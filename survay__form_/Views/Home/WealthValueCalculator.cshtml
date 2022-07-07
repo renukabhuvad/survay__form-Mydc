@@ -1,0 +1,990 @@
+﻿@model survay__form_.Models.Ticket
+@*@Model IEnumerable<bima_care.Models.Ticket>*@
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/wealthvalueCalculator.cshtml";
+}
+
+<style>
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        h1 {
+            padding-top: 5px;
+            font-size: 21px;
+            line-height: 44px;
+            font-weight: 400;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .navbar-toggle {
+            float: right !important;
+            padding: 17px 9px !important;
+            margin-top: 10px !important;
+        }
+    }
+</style>
+
+@section AdditionalMeta
+{
+    <title>@Model.agentname | Retirment Calculation Form</title>
+    <link rel="icon" type="image/x-icon" href="@Model.profileimage">
+    <meta name="keywords" content="@Model.profileimage,Retirment Calculation Form,Calculation">
+    <meta name="description" content="Retirment Calculation Form Shared By @Model.agentname">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Wealth Value Calculator">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="@Model.agentname">
+    <meta name="twitter:title" content="Wealth Value Calculator">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="@Model.agentname">
+    <meta name="twitter:image:src" content="@Model.profileimage">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Wealth Value Calculator" />
+    <meta property="og:type" content="Wealth Value Calculator" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="@Model.agentname" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+
+@{
+
+    @*@ViewBag.Invest;
+        @ViewBag.Total;
+        @ViewBag.data1;
+        @ViewBag.Name;*@
+
+    var total = ViewBag.data1;
+
+}
+    <script>
+    @*var invest = '@(ViewBag.Invest)';
+    $("#invest").html(invest);*@
+
+    window.onload = function ()
+    {
+        var invest =  '@(ViewBag.Invest)';
+        localStorage.setItem("storageName",invest);
+
+        var gtotal ='@(ViewBag.Total)';
+        $("#gtotal").html(gtotal);
+        localStorage.setItem("gtotalName",gtotal);
+
+        var gtotal1 ='@(ViewBag.data1)';
+        $("#gtotal1").html(gtotal1);
+        localStorage.setItem("gtotalName1",gtotal1);
+
+        //var window1 = localStorage.getItem("storageName1");
+        //$("#gtotal12").html(window1);
+    }
+    </script>
+
+<style>
+    .details {
+        position: relative;
+        background: #4caf50;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-size: 15px;
+        padding: 10px;
+        font-weight: 400;
+        /*margin-top: 85px;*/
+    }
+
+    b {
+        color: #000;
+        font-size: 18px;
+    }
+
+    th, td 
+    {
+        padding: 0;
+        border: 1px solid #000;
+        text-align: center !important;
+    }
+
+    .modal-dialog 
+    {
+        width: 900px !important;
+        margin: 30px auto;
+        left: 0%;
+    }
+
+    .button {
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        color: #FFFFFF;
+        padding: 10px 20px;
+        font-size: 17px;
+        /* border: 2px #b35737 solid; */
+        border-radius: 2em;
+    }
+
+    @@media only screen and (max-width:520px) and (min-width:220px) {
+        .button {
+            /*padding: 5px;*/
+        }
+
+        .modal-open .modal {
+            overflow-x: auto;
+            overflow-y: auto;
+        }
+    }
+</style>
+
+<style>
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 5px solid #fff;
+        }
+
+        .agname {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+            .agname li {
+                float: left;
+                list-style: none !important;
+                padding: 0px !important;
+                margin: 3px 0px !important;
+            }
+
+                .agname li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 16px;
+                    text-decoration: none;
+                }
+
+        .agname {
+            font-size: 15px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 5px solid #fff;
+    }
+
+    .agname {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    .agname li {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+    .agname li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+
+    .curved {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+</style>
+
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <div class="text-center">
+                    <img src="@Model.profileimage" class="profilepic" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="text-left">
+                    <ul class="agname">
+                        <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                        <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.emailid </span> </li>
+                        <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="curved">
+    <div style="">
+        <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> Wealth Value Calculator </h2>
+    </div>
+</div>
+
+<div class="image-container set-full-height" style="background:#fff4f2;">
+    <!--   Big container   -->
+    @if (Session["Gtotal"] != null)
+    {
+        <input type="hidden" value="1" id="active" />
+    }
+    else
+    {
+        <input type="hidden" value="0" id="active" />
+    }
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8 col-sm-offset-2" style="margin-top:40px;">
+                <div class="wizard-container">
+
+                    <div class="card wizard-card" data-color="green" id="wizardProfile">
+                        <form action="../Calculation" method="post">
+                            <input type="hidden" value="@Model.Id_" id="id" name="id" />
+                            <div class="wizard-header">
+                                @*<h3 class="wizard-title">
+                                        Wealth Value Calculator
+                                    </h3>*@
+                                <h5>Calculate your potential wealth value</h5>
+                            </div>
+                            <div class="wizard-navigation">
+                                <ul>
+
+                                    @*@if (total > 0)
+                                        {*@
+
+                                    <li><a href="#personal" data-toggle="tab">Personal Information</a></li>
+                                    <li><a href="#financial" data-toggle="tab">Financial Information</a></li>
+                                    <li style="width:32% !important;"><a href="#result" data-toggle="tab">Result</a></li>
+                                    @*}
+                                        else
+                                        {
+                                        <li><a href="#personal" data-toggle="tab">Personal Information</a></li>
+                                        <li><a href="#financial" data-toggle="tab">Financial Information</a></li>
+
+                                        }*@
+
+                                    @*<li><a href="#personal" data-toggle="tab">Personal Information</a></li>
+                                        <li><a href="#financial" data-toggle="tab">Financial Information</a></li>
+                                        <li><a href="#result" data-toggle="tab">Result</a></li>*@
+                                </ul>
+                            </div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane" id="personal">
+                                    <div class="row">
+                                        <h4 class="info-text"> Let's start with the Basic Information</h4>
+                                        @*<div class="col-sm-4 col-sm-offset-1">
+                                            <div class="picture-container">
+                                            <div class="picture">
+                                            <img src="/assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+                                            <input type="file" id="wizard-picture">
+                                            </div>
+                                            <h6>Choose Picture</h6>
+                                            </div>
+                                            </div>*@
+                                        <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">face</i>
+                                                </span>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">First Name <small></small></label>
+                                                    <input name="firstname" type="text" class="form-control" id="first_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">local_phone</i>
+                                                </span>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Mobile No <small></small></label>
+                                                    <input name="phone" type="text" class="form-control numbersOnly" maxlength="10"> @*pattern="/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/"*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">email</i>
+                                                </span>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Email <small></small></label>
+                                                    <input name="email" type="email" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">cake</i>
+                                                </span>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Birth Date<small></small></label>
+                                                    <input name="birthdate" id="birth" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div id="container"></div>
+                                        <div class="col-sm-10 col-sm-offset-1">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">
+                                                    <i class="material-icons">cake</i>
+                                                </span>
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Retirement Age<small></small></label>
+                                                    <input name="retirement" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane" id="financial">
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-inr" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Present Annual Income<small></small></label>
+                                                <input name="income" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Your Annual Expense<small></small></label>
+                                                <input name="expense" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                        <span class="input-group-addon">
+                                        <i class="fa fa-shopping-cart" style="font-size:20px;"></i>
+                                        </span>
+                                        <div class="form-group label-floating">
+                                        <label class="control-label">Amount<small></small></label>
+                                        <input name="Amount_end_year" id="End_Amount" type="text" class="form-control">
+                                        </div>
+                                        </div>
+                                        </div>*@
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-line-chart" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Growth On Income<small></small></label>
+                                                <input name="Growth" type="text" class="form-control" maxlength="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-line-chart" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Influction Rate<small></small></label>
+                                                <input name="influction" type="text" class="form-control" maxlength="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-percent" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Interest Rate<small></small></label>
+                                                <input name="interest" type="text" class="form-control" maxlength="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-umbrella" style="font-size:20px;"></i>
+                                            </span>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Existing Investment<small></small></label>
+                                                <input name="Investment" id="insurance" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input id="btnhome" type="submit" class="button" value="RESULT" />
+                                </div>
+
+                                <div class="tab-pane" id="result">
+                                    <div class="row">
+                                        <div>
+                                            <p align="left" style="font-size:20px;padding: 10px 0 0 40px;">
+                                                Dear @ViewBag.Name,<br /><br />
+                                            </p>
+                                            <p align="center" style="font-size:20px;padding: 0 50px;line-height: 40px;">
+                                                As Par Given Information your Potential <b>Wealth Value is <span class="fa fa-inr"></span> @ViewBag.Total </b>
+                                                and you have taken <b> Life Cover of <span class="fa fa-inr"></span> @ViewBag.Invest </b> so protect your Potential <b> Wealth Value with <span class="fa fa-inr"></span> <span id="gtotal1"></span></b> to secure your Family Future & Dreams.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <input type="text" id="contact_name" style="display:none;" value="@ViewBag.Name" />
+                                    <input type="text" id="contact_email" style="display:none;" value="@ViewBag.Email" />
+                                    <input type="text" id="contact_mobile" style="display:none;" value="@ViewBag.Phone" />
+                                    <input type="text" id="contact_message" style="display:none;" value="Wealth Value Calcultor: Wealth Value is  @ViewBag.Total and you have Life Cover @ViewBag.Invest so protect your future wealth @ViewBag.data1 to secure your family future & dreams." />
+                                    <div class="wizard-footer">
+                                        <div class="row" style="padding-bottom:20px;">
+                                            <div class="col-md-9">
+                                                <p>I Have Better & Suitable Financial Solutions For Protecting your Potential Wealth Value, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                            </div>
+                                            <div class="col-md-3" style="padding-top:7px;">
+                                                <button type="button" class="button" id="modelpop">Request Now</button>
+                                            </div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <button type="button" data-toggle="modal" data-target="#myModal" class="button">View Detail Calculation</button>
+                                            @*<a href="#" role="button" class="button" style="float:left;margin: 10px 1px;">More Details Contact US</a>*@
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn-next btn-fill button btn-wd' name='next' value='Next' />
+                                        <input type='button' class='btn-finish btn-fill button btn-wd' name='finish' value='Finish' onclick="clearsession();" />
+                                    </div>
+
+                                    <div class="pull-left">
+                                        <input type='button' class='btn-previous btn-fill button btn-wd' name='previous' value='Previous' />
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!-- wizard container -->
+            </div>
+        </div><!-- end row -->
+    </div> <!--  big container -->
+</div>
+
+<!-- Modal -->
+@*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form method="post" action="../home/SendMail" id="form1">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Advance Wealth Value Calculation</h4>
+                    <input type="text" name="name" id="mail_name" style="display:none" />
+                    <input type="text" name="email" id="mail_email" style="display:none" />
+                    <input type="text" name="wealth" id="mail_wealth" style="display:none" />
+                    <input type="text" name="future" id="mail_future" style="display:none" />
+                    <input type="text" name="lifecover" id="mail_lifecover" style="display:none" />
+
+                </div>
+                <div class="modal-body">
+                    @{
+                        var getlist = ViewBag.data as IEnumerable<survay__form_.Models.Ticket>;
+
+                        <table id="sample_editable_1" class="table table-striped table-hover table-bordered table_export" name="message">
+                            <thead>
+                                <tr align="left" style="background-color:#4caf50;color:White;">
+                                    <th style="color:#fff;border:1px solid #000;">Year</th>
+                                    <th style="color:#fff;border:1px solid #000;">Amount</th>
+                                    <th style="color:#fff;border:1px solid #000;">Growth Rate</th>
+                                    @*<th>Tax</th>*@
+                                    <th style="color:#fff;border:1px solid #000;">Expense</th>
+                                    <th style="color:#fff;border:1px solid #000;">Influction Rate</th>
+                                    @*<th>Net_AnnualAmount</th>*@
+                                    <th style="color:#fff;border:1px solid #000;">Amount End year</th>
+                                    <th style="color:#fff;border:1px solid #000;">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody id="popup">
+                                @if (getlist != null)
+                                {
+
+                                    foreach (var list in getlist)
+                                    {
+                                        <tr>
+
+                                            <td id="Id" style="border:1px solid #000;">@list.Id </td>
+                                            <td contenteditable='false' id="Amount" class="countable" style="border:1px solid #000;">@list.Amount</td>
+                                            <td contenteditable='false' id="Growth_Rate" style="border:1px solid #000;">@list.Growth_Rate</td>
+                                            <td contenteditable='false' id="Expancess" style="border:1px solid #000;">@list.Expancess</td>
+                                            <td contenteditable='false' id="RatOfInflation" style="border:1px solid #000;">@list.RatOfInflation</td>
+                                            <td id="Amount_end_year" style="border:1px solid #000;">@list.Amount_end_year </td>
+                                            <td style="border:1px solid #000;"> <button id="button" class="btn btn-success edit" style="padding: 4px 10px;">Edit</button></td>
+                                            @*   <td>@list.Id </td>
+                                                <td>@list.Amount</td>
+                                                <td>@list.Growth_Rate</td>
+                                                <td>@list.Expancess</td>
+                                                <td>@list.RatOfInflation</td>
+                                                <td>@list.Amount_end_year</td>*@
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+                        <table class="table table-striped table-hover table-bordered">
+                            <tr>
+                                <td style="background-color:#7c67fa; color:White;"> Grand Total </td>
+                                <td align="right" style="background-color:#7c67fa; color:White;" id="gtotal1"> @ViewBag.data1 </td>
+                            </tr>
+                        </table>
+                    }
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-primary" onclick="tableToExcel('sample_editable_1', 'W3C Example Table')" >Export To Excel</button>*@
+                    @*<button type="button" class="button" onclick="senddownload();">Download</button>*@
+                    @*<button type="button" class="button" onclick="sendmail();">Send Mail</button>*@
+                    <button type="button" class="button" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!--End Modal -->
+@section scripts{
+    <script>
+       document.getElementById("mail_name").value = document.getElementById("contact_name").value;
+       document.getElementById("mail_email").value = document.getElementById("contact_email").value;
+       document.getElementById("mail_wealth").value = @ViewBag.Total; @*@ViewBag.Total;*@
+       document.getElementById("mail_future").value = @ViewBag.Invest;
+        document.getElementById("mail_lifecover").value = document.getElementById("gtotal1").value; @*@ViewBag.data1;*@
+    </script>
+    @*<link href="~/tableexport.min.css" rel="stylesheet" />*@
+    <script src="~/Blob.js"></script>
+    <script src="~/FileSaver.js"></script>
+    <script src="~/tableexport.min.js"></script>
+    <script>
+        $('#birth').datepicker({
+            format: 'dd/mm/yyyy',
+        });
+        $(".table_export").tableExport({
+            headings: true,                    // (Boolean), display table headings (th/td elements) in the <thead>
+            footers: true,                     // (Boolean), display table footers (th/td elements) in the <tfoot>
+            formats: ["csv"],    // (String[]), filetypes for the export
+            fileName: "id",                    // (id, String), filename for the downloaded file
+            ignoreRows: null,                  // (Number, Number[]), row indices to exclude from the exported file(s)
+            ignoreCols: [6],                  // (Number, Number[]), column indices to exclude from the exported file(s)
+            ignoreCSS: ".tableexport-ignore",  // (selector, selector[]), selector(s) to exclude from the exported file(s)
+            emptyCSS: ".tableexport-empty",    // (selector, selector[]), selector(s) to replace cells with an empty string in the exported file(s)
+            trimWhitespace: false,
+            position: "bottom",
+            // (Boolean), remove all leading/trailing newlines, spaces, and tabs from cell text in the exported file(s)
+            //bootstrap: true,                   // (Boolean), style buttons using bootstrap
+            //position: "bottom"                // (top, bottom), position of the caption element relative to table
+        });
+
+        $(document).ready(function ()
+        {
+            var currentURL = window.location.href;
+            //alert(currentURL);
+            var auth_key = currentURL.split("/");
+            //alert(auth_key[5])
+            $("#btn_again").prop("href", "../FamilyFinancialSecurity/" + auth_key[5] + "");
+        });
+    </script>
+    <script>
+
+            //ab=document.getElementById("txtdate1").value;
+
+            //dob = new Date($('#txtdate1').val());
+            //var today = new Date();
+            //var age = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+            //$('#age').html(age + ' years old');
+
+            // var PresentDay = new Date();
+
+            // var dob = (new Date(parseInt(document.getElementById("txtdate1").value)));
+            ////var month = PresentDay.getMonth();
+            // //var dobd = dob.getMonth();
+            // var months = (PresentDay.getMonth() - dob.getMonth() + (12 * (PresentDay.getFullYear() - dob.getFullYear())));
+            // var ab = Math.round(months / 12);
+            // //document.getElementById("txtage").value = Math.round(months / 12);
+
+            // alert(ab);
+
+
+            $("#birth").change(function () {
+                debugger;
+
+                var dob = document.getElementById('birth').value;
+                var dateParts = dob.split("/");
+                //return new Date(dateParts[2], (dateParts[1] - 1), dateParts[0]);
+                var year = dateParts[2];
+                var month = dateParts[1] - 1;
+                var day = dateParts[0];
+                //var year = Number(dob.substr(4, 4));
+                //var month = Number(dob.substr(2, 2)) - 1;
+                //var day = Number(dob.substr(0, 2));
+                var today = new Date();
+                var age = today.getFullYear() - year;
+                if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+                    age--;
+                }
+
+                toAppend = '<div class="col-sm-10 col-sm-offset-1"><div class="input-group"><span class="input-group-addon"><i class="material-icons">perm_identity</i></span><div class="form-group label-floating"><label class="control-label">Age<small></small></label><input name="birthdate" type="text" id="txtage" class="form-control"></div></div></div>'; $("#container").html(toAppend);
+                document.getElementById('txtage').value = age;
+            });
+            //function sum()
+            //{
+            //    var Present_amount = document.getElementById('income').value;
+            //    var Expanse = document.getElementById('exp').value;
+            //    var End_Amount = parseInt(Present_amount) - parseInt(Expanse);
+            //    document.getElementById('End_Amount').value = End_Amount;
+
+        //}
+            @*$().click(function(){
+
+                var invest='@(ViewBag.Invest)'
+
+            })*@
+
+            $('.editbtn').click(function () {
+                var $this = $(this);
+                var tds = $this.closest('tr').find('td').filter(function () {
+                    return $(this).find('.editbtn').length === 0;
+                });
+                if ($this.html() === 'Edit') {
+
+                    $this.html('Save');
+                    tds.prop('contenteditable', true);
+                    debugger
+                    var GrandTotal = 0;
+
+                    //  if (document.getElementById('mytable') != null) {
+                    var table = document.getElementById('mytable');
+                    var rows = table.getElementsByTagName('tr');
+
+                    var influction = '@ViewBag.influction';
+
+
+                    var Id = '';
+                    var Present_Amount = '';
+                    var Growth_Rate = '';
+                    var Expancess = '';
+                    var RatOfInflation = '';
+                    var Amount_end_year = '';
+
+                    for (var i = 1; i < rows.length; i++) {
+
+                        rows[i].i = i;
+                        rows[i].onclick = function () {
+                            Id = parseInt(table.rows[this.i].cells[0].innerHTML);
+                            //rows[this.i].cells[0].innerHTML = "<input type='text' value='" + Id + "'>";
+                            Present_Amount = parseInt(table.rows[this.i].cells[1].innerHTML);
+                            Growth_Rate = parseInt(table.rows[this.i].cells[2].innerHTML);
+                            Expancess = parseInt(table.rows[this.i].cells[3].innerHTML);
+                            RatOfInflation = parseInt(table.rows[this.i].cells[4].innerHTML);
+                            Amount_end_year = parseInt(table.rows[this.i].cells[5].innerHTML);
+
+                            var myTable = document.getElementById('mytable');
+                            //calculation start
+                           //myTable.rows[i].cells[0].innerHTML = "<input type='text' value='" + Id + "'>";
+                            for (var j = this.i; j < rows.length - 1 ; j++) {
+
+                                Amount_end_year = Math.abs(Present_Amount - Expancess);
+
+                                //if (Interest_Rate > 0) {
+                                //    var si = Amount_end_year * Year_Interest / 100;
+
+                                //    si = 0;
+
+                                //}
+
+                                //$('ab').on('click', function () {
+                                //    var $this = $(this);
+                                //    var $input = $('<input>', {
+                                //        value: $this.text(),
+                                //        type: 'text',
+                                //        blur: function () {
+                                //            $this.text(this.value);
+                                //        },
+                                //        keyup: function (e) {
+                                //            if (e.which === 13) $input.blur();
+                                //        }
+                                //    }).appendTo($this.empty()).focus();
+                                //});
+
+
+                                GrandTotal += Amount_end_year;
+                               // myTable.rows[j].cells[0].innerHTML = "<input type='text' value='" + Id + "'>";
+                                myTable.rows[j].cells[0].innerHTML = Id;
+                               // myTable.rows[j].cells[1].innerHTML = "<input type='text' value='" + Math.round(Present_Amount) + "'>";
+                               myTable.rows[j].cells[1].innerHTML = Math.round(Present_Amount);
+                                myTable.rows[j].cells[2].innerHTML = Math.round(Growth_Rate);
+                                myTable.rows[j].cells[3].innerHTML = Math.round(Expancess);
+                                myTable.rows[j].cells[4].innerHTML = Math.round(RatOfInflation);
+                                myTable.rows[j].cells[5].innerHTML = Math.round(Amount_end_year);
+
+
+                                if (RatOfInflation > 0) {
+
+                                    var exp = (RatOfInflation / 100) * Expancess;
+                                    Expancess += exp;
+                                    //myTable.rows[j].cells[3].innerHTML = Math.round(Expancess);
+                                }
+
+
+                                if (Growth_Rate > 0) {
+                                    Present_Amount += (Growth_Rate / 100) * Present_Amount;
+                                    //myTable.rows[j].cells[2].innerHTML = Math.round(Growth_Rate);
+
+                                }
+
+                                Id += 1;
+
+                                //calculation End
+
+                                //  alert('Year: ' + Id + ' Present_Amount: ' + Present_Amount + ' Growth_Rate: ' + Growth_Rate + ' Expancess : ' + Expancess + '  RatOfInflation ' + RatOfInflation + ' Amount_end_year: ' + Amount_end_year);
+
+
+                            }
+
+                            var gtotal = 0;
+                            for (var k = 1; k < rows.length  ; k++) {
+                                gtotal += parseInt(table.rows[k].cells[5].innerHTML);
+
+                            }
+                            $("#gtotal").html(gtotal);
+                            // alert(gtotal);
+                        };
+
+                    }
+
+
+                } else {
+                    $this.html('Edit');
+                    tds.prop('contenteditable', false);
+                }
+            });
+
+
+        @*function Calculate() {
+
+                debugger
+                var GrandTotal = 0;
+
+                //  if (document.getElementById('mytable') != null) {
+                var table = document.getElementById('mytable');
+                var rows = table.getElementsByTagName('tr');
+
+                var influction = '@ViewBag.influction';
+
+
+                var Id = '';
+                var Present_Amount = '';
+                var Growth_Rate = '';
+                var Expancess = '';
+                var RatOfInflation = '';
+                var Amount_end_year = '';
+
+                for (var i = 1; i < rows.length; i++) {
+
+                    rows[i].i = i;
+                    rows[i].onclick = function () {
+
+                        Id = parseInt(table.rows[this.i].cells[0].innerHTML);
+                        Present_Amount = parseInt(table.rows[this.i].cells[1].innerHTML);
+                        Growth_Rate = parseInt(table.rows[this.i].cells[2].innerHTML);
+                        Expancess = parseInt(table.rows[this.i].cells[3].innerHTML);
+                        RatOfInflation = parseInt(table.rows[this.i].cells[4].innerHTML);
+                        Amount_end_year = parseInt(table.rows[this.i].cells[5].innerHTML);
+
+
+
+                        var myTable = document.getElementById('mytable');
+                        //calculation start
+
+                        for (var j = this.i; j < rows.length - 1 ; j++) {
+
+                            Amount_end_year = Math.abs(Present_Amount - Expancess);
+
+                            //if (Interest_Rate > 0) {
+                            //    var si = Amount_end_year * Year_Interest / 100;
+
+                            //    si = 0;
+
+                            //}
+
+                            GrandTotal += Amount_end_year;
+                            myTable.rows[j].cells[0].innerHTML = Id;
+                            myTable.rows[j].cells[1].innerHTML = Math.round(Present_Amount);
+                            myTable.rows[j].cells[2].innerHTML = Math.round(Growth_Rate);
+                            myTable.rows[j].cells[3].innerHTML = Math.round(Expancess);
+                            myTable.rows[j].cells[4].innerHTML = Math.round(RatOfInflation);
+                            myTable.rows[j].cells[5].innerHTML = Math.round(Amount_end_year);
+
+
+                            if (RatOfInflation > 0) {
+
+                                var exp = (RatOfInflation / 100) * Expancess;
+                                Expancess += exp;
+                                //myTable.rows[j].cells[3].innerHTML = Math.round(Expancess);
+                            }
+
+
+                            if (Growth_Rate > 0) {
+                                Present_Amount += (Growth_Rate / 100) * Present_Amount;
+                                //myTable.rows[j].cells[2].innerHTML = Math.round(Growth_Rate);
+
+                            }
+
+                            Id += 1;
+
+                            //calculation End
+
+                            //  alert('Year: ' + Id + ' Present_Amount: ' + Present_Amount + ' Growth_Rate: ' + Growth_Rate + ' Expancess : ' + Expancess + '  RatOfInflation ' + RatOfInflation + ' Amount_end_year: ' + Amount_end_year);
+
+
+                        }
+
+                        var gtotal = 0;
+                        for (var k = 1; k < rows.length - 1 ; k++) {
+                            gtotal += parseInt(table.rows[k].cells[5].innerHTML);
+
+                        }
+                        $("#gtotal").html(gtotal);
+                        // alert(gtotal);
+                    };
+
+                }
+
+            }*@
+
+
+            function clearsession()
+            {
+                $.post("../Home/clearsession", function (success)
+                {
+                    var currentURL = window.location.href;
+                    //alert(currentURL);
+                    var auth_key = currentURL.split("/");
+                    //alert(auth_key[5])
+                    window.location.href = "../Home/WealthValueCalculator/" + @ViewBag.auth_key + "" ;
+                });
+            }
+    </script>
+    @*<script type="text/javascript">
+                var tableToExcel = (function() {
+                var uri = 'data:application/vnd.ms-excel;base64,'
+            , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+            , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+            , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+          return function(table, name) {
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+            window.location.href = uri + base64(format(template, ctx))
+          }
+        })()
+                    //$("#btnExport").click(function (e) {
+                    //    window.open('data:application/vnd.ms-excel,' + $('#testTable').html());
+                    //    e.preventDefault();
+                //});
+
+
+
+            </script>*@
+    @*<script>
+            var cls = document.getElementById("sample_editable_1").getElementsByTagName("td");
+            var sum = 0;
+        for (var i = 0; i < cls.length; i++)
+        {
+            if (cls[i].className == "countable")
+            {
+                sum += isNaN(cls[i].innerHTML) ? 0 : parseInt(cls[i].innerHTML);
+            }
+        }
+         alert('sum is ' + sum);
+        document.getElementById("GrandTotal").value = sum;
+
+        </script>*@
+    <script type="text/javascript">
+        var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+        $('#modelpop').click(function (e) {
+            e.preventDefault();
+            $.post("../home/Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + $("#contact_message").val() + "&subject=Wealth Value Calculator", function (success) {
+                alert("Thanks For your Interest we will get Back to you soon.");
+                document.getElementById("contact_name").value = "";
+                document.getElementById("contact_mobile").value = "";
+                document.getElementById("contact_email").value = "";
+                //document.getElementById("txtdate1").value = "";
+                document.getElementById("contact_message").value = "";
+                location.reload();
+            });
+        });
+        function sendmail() {
+            var table = $("#sample_editable_1").html();
+            //var data=table.concat('<table>'+table+'</table>');
+            //$.post("../?message='" + table+"'", function (sucess) {
+            //});
+            data = {
+                message: table,
+                name: $("#mail_name").val(),
+                email: $("#mail_email").val(),
+                wealth: $("#mail_wealth").val(),
+                future: $("mail_future").val(),
+                lifecover: $("mail_lifecover").val()
+            }
+            $.ajax(
+                {
+                    url: "../home/SendMail",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    // data:data,
+                    success: function (result) {
+                        alert("Email Send Successfully");
+                    }
+                });
+        }
+    </script>
+}
+
+

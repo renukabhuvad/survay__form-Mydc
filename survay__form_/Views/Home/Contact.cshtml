@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Contact">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Contact">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Contact" />
+    <meta property="og:type" content="Contact" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Contact" />
+
+}
+<style>
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .navbar-toggle {
+            float: right !important;
+            padding: 17px 9px !important;
+            margin-top: 10px !important;
+        }
+    }
+</style>
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h1>CONTACT US</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ulockd-about contact-section">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="section-title text-center">
+            <h2>Get in Touch with us</h2>
+        </div>
+        <div class="row clearfix">
+            <!--Info Column-->
+            <div class="info-column col-md-4 col-sm-12 col-xs-12">
+                <h4>Quick Contact Informaiton</h4>
+                <ul class="contact-info">
+                    <li><div class="icon-box"><span class="fa fa-map-marker"></span></div> 905, Ghanshyam Enclave, Lalji Pada, Near Laljipada Police Chowky, Kandiwali link road, Kandiwali (W). Mumbai Maharashtra - 400067 </li>      
+                    <li><div class="icon-box"><span class="fa fa-phone"></span></div> 022-28684456 </li>
+                    <li><div class="icon-box"><span class="fa fa-phone"></span></div> 8424055399 </li>
+                    <li><div class="icon-box"><span class="fa fa-envelope-o"></span></div> info@kazimraza.com </li>
+                </ul>
+            </div>
+   
+            <div class="form-column col-md-8 col-sm-12 col-xs-12">
+                <!--Contact Form-->
+                <div class="default-form contact-form">
+                    <form id="contact-form" method="post">
+                        <div class="row clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="name" id="user_name3" placeholder="Name" class="requireddata alphabetOnly">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="user_email3" placeholder="Email" class="requireddata validemail">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="phone" id="user_Mobile3" placeholder="Phone" class="requireddata validnumber numbersOnly" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="subject" id="user_Subject3" placeholder="Subject" class="requireddata">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <textarea name="msg" placeholder="Message" id="email_message3" class="requireddata"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="g-recaptcha" data-sitekey="6LdZ48kbAAAAALzrv1omkzc5Kld6IJj9wAFxM8qW"></div>
+                                    <span class="Error" id="errormsg" style="display: none; color: Red;">This Filed Required!</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" id="btn1" class="btn-one">send Message</button>
+                    </div>
+                </div>
+                <!--End Contact Form-->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<iframe width="100%" height="600" src="https://maps.google.com/maps?cid=13225249491304428599&hl=en&gl=US&mapclient=embed ,&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+@section scripts{
+    <script src="~/js/Validataions.js"></script>
+
+    <script>
+        $("#user_Mobile").on("change", function () {
+            var mobNum = $(this).val();
+            var filter = (/^\d*(?:\.\d{1,2})?$/) || (charCode > 31 && (charCode < 48 || charCode > 57));
+
+            if (filter.test(mobNum)) {
+                if (mobNum.length == 10) {
+                    //alert("valid");
+                    $("#mobile-valid").removeClass("hidden");
+                    $("#folio-invalid").addClass("hidden");
+                } else {
+                    $.confirm({
+                        icon: 'fa fa-warning',
+                        title: 'Please put 10  digit mobile number',
+                        content: '',
+                        type: 'red',
+                        typeAnimated: true,
+                        buttons: {
+                            tryAgain: {
+                                text: 'Close',
+                                btnClass: 'btn-red',
+                                action: function () {
+                                }
+                            }
+                        }
+                    });
+                    //alert('Please put 10  digit mobile number');
+                    $("#folio-invalid").removeClass("hidden");
+                    $("#mobile-valid").addClass("hidden");
+                    return false;
+                }
+            }
+            else {
+                $.confirm({
+                    icon: 'fa fa-warning',
+                    title: 'Not a valid number',
+                    content: '',
+                    type: 'red',
+                    typeAnimated: true,
+                    buttons: {
+                        tryAgain: {
+                            text: 'Close',
+                            btnClass: 'btn-red',
+                            action: function () {
+                            }
+                        }
+                    }
+                });
+                //alert('Not a valid number');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+            }
+
+        });
+        $("#user_email").on("change", function () {
+            var emailid = $(this).val();
+            var re = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (re.test(emailid) == false) {
+                $.confirm({
+                    icon: 'fa fa-warning',
+                    title: 'Invalid Email Address',
+                    content: '',
+                    type: 'red',
+                    typeAnimated: true,
+                    buttons: {
+                        tryAgain: {
+                            text: 'Close',
+                            btnClass: 'btn-red',
+                            action: function () {
+                            }
+                        }
+                    }
+                });
+                //alert('Invalid Email Address');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+
+            }
+        });
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        $('#btn1').click(function (e) {
+            var f = document.getElementById('contact-form');
+            var result = Validation.Required("#contact-form");
+            var response = grecaptcha.getResponse();
+            if (response.length == 0)
+            {
+                //reCaptcha not verified
+               // alert("please verify you are humann!");
+                document.getElementById('errormsg').style.display = "block";
+                //document.getElementsByTagName('#errormsg').style.display = "block";
+                evt.preventDefault();
+                // return false;
+                if (result == "Fail")
+                {
+                    //e.preventDefault();
+                    return false;
+                }
+            }
+
+            if (result == "Pass")
+            {
+                e.preventDefault();
+                $.post("../Home/Contact?name=" + $("#user_name3").val() + "&phone=" + $("#user_Mobile3").val() + "&email=" + $("#user_email3").val() + "&msg=" + $("#email_message3").val() + "&subject=Enquiry", function (success) {
+                    alert("Send Message Successfully");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+}

@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Microdata markup added by Google Structured Data Markup Helper. -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title> Digital Calender </title>
+
+    <!-- Add manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <!-- Tell the browser it's a PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Tell iOS it's a PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#536878">
+
+    @RenderSection("AdditionalMeta", false)
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5KD2F5F');
+    </script>
+
+    <!-- End Google Tag Manager -->
+    <link rel="icon" href="~/images/kazim_raza_logo_1VI_icon.ico" type="image/x-icon">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="~/css/style1.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" id="jssDefault" href="/css/custom/theme-2.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    @*<link href="~/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />*@
+
+    @*<link href="~/css/rowReorder.dataTables.min.css" rel="stylesheet" />
+        <link href="~/css/responsive.dataTables.min.css" rel="stylesheet" />*@
+
+    <link href="~/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/select.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/colorboxcss.css" rel="stylesheet" />
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="~/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="../assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/global/css/style.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+
+    <script src="~/assets/global/plugins/jquery.min.js"></script>
+    @*<link href="~/css/social.css" rel="stylesheet" />*@
+    <link href="~/css/custom/jssocials.css" rel="stylesheet" />
+    @*<link href="~/css/custom/jssocials-theme-flat.css" rel="stylesheet" />*@
+    @*<link href="~/css/custom/jssocials-theme-minima.css" rel="stylesheet" />*@
+    <link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+
+    <style>
+        @@media screen and (max-width: 520px) and (min-width: 220px) {
+            .logo-box a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            }
+
+            .logo-box {
+                width: 307px;
+            }
+
+            h1 {
+                padding-top: 10px;
+                font-size: 35px;
+                line-height: 30px;
+                font-weight: 400;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            .contact-section .contact-area {
+                padding: 60px 35px;
+            }
+
+            .service-block2 .inner-box .image-box {
+                padding-top: 25px;
+            }
+
+            .blockstart {
+                height: 250px !important;
+            }
+
+            .blockimg {
+                width: 100%;
+                height: 200px !important;
+            }
+
+            .Video_blcok .blocks .greenhead {
+                font-size: 12px !important;
+            }
+
+            .navbar-brand {
+                padding: 0px !important;
+            }
+
+                .navbar-brand img {
+                    width: 250px !important;
+                    padding-top: 5px;
+                }
+
+            .main-menu .navbar-header {
+                padding: 0px;
+            }
+
+            .back-section {
+                padding-bottom: 0px;
+                height: 125px;
+            }
+
+                .back-section h1 {
+                    padding-top: 20px !important;
+                }
+
+            .our_client_faq_area .fast_faq_area .fast_faq_content .panel-group .panel-default .panel-heading .panel-title a span {
+                line-height: 1.3;
+                font-size: 14px;
+            }
+
+            .our_client_faq_area {
+                margin-bottom: 0px;
+            }
+
+            .footer-bottom .pull-right {
+                float: none !important;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        th {
+            background: #e61e25 !important;
+            color: #fff;
+        }
+
+        .navbar-toggle {
+            float: right !important;
+            padding: 22px 19px !important;
+            margin-right: 0px !important;
+        }
+
+        .back-section h1 {
+            padding-top: 40px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        @@media screen and (max-width: 520px) and (min-width: 220px) {
+            h1 {
+                padding-top: 5px;
+                font-size: 21px;
+                line-height: 44px;
+                font-weight: 400;
+                color: #fff;
+                text-transform: uppercase;
+            }
+        }
+
+        @@media screen and (max-width: 520px) and (min-width: 220px) {
+            .navbar-toggle {
+                float: right !important;
+                padding: 17px 9px !important;
+                margin-top: 10px !important;
+            }
+        }
+        /*@@media screen and (max-width: 375px) {
+            .navbar-brand img {
+                width: 285px !important;
+                padding-top: 5px;
+            }
+        }*/
+    </style>
+
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KD2F5F"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- main header area -->
+
+    <header class="main-header">
+        <!-- header upper -->
+        <div class="header-upper hidden-xs hidden-sm hidden-md hidden-sm-down">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <ul class="top-left">
+                                <li><a href="#">Welcome to Kazim Raza</a></li>
+                                <li><a href="#">info@kazimraza.com</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="top-right">
+                                <ul class="social-top">
+                                    <li><a href="https://www.facebook.com/kazim.raza.71" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCHbD8q8OWP-fO0RPe2vf9AQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header upper -->
+        <!-- header lower/fixed-header -->
+        
+        <!-- end header lower/fixed-header -->
+
+    </header>
+    <!-- end main header area -->
+    @RenderBody()
+
+    <!-- main-footer area -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 col-xs-12 footer-column">
+                    <div class="service-wideget footer-wideget">
+                        <div class="footer-title"><h4>USEFUL LINKS</h4></div>
+                        <ul class="list">
+                            <li><a href="/Home/Index">HOME</a></li>
+                            <li><a href="/Home/About">ABOUT US</a></li>
+                            <li><a href="/Home/Vision">OUR VISION</a></li>
+                            <li><a href="/Knowledge/Lic_Home">HOME LOAN</a></li>
+                            <li><a href="/Gallery/Gallery">GALLERY</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xs-12 footer-column">
+                    <div class="service-wideget footer-wideget">
+                        <div class="footer-title"><h2 style="margin-bottom:86px;"></h2></div>
+                        <ul class="list">
+                            <li><a href="/Knowledge/Industry_News">NEWS</a></li>
+                            <li><a href="/LicInfo/DoctorLocator">DOCTOR LOCATOR</a></li>
+                            <li><a href="/Knowledge/Articles">ARTICLES</a></li>
+                            <li><a href="/LicInfo/BranchLocator">BRANCH LOCATOR</a></li>
+                            <li><a href="/ResourceCenter/Important_Form">FORMS</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--=== Right Fixed Appiontment Form ===-->
+                <div id="appiontment-now-box">
+                    <p class="toggle">May I Help You</p>
+                    <div class="appiontment-now ">
+                        <div class="appiontment-form">
+                            <p>Request For Appiontment</p>
+                            <form id="appoinment" method="post">
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <input class="form-control requireddata alphabetOnly" type="text" name="name" id="user_name5" placeholder="Full Name">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <input class="form-control requireddata validemail" type="email" name="email" id="user_email5" placeholder="E-mail">
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <input id="txtdate1" class="form-control requireddata numbersOnly" type="text" name="date" placeholder="Date">
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <input class="form-control requireddata numbersOnly validnumber" type="text" name="phone" id="user_Mobile5" placeholder="Phone No." maxlength="10">
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <textarea class="form-control requireddata" rows="3" name="msg" id="email_message5" placeholder="message"></textarea>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="6LdZ48kbAAAAALzrv1omkzc5Kld6IJj9wAFxM8qW"></div>
+                                        <span class="Error" id="errormsg" style="display: none; color: Red;">This Filed Required!</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12 ">
+                                    <a class="btn-one" id="btn5" role="button">Submit</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--===/ Right Fixed Appiontment Form ===-->
+
+                <div class="col-md-4 col-xs-12 footer-column">
+                    <div class="contact-wideget footer-wideget">
+                        <div class="contact-info">
+                            <div class="footer-logo">
+                                <a href="index.html"></a>
+                            </div>
+                            <div class="single-item">
+                                <div class="icon-box"><i class="fa fa-map-marker"></i></div>
+                                <div class="text"><p style="color:#000">905, Ghanshyam Enclave, Lalji Pada, Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 </p></div>
+                            </div>
+                            <div class="single-item">
+                                <div class="icon-box"><i class="fa fa-phone"></i></div>
+                                <div class="text"><p style="color:#000">Phone:02228684456</p></p></div>
+                            </div>
+                            <div class="single-item">
+                                <div class="icon-box"><i class="fa fa-envelope"></i></div>
+                                <div class="text">
+                                    <p style="color:#000">
+                                        Email: info@k<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">kazimraza</span></span>.com
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="footer-social">
+                                <li><a href="https://www.facebook.com/kazim.raza.71" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCHbD8q8OWP-fO0RPe2vf9AQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    </span>
+    <!-- main-footer end -->
+
+    <style>
+        .footer-bottom .pull-right {
+            float: none;
+        }
+    </style>
+
+    <!-- footer bottom -->
+    <section class="footer-bottom">
+        <div class="container">
+            <center>
+                <div class="copyright">Copyright © <a href="http://zaidicorp.in/">Zaidi Coopration</a> 2015. All rights reserved.</div>
+                <div class="pull-right">
+                    <button class="btn-one" data-toggle="modal" data-target=".bs-example-modal-lg">Disclaimer</button>
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-body" style="background:#e61e25">
+                                    <h2 style="color:#FFFFFF;text-align:center;">Disclaimer</h2>
+                                    <p style="font-size:16px; text-align:justify; line-height:30px; color:#FFFFFF;">The Website contains information that have been obtained from sources believed to be reliable and every effort has been made to provide accurate information, however the Operators of this Website make no guarantees whatsoever regarding the timeliness, completeness, accuracy, adequacy, fullness, functionality or reliability of the information and make no warranties of any kind and nature whatsoever either express or implied, including but not limited to warranties regarding the accuracy, performance, merchantability and/or fitness for a particular purpose of the information and materials contained, provided and posted on the Website or of the results obtained from the use of such information, statements, opinions, products, services and materials.</p>
+                                    <br />
+                                    <p style="font-size:16px; text-align:justify; line-height:30px; color:#FFFFFF;">The Registered Users and Viewers of the Website understand and agree that any action taken or decision made by them based on the information provided on the Website will be taken or made by them at their own risk without any recourse whatsoever to the Operators of the Website. The information, statements, opinions and materials contained on the Website are for private use only and not intended for use in any commercial activity or purpose.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </section>
+    <!-- footer bottom end -->
+
+    @RenderSection("scripts", required: false)
+
+    <!-- jQuery -->
+    <script src="~/js/jquery-2.1.4.js"></script>
+    <script src="~/css/custom/jssocials.js"></script>
+    <script src="~/css/custom/jssocials.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).ready(function () {
+            $("#shareIcons").jsSocials({
+                showLabel: false,
+                showCount: false,
+                shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+            });
+        });
+    </script>
+
+    <script>
+        //Submenu Dropdown Toggle
+        if ($('.main-header li.dropdown ul').length) {
+            $('.main-header li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
+
+            //Dropdown Button
+            $('.main-header li.dropdown .dropdown-btn').on('click', function () {
+                $(this).prev('ul').slideToggle(500);
+            });
+
+            //Disable dropdown parent link
+            $('.navigation li.dropdown > a').on('click', function (e) {
+                e.preventDefault();
+            });
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Style-switcher  -->
+    <script type="text/javascript" src="/js/jQuery.style.switcher.min.js"></script>
+
+    <!-- revolution slider js -->
+    <script src="/js/slider-active.js" type="text/javascript"></script>
+    <script src="/revolution/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.actions.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.carousel.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.kenburn.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.layeranimation.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.migration.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.navigation.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.parallax.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.video.min.js" type="text/javascript"></script>
+
+    <!-- owl.carousel js -->
+    <script src="~/js/colorbox.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <!-- jQuery ui js -->
+    <script src="/js/jquery-ui.js"></script>
+
+    <!-- jQuery fancybox js -->
+    <script src="/js/jquery.fancybox.pack.js"></script>
+
+    <!-- jQuery wow js -->
+    <script src="/js/wow.js"></script>
+
+    <!-- jQuery google map js -->
+    <script src="/js/gmaps.js"></script>
+    <script src="/js/map-helper.js"></script>
+
+    <!-- jQurery isotop js -->
+    <script src="/js/isotope.js"></script>
+    <script src="/js/jquery.bootstrap-touchspin.js"></script>
+
+    <!-- jQuery contact form js -->
+    <script src="/js/validation.js"></script>
+
+    <!-- jQuery contact form js -->
+    <script type="text/javascript" src="/js/SmoothScroll.js"></script>
+
+    <!-- jQuery select menu js -->
+    <script src="/js/bootstrap-select.min.js"></script>
+
+    <!-- jQuery nouislider js -->
+    <script src="/js/nouislider.js"></script>
+
+    <!-- Image zoom js -->
+    <script src="/js/imagezoom.js"></script>
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../assets/global/plugins/ion.rangeslider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
+    @*<script src="http://ionden.com/a/plugins/ion.rangeSlider/static/js/ion-rangeSlider/ion.rangeSlider.js"></script>*@
+    <script src="../assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+    <script src="./../assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../assets/pages/scripts/components-ion-sliders.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <script src="~/Charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $('#txtdate1').datepicker({
+            dateFormat: 'dd/mm/yy',
+            minDate: 0
+        });
+    </script>
+
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/js/dataTables.select.min.js"></script>
+
+    <link href="~/css/style2.css" rel="stylesheet" />
+    <script src="~/js/right-popup-js/custom.js"></script>
+    <script src="~/js/right-popup-js/jquery-ui.min.js"></script>
+    <script src="~/js/right-popup-js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/right-popup-js/owl.carousel.min.js"></script>
+
+    <!-- jQuery main js -->
+    <script src="/js/script.js"></script>
+    <link href="~/css/jquery-confirm.min.css" rel="stylesheet" />
+    <script src="~/js/jquery-confirm.min.js"></script>
+    <script src="~/js/jquery-1.8.0.min.js"></script>
+    <script src="~/js/jquery.fancybox.js"></script>
+    <link href="~/css/jquery.fancybox.css" rel="stylesheet" />
+    <script src="~/js/jquery.fancybox-media.js"></script>
+    <script src="~/js/Validataions.js"></script>
+
+    <script>
+        //Submenu Dropdown Toggle
+        if ($('.main-header li.dropdown ul').length) {
+            $('.main-header li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
+
+            //Dropdown Button
+            $('.main-header li.dropdown .dropdown-btn').on('click', function () {
+                $(this).prev('ul').slideToggle(500);
+            });
+
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+            //Disable dropdown parent link
+            $('.navigation li.dropdown > a').on('click', function (e) {
+                e.preventDefault();
+            });
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="~/js/script.js"></script>
+
+    <script>
+        $("#user_Mobile3").on("change", function () {
+            var mobNum = $(this).val();
+            var filter = (/^\d*(?:\.\d{1,2})?$/) || (charCode > 31 && (charCode < 48 || charCode > 57));
+
+            if (filter.test(mobNum)) {
+                if (mobNum.length == 10) {
+                    //alert("valid");
+                    $("#mobile-valid").removeClass("hidden");
+                    $("#folio-invalid").addClass("hidden");
+                } else {
+                    alert('Please put 10  digit mobile number');
+                    $("#folio-invalid").removeClass("hidden");
+                    $("#mobile-valid").addClass("hidden");
+                    return false;
+                }
+            }
+            else {
+                alert('Not a valid number');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+            }
+
+        });
+        $("#user_email3").on("change", function () {
+            var emailid = $(this).val();
+            var re = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (re.test(emailid) == false) {
+                alert('Invalid Email Address');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+            }
+        });
+    </script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script>
+        $('#btn5').click(function (e)
+        {
+            var f = document.getElementById('appoinment');
+            var result = Validation.Required("#appoinment");
+
+            var response = grecaptcha.getResponse();
+            if (response.length == 0)
+            {
+                //reCaptcha not verified
+                // alert("please verify you are humann!");
+                document.getElementById('errormsg').style.display = "block";
+                //document.getElementsByTagName('#errormsg').style.display = "block";
+                evt.preventDefault();
+                // return false;
+                if (result == "Fail")
+                 {
+                    //e.preventDefault();
+                    return false;
+                }
+            }
+
+            if (result == "Pass") {
+                e.preventDefault();
+                $.post("../Home/Contact?name=" + $("#user_name5").val() + "&phone=" + $("#user_Mobile5").val() + "&email=" + $("#user_email5").val() + "&msg=" + $("#email_message5").val() + "&subject=Enquiry", function (success) {
+                    alert("Message Send Successfully");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        var $jfancy = jQuery.noConflict();
+        /*
+         *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+        */
+        $jfancy('.fancybox-media')
+            .attr('rel', 'media-gallery')
+            .fancybox({
+                openEffect: 'none',
+                closeEffect: 'false',
+                prevEffect: 'none',
+                nextEffect: 'none',
+
+                arrows: false,
+                helpers: {
+                    media: {},
+                    buttons: {}
+                }
+            });
+    </script>
+
+    <script type="text/javascript">
+        function ImageCall(id) {
+            $jfancy('.fancybox-media')
+                .attr('rel', 'media-gallery')
+                .fancybox({
+                    openEffect: 'none',
+                    closeEffect: 'none',
+                    prevEffect: 'none',
+                    nextEffect: 'none',
+
+                    arrows: false,
+                    helpers: {
+                        media: {},
+                        buttons: {}
+                    }
+                });
+            document.getElementById(id).click();
+        }
+    </script>
+
+</body>
+</html>

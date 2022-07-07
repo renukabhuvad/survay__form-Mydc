@@ -1,0 +1,687 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Digital Calender</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="Premium Calender">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Digital Calender">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="Digital Calender">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="http://mydc.in/survay/images/favicon.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Digital Calender" />
+    <meta property="og:type" content="Digital Calender" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="http://mydc.in/survay/images/favicon.png" />
+    <meta property="article:section" content="Premium Calender" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="http://mydc.in/survay/images/favicon.png" type="image/x-icon">
+
+    <style>
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            color: #444;
+            line-height: 40px !important;
+        }
+
+        .select2-container .select2-selection--single {
+            box-sizing: border-box;
+            cursor: pointer;
+            display: block;
+            height: 45px !important;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #ced4da !important;
+            border-radius: 4px;
+        }
+
+            .select2-container--default .select2-selection--single .select2-selection__arrow {
+                height: 40px !important;
+                position: absolute;
+                top: 1px;
+                right: 1px;
+                width: 20px;
+            }
+    </style>
+    <style>
+        #select2-selMembers-results li:nth-last-child(1) {
+            margin-bottom: 0px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #e3e3e3;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: "Asap", sans-serif;
+            background: #ffffff;
+        }
+
+        .radio {
+            position: relative;
+            cursor: pointer;
+            line-height: 20px;
+            font-size: 14px;
+            margin: 15px;
+            display: inline-block;
+        }
+
+            .radio .label {
+                position: relative;
+                display: block;
+                float: left;
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                border: 2px solid #c8ccd4;
+                border-radius: 100%;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+                .radio .label:after {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    background: #66aa05;
+                    transform: scale(0);
+                    transition: all 0.2s ease;
+                    opacity: 0.08;
+                    pointer-events: none;
+                }
+
+            .radio:hover .label:after {
+                transform: scale(3.6);
+            }
+
+        input[type="radio"]:checked + .label {
+            border-color: #66aa05;
+        }
+
+            input[type="radio"]:checked + .label:after {
+                transform: scale(1);
+                transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+                opacity: 1;
+            }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <style>
+        .accordion-button {
+            background-color: #ecf4e4;
+            color: #66aa05;
+        }
+
+            .accordion-button:not(.collapsed) {
+                color: #66aa05;
+                background-color: #ECF4E4;
+                box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+            }
+
+        .btn-primary, btn-primary:hover {
+            color: #fff;
+            background-color: #66aa05 !important;
+            border-color: #4e8204 !important;
+        }
+
+            .btn-check:focus + .btn-primary, .btn-primary:focus {
+                color: #fff;
+                background-color: #66aa05 !important;
+                border-color: #4e8204 !important;
+                box-shadow: 0 0 0 0.25rem rgb(102 170 5 / 18%) !important;
+            }
+
+        .form-control:focus {
+            color: #212529;
+            background-color: #fff;
+            border-color: #66aa05 !important;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgb(102 170 5 / 12%) !important;
+        }
+    </style>
+
+    <div style="background: #ffffff;">
+        <div>
+            <h1 style="text-align: center; margin: 20px 0px;">Digital Calender</h1>
+        </div>
+        <div class="container">
+            <form method="post" action="savedata">
+                <div class="accordion" id="myAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Personal Information</button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#myAccordion">
+                            <div class="card-body">
+
+                                <label for="opt1" class="radio">
+                                    <input type="radio" name="rdo" id="opt1" class="hidden" value="head" required checked />
+                                    <span class="label"></span> Head
+                                </label>
+
+                                <label for="opt2" class="radio">
+                                    <input type="radio" name="rdo" id="opt2" class="hidden" value="member" required />
+                                    <span class="label"></span> Member
+                                </label>
+
+                                <div class="form-floating mb-3" id="showhead">
+                                    <label> Select Head </label>
+                                    <select id="selHead" class="form-control" style="width:100%;" name="selHead" onchange="getfamilly_member();"></select>
+                                </div>
+
+                                <div class="form-floating mb-3" id="showmember">
+                                    <label> All Members </label>
+                                    <select id="selMembers" class="form-control" style="width:100%;" name="selMembers" onchange="getmember();"></select>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" onKeyPress="if (this.value.length == 10) return false;" onkeyup=" mobile10();" class="form-control" id="txtmobile" name="mobile" placeholder="Mobile No" required maxlength="10" min="10" autocomplete="off" />
+                                    <label for="floatingInput"> Mobile No </label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="txtname" placeholder="Name" required name="name" style="text-transform:capitalize;" autocomplete="off" />
+                                    <label for="floatingInput"> Name </label>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <div class='input-group date form-floating' id='datetimepicker1'>
+                                        <input type='text' class="form-control" id="txtdob" name="dob" autocomplete="off" readonly />
+                                        <label for="floatingInput"> Date Of Birth </label>
+                                        <span class="input-group-addon input-group-text">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn btn-primary" id="openpanel" onclick="savefamily();"> Proceed </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button type="button" class="accordion-button button1 collapsed" data-bs-target="#collapseThree"> Policy Details </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+                            <div class="card-body">
+                                <div class="input-group mb-3">
+                                    <label> Select Insurance </label>
+                                    <select id="selUser" class="form-control" style="width:100%;" name="comp">
+                                        <option value="0">Select Insurance</option>
+                                        <option value="1">Life Insurance</option>
+                                        <option value="2">Health Insurance</option>
+                                        <option value="3">General Insurance</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Product Name" name="productname" required autocomplete="off" />
+                                    <label> Product Name <span style="color:red">(Ex. LIC-Jeevan Aanad)</span> </label>
+
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="txtpolicyno" placeholder="Policy Name" name="policyno" required autocomplete="off" onKeyPress="if(this.value.length==50) return false;" />
+                                    <label for="floatingInput"> Policy Number </label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" onKeyPress="if(this.value.length==14) return false;" class="form-control" id="txtsumass" placeholder="Sum Assured" name="sumass" required autocomplete="off" />
+                                    <label for="floatingInput"> Sum Assured </label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <select id="ddlmode" class="form-control" style="width:100%;" name="mode" onchange="date_change();">
+                                        <option value="Y">Yearly</option>
+                                        <option value="H">Half Yearly</option>
+                                        <option value="Q">Quaterly</option>
+                                        <option value="M">Monthly</option>
+                                        <option value="S">Single</option>
+
+
+
+                                    </select>
+                                    <label for="floatingInput"> Mode </label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" onKeyPress="if(this.value.length==2) return false;" class="form-control" id="txtterm" placeholder="Term" name="term" required autocomplete="off" />
+                                    <label for="floatingInput"> Term </label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" onKeyPress="if(this.value.length==2) return false;" class="form-control" id="txtppt" placeholder="PPT" name="ppt" required autocomplete="off" />
+                                    <label for="floatingInput"> PPT </label>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    @*<input type="text" class="form-control" id="floatingInput" placeholder="Mobile No" />
+                                        <label for="floatingInput"> Policy Start Due </label>*@
+
+                                    <div class='input-group date form-floating' id='datetimepicker2'>
+                                        <input type='text' class="form-control" id="txtstrdate" name="psd" required autocomplete="off" onchange="date_change();" readonly />
+                                        <label for="floatingInput"> Policy Start Due </label>
+                                        <span class="input-group-addon input-group-text">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    @*<input type="text" class="form-control" id="floatingInput" placeholder="Mobile No" />
+                                        <label for="floatingInput"> Policy Next Due </label>*@
+                                    <div class='input-group date form-floating' id='datetimepicker3'>
+                                        <input type='text' class="form-control" id="txtnxtdue" name="nxtdue" required autocomplete="off" readonly />
+                                        <label for="floatingInput"> Policy Next Due </label>
+                                        <span class="input-group-addon input-group-text">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="txtpremium" placeholder="Premium" name="premium" required autocomplete="off" onKeyPress="if(this.value.length==9) return false;" />
+                                    <label for="floatingInput"> Premium </label>
+                                </div>
+                                <input type="hidden" id="hdnid" value="0" name="headid" />
+                                <input type="hidden" id="familyid" value="0" name="familyid" />
+                                <button type="submit" class="btn btn-primary" value="Save">Save</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#selUser").select2();
+            $("#selInsurer").select2();
+            $("#selHead").select2();
+            $("#selMembers").select2();
+            $('#showhead').hide();
+            $('#showmember').hide();
+
+            $(function () {
+                $('input[name="rdo"]').on('click', function () {
+                    $("#txtmobile").val("");
+                    $("#txtmobile").attr('readonly', false);
+                    $("#txtname").val("");
+                    $("#txtname").attr('readonly', false);
+                    $("#txtdob").val("");
+                    if ($(this).val() == 'member') {
+                        $('#showhead').show();
+                        $('#showmember').show();
+
+                    }
+                    else {
+                        $('#showhead').hide();
+                        $('#showmember').hide();
+                    }
+                });
+            });
+
+            $("#openpanel").on("click", function () {
+
+                if ($("#txtmobile").val() != "" && $("#txtname").val() != "" && $("#txtdob").val() != "") {
+                    var mobile = $("#txtmobile").val();
+                    var l = mobile.length;
+                    if (l == 10) {
+                        $("#collapseThree").collapse('show');
+                        $("#collapseOne").collapse('hide');
+                        $(".button1").removeClass('collapsed');
+                    }
+                    else {
+                        $("#txtmobile").css("border-color", "red");
+                    }
+                    
+                }
+                else {
+                    if ($("#txtmobile").val() == "") {
+                        $("#txtmobile").css("border-color", "red");
+                    }
+                    if ($("#txtname").val() == "") {
+                        $("#txtname").css("border-color", "red");
+                    }
+                    if ($("#txtdob").val() == "") {
+                        $("#txtdob").css("border-color", "red");
+                    }
+                }
+            });
+        });
+    </script>
+
+    <link href="/survay/DateTimePicker/bootstrap-datetimepicker.css" rel="stylesheet">
+    <script src="/survay/DateTimePicker/bootstrap-datepicker.min.js"></script>
+    <link href="/survay/DateTimePicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="/survay/DateTimePicker/bootstrap-datetimepicker.js"></script>
+    <link href="/survay/DateTimePicker/datepicker.min.css" rel="stylesheet" />
+    <script src="/survay/DateTimePicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <script>
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        $(document).ready(function ()
+        {
+            $("#txtmobile").keypress(function (e)
+            {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                   // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#txtpolicyno").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#txtsumass").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#txtterm").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#txtppt").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            $("#txtpremium").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    // $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                    return false;
+                }
+            });
+            var s = getUrlVars()["s"];
+            if (s != null) {
+                alert(s);
+            }
+
+            $.getJSON('@Url.Action("GetHeadList", "digitel_calender")' + "", function (result) {
+
+                var data = result.data;
+                $("#selHead").prepend("<option value='0' selected='selected'>--Select--</option>");
+                for (var i = 0; i < data.length; i++) {
+                    $("#selHead").append($("<option />").val(data[i].familymemberid).text(data[i].fullname))
+
+
+                }
+                $("#selHead").select2();
+
+            })
+
+
+	    $('#datetimepicker1').datepicker({
+            format: 'dd/mm/yyyy',
+            autoclose: true
+            });
+            $('#datetimepicker2').datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true
+            });
+            $('#datetimepicker3').datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true
+            });
+
+        });
+
+        function mobile10() {
+            var mobile = $("#txtmobile").val();
+            var l = mobile.length;
+            if (l == 10) {
+                chkdata();
+            }
+        }
+
+        function chkdata() {
+            $.getJSON('@Url.Action("chkdata", "digitel_calender")' + "?mobile=" + $("#txtmobile").val() + "&rdo=" + $("input[name='rdo']:checked").val(), function (result)
+            {
+                if (result.data.familymemberid == "-1")
+                {
+                    alert("Member Already Exist");
+                    location.reload();
+                }
+                else if (result.data.familymemberid != "0") {
+                    $("#txtname").val(result.data.fullname);
+                    $('#txtname').attr('readonly', true);
+                    $("#txtdob").val(result.data.recorddateofbirth);
+                    $('#txtdob').attr('readonly', true);
+                    $("#hdnid").val(result.data.familymemberid);
+
+                    $("#familyid").val(result.data.familymemberid);
+
+                }
+
+
+            })
+        }
+
+        function savefamily()
+        {
+            var selHead = 0;
+            if ($("input[name='rdo']:checked").val() == "head") {
+                selHead = 0;
+                if ($("#familyid").val() == "0") {
+                    $.getJSON('@Url.Action("savefamily", "digitel_calender")' + "?mobile=" + $("#txtmobile").val() + "&rdo=" + $("input[name='rdo']:checked").val() + "&name=" + $("#txtname").val() + "&dob=" + $("#txtdob").val() + "&selHead=" + selHead + "", function (result) {
+                        if (result.data != "0" || result.data != "Member Already Exist") {
+                            $("#hdnid").val(result.data);
+                            $("#familyid").val(result.data);
+                        }
+                        else {
+                            if (result.data == "Member Already Exist") {
+                                alert(result.data);
+                                location.reload();
+                            }
+                        }
+
+                    })
+                }
+            }
+            else
+            {
+                selHead = $("#selHead").val();
+
+                if ($("#selMembers").val() == "-1") {
+                    $.getJSON('@Url.Action("savefamily", "digitel_calender")' + "?mobile=" + $("#txtmobile").val() + "&rdo=" + $("input[name='rdo']:checked").val() + "&name=" + $("#txtname").val() + "&dob=" + $("#txtdob").val() + "&selHead=" + selHead + "", function (result) {
+                        if (result.data != "0" || result.data != "Member Already Exist") {
+                            $("#hdnid").val(result.data);
+                            $("#familyid").val(result.data);
+                        }
+                        else {
+                            if (result.data == "Member Already Exist") {
+                                alert(result.data);
+                                location.reload();
+                            }
+                        }
+
+                    })
+                }
+            }
+
+
+
+        }
+
+        function getfamilly_member() {
+            $("#selMembers").empty();
+            $.getJSON('@Url.Action("getfamilymember", "digitel_calender")' + "?id=" + $("#selHead").val()+"", function (result) {
+
+                var data = result.data;
+                $("#selMembers").prepend("<option value='0' selected='selected'>--Select--</option>");
+                for (var i = 0; i <= data.length-1; i++) {
+                    $("#selMembers").append("<option value='" + data[i].familymemberid + "'>" + data[i].fullname+"</option>");
+                    //$("#selMembers").append($("<option />").val(data[i].familymemberid).text(data[i].fullname))
+                    //alert(data[i].familymemberid + "--------" + data[i].fullname);
+                }
+                $("#selMembers").select2();
+
+            })
+        }
+
+        function getmember() {
+            if ($("#selMembers").val() != "-1") {
+                $.getJSON('@Url.Action("getfamilymember1", "digitel_calender")' + "?id=" + $("#selMembers").val() + "", function (result) {
+
+                    var data = result.data;
+
+                    for (var i = 0; i <= data.length-1; i++) {
+                        //$("#selMembers").append("<option value='" + data[i].familymemberid + "'>" + data[i].fullname+"</option>");
+                        $("#txtname").val(data[i].fullname);
+                        $('#txtname').attr('readonly', true);
+                        $("#txtdob").val(data[i].recorddateofbirth);
+                        $('#txtdob').attr('readonly', true);
+                        $("#txtmobile").val(data[i].familycode);
+                        $('#txtmobile').attr('readonly', true);
+                        $("#familyid").val(data[i].familymemberid);
+                    }
+
+                })
+            }
+            else {
+                $("#txtname").val("");
+                $('#txtname').attr('readonly', false);
+                $("#txtdob").val("");
+                $('#txtdob').attr('readonly', true);
+                $("#txtmobile").val("");
+                $('#txtmobile').attr('readonly', false);
+                $("#familyid").val(0);
+            }
+        }
+
+        function date_change()
+        {
+            var t = $("#ddlmode").val();
+            if ($("#txtstrdate").val() != "")
+            {
+                if (t == "Y") {
+                    var str = $("#txtstrdate").val();
+                    var parts = str.split("/");
+                    var day = parts[0] && parseInt(parts[0], 10);
+                    var month = parts[1] && parseInt(parts[1], 10);
+                    var year = parts[2] && parseInt(parts[2], 10);
+                    var duration = parseInt(1, 10);
+                    if (day <= 31 && day >= 1 && month <= 12 && month >= 1) {
+
+                        var expiryDate = new Date(year, month - 1, day);
+                        expiryDate.setFullYear(expiryDate.getFullYear() + duration);
+
+                        var day = ('0' + expiryDate.getDate()).slice(-2);
+                        var month = ('0' + (expiryDate.getMonth() + 1)).slice(-2);
+                        var year = expiryDate.getFullYear();
+
+                        $("#txtnxtdue").val(day + "/" + month + "/" + year);
+                    }
+                }
+                else if (t == "H") {
+                    var str = $("#txtstrdate").val();
+                    var parts = str.split("/");
+                    var day = parts[0] && parseInt(parts[0], 10);
+                    var month = parts[1] && parseInt(parts[1], 10);
+                    var year = parts[2] && parseInt(parts[2], 10);
+                    var dt = new Date(month + "/" + day + "/" + year);
+                    dt.setMonth(dt.getMonth() + 6);
+                    $("#txtnxtdue").val(moment(dt).format('DD/MM/YYYY'));
+                }
+                else if (t == "Q") {
+                    var str = $("#txtstrdate").val();
+                    var parts = str.split("/");
+                    var day = parts[0] && parseInt(parts[0], 10);
+                    var month = parts[1] && parseInt(parts[1], 10);
+                    var year = parts[2] && parseInt(parts[2], 10);
+                    var dt = new Date(month + "/" + day + "/" + year);
+                    dt.setMonth(dt.getMonth() + 3);
+                    $("#txtnxtdue").val(moment(dt).format('DD/MM/YYYY'));
+                }
+                else if (t == "M") {
+                    var str = $("#txtstrdate").val();
+                    var parts = str.split("/");
+                    var day = parts[0] && parseInt(parts[0], 10);
+                    var month = parts[1] && parseInt(parts[1], 10);
+                    var year = parts[2] && parseInt(parts[2], 10);
+                    var dt = new Date(month + "/" + day + "/" + year);
+                    dt.setMonth(dt.getMonth() + 1);
+                    $("#txtnxtdue").val(moment(dt).format('DD/MM/YYYY'));
+                }
+                else if (t == "S") {
+                    var str = $("#txtstrdate").val();
+                    //var parts = str.split("/");
+                    //var day = parts[0] && parseInt(parts[0], 10);
+                    //var month = parts[1] && parseInt(parts[1], 10);
+                    //var year = parts[2] && parseInt(parts[2], 10);
+                    //var dt = new Date(month + "/" + day + "/" + year);
+                    //dt.setMonth(dt.getMonth() + 6);
+                    $("#txtnxtdue").val(str);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

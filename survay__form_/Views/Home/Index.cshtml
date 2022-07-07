@@ -1,0 +1,1639 @@
+﻿@model survay__form_.Models.Globel
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="This Is A Informative Website For Public Interest In Insurance And Investment Domain">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Home">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Home">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Home" />
+    <meta property="og:type" content="index" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="og:image" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png" />
+    <meta property="article:section" content="This Is A Informative Website For Public Interest In Insurance And Investment Domain" />
+}
+
+<style>
+       /*th {
+            background-color: #e61e25;
+            height: 50px;
+            color: white;
+            text-align: center !important;
+            font-size: 18px;
+        }
+
+        th, td {
+            width: 20%;
+            padding: 8px;
+            margin: 5px;
+            border: 1px #000000 solid;
+            text-align: center;
+            font-size: 13px;
+        }*/
+        .dysania-grid li a, .dysania-grid li a img {
+        display: block;
+        position: relative;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0px !important;
+        overflow: hidden;
+        outline: 0 !important;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+       .Video_blcok .blocks .greenhead {
+            background: #fff;
+            text-align: center;
+            color: #00283a;
+            font-size: 14px;
+            /*border-bottom: 1px solid #558f02;*/
+            line-height: 45px;
+        }
+
+        .blockstart {
+            border: 2px solid #000;
+            padding: 2px;
+            height: 400px;
+        }
+
+        .blockimg {
+            width: 100%;
+            height: 350px;
+        }
+
+        .Video_blcok .blocks .blockstart span {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-top: -25px;
+          margin-left: -25px;
+          width: 58px;
+          height: 41px;
+          line-height: 50px;
+          font-size: 60px;
+          color: #48c7f6;
+        }
+
+    #testimonial4{
+      overflow: hidden;
+      position: relative;
+      /*background: #fdf5de;*/
+    }
+    #testimonial4 .carousel-inner{
+      width: 75%;
+      margin: auto;
+    }
+    #testimonial4 .carousel-inner:hover{
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+    #testimonial4 .carousel-inner:active{
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+    }
+    #testimonial4 .carousel-inner .item{
+      overflow: hidden;
+    }
+
+    .testimonial4_indicators .carousel-indicators{
+      left: 0;
+      margin: 0;
+      width: 100%;
+      font-size: 0;
+      height: 20px;
+      bottom: 15px;
+      padding: 0 5px;
+      cursor: e-resize;
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: absolute;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .testimonial4_indicators .carousel-indicators li{
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      border: none;
+      text-indent: 0;
+      margin: 2px 3px;
+      cursor: pointer;
+      display: inline-block;
+      background: #ffffff;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+    }
+    .testimonial4_indicators .carousel-indicators .active{
+      padding: 0;
+      width: 10px;
+      height: 10px;
+      border: none;
+      margin: 2px 3px;
+      background-color: #000;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+    }
+    .testimonial4_indicators .carousel-indicators::-webkit-scrollbar{
+      height: 3px;
+    }
+    .testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb{
+      background: #eeeeee;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+    }
+
+    .testimonial4_control_button .carousel-control{
+      top: 175px;
+      opacity: 1;
+      width: 40px;
+      bottom: auto;
+      height: 40px;
+      font-size: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      overflow: hidden;
+      line-height: 38px;
+      text-shadow: none;
+      text-align: center;
+      position: absolute;
+      background: transparent;
+      border: 2px solid #ffffff;
+      text-transform: uppercase;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      -webkit-transition: all 0.6s cubic-bezier(0.3,1,0,1);
+      transition: all 0.6s cubic-bezier(0.3,1,0,1);
+    }
+    .testimonial4_control_button .carousel-control.left{
+      left: 7%;
+      right: auto;
+      top:50%;
+    }
+    .testimonial4_control_button .carousel-control.right{
+      right: 7%;
+      left: auto;
+      top:50%;
+    }
+    .testimonial4_control_button .carousel-control.left:hover,
+    .testimonial4_control_button .carousel-control.right:hover{
+      color: #000;
+      background: #fff;
+      border: 2px solid #fff;
+    }
+
+    .testimonial4_header{
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 550px;
+      display: block;
+      margin: 30px auto;
+      text-align: center;
+      position: relative;
+    }
+    .testimonial4_header h4{
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 600;
+      position: relative;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .testimonial4_slide{
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      margin: auto;
+      padding: 20px;
+      position: relative;
+      text-align: center;
+    }
+    .testimonial4_slide img {
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      display: block;
+      color: #f2f2f2;
+      font-size: 18px;
+      line-height: 46px;
+      text-align: center;
+      position: relative;
+    }
+
+    .testimonial4_slide p {
+      color: #fff;
+      font-size: 16px;
+      margin: 40px 0 20px 0;
+    }
+
+    .testimonial4_slide h4 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+
+    @@media only screen and (max-width: 480px){
+      .testimonial4_control_button .carousel-control{
+        display: none;
+      }
+      .testimonial4_header{
+        width: 95%;
+      }
+      .testimonial4_header h4{
+        font-size: 20px;
+      }
+      .testimonial4_slide{
+        width: 98%;
+        padding: 5px;
+      }
+       .maturity{
+            padding: 4px 0px 0px 20px !important;
+        }
+       .amount-investedtext {
+        bottom: 9px;
+    }
+    }
+    .maturity {
+            float: left;
+            padding: 5px 0px 0px 85px;
+        }
+    @@media (min-width: 481px) and (max-width: 767px){
+      .testimonial4_control_button .carousel-control.left{
+        left: 2%;
+      }
+      .testimonial4_control_button .carousel-control.right{
+        right: 2%;
+      }
+      .testimonial4_header{
+        width: 95%;
+      }
+      .testimonial4_slide{
+        width: 98%;
+        padding: 5px;
+      }
+
+    }
+
+    @@media (min-width: 768px) and (max-width: 991px){
+      .testimonial4_control_button .carousel-control.left{
+        left: 5%;
+      }
+      .testimonial4_control_button .carousel-control.right{
+        right: 5%;
+      }
+    }
+    /*@@media (min-width: 768px)
+        {
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        box-shadow: 0 0px 22px rgba(70, 191, 236, 0.97);
+
+    }
+    .modal-dialog {
+        width: 400px;
+         height: 380px;
+        margin: 25% auto 0 1%;
+    }
+        }*/
+     .button a.start-sip {
+        background: #ff4500 !important;
+        border: 2px solid #ff4500;
+        padding: 8px 24px !important;
+        cursor: pointer;
+        font-family: "Open Sans",sans-serif;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        border-radius: 25px !important;
+        width: 156px;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    .button a:hover.start-sip {
+        background: #009454 !important;
+        border: 2px solid #009454;
+        color: #fff;
+    }
+</style>
+<style>
+    @@keyframes slideInFromLeft {
+        0% {
+            transform: translateY(10%);
+        }
+
+        100% {
+            transform: translateY(-40%);
+        }
+    }
+
+    /*img.sticky {
+        animation: 1s ease-out 0s 1 slideInFromLeft;
+        position: sticky;
+        top: 0;
+        width: 200px;
+    }*/
+
+    .fixed1 {
+        animation: 1s ease-out 0s 1 slideInFromLeft;
+        position: fixed;
+        top: 150px;
+        z-index: 99;
+    }
+
+        .fixed1 .topimage {
+            width: 400px !important;
+            height: 300px !important;
+        }
+
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .fixed1 {
+            /*position: static;*/
+            top: initial;
+            z-index: 99;
+        }
+
+            .fixed1 .topimage {
+                width: auto !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+
+        .staticback1 a.start-sip {
+            background: #ff4500 !important;
+            border: 2px solid #ff4500;
+            padding: 8px 24px !important;
+            cursor: pointer;
+            font-family: "Open Sans",sans-serif;
+            color: #fff;
+            font-size: 14px;
+            line-height: 20px;
+            border-radius: 25px !important;
+            width: 156px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .staticback1 a:hover.start-sip {
+            background: #009454 !important;
+            border: 2px solid #009454;
+            color: #fff;
+        }
+
+        #growth {
+            padding: 20px 0px 0 5px !important;
+        }
+    }
+
+    #growth {
+        padding: 0 0 0 3px;
+    }
+</style>
+<style>
+    .contactmodal-container {
+        padding: 30px;
+        max-width: 350px;
+        width: 100% !important;
+        background-color: #f7f7f7;
+        margin: 0 auto;
+        border-radius: 2px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        font-family: roboto;
+    }
+
+        .contactmodal-container h1 {
+            text-align: center;
+            font-size: 1.8em;
+            font-family: roboto;
+            color: #000;
+        }
+
+        .contactmodal-container input[type=text] {
+            height: 44px;
+            font-size: 14px;
+            width: 100%;
+            margin-bottom: 10px;
+            -webkit-appearance: none;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            /* border-radius: 2px; */
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+</style>
+
+<div class="slider-area-2" id="slider1">
+    @foreach (var item in Model.slider)
+{
+        <div class="single-slide-item">
+            <img class="img-responsive" src="https://kazimraza.com//admin/@item.imagepath" alt="Slider" style="width:100%;">
+        </div>
+    }
+</div>
+
+<!-- main slider end -->
+<div class="cta-area ptb-10" style="background:#e61e25;height:50px;line-height:50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" style="color:#FFF; font-size:15px;">
+                    <span>
+                        @foreach (var item in Model.News)
+                        {
+                            <a href='/Knowledge/Industry_News' style='color: #FFFFFF;'>@item.title<span style='color: #FF0000; margin-left: 1em; margin-Right:1em;'>|</span></a>
+                        }
+                    </span>
+                </marquee>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- welcome section -->
+
+<section class="welcome-section sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-7 col-xs-12 welcome-column">
+                <div class="welcome-title">
+                    <div class="section-title"><h2>Welcome to Kazim Raza</h2></div>
+                </div>
+                <div class="welcome-content">
+                    <div class="text">
+                        <p style="text-align:justify;color:black" id="about" class=".show-read-more">
+                            @*  @Model.about.data*@
+                            @Html.Raw(@Model.about.data)
+                        </p>
+                    </div>
+                    <div class="button"><a href="/Home/About" class="btn-one">Read More</a></div>
+                    @*<div class="signature-box"><figure><img src="images/home/signature.png" alt=""></figure></div>*@
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-12 welcome-column">
+                <div class="img-box wow slideInRight animated"><figure><img src="~/images/Kazim1.jpg" alt="About Us" style="width:100%;height:auto;"></figure></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- welcome section end -->
+<!--Services-->
+<section class="services-style-one">
+    <div class="auto-container">
+        <!--Title-->
+        <div class="row clearfix">
+            <div class="col-md-9 col-sm-6 col-xs-6">
+                <div class="sec-title">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <!--Service Block-->
+            <div class="column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="service-block2 hvr-float-shadow">
+                    <div class="inner-box hover-style1">
+                        <div class="image-box hover-style1-img">
+                            <img src="~/images/mutual funds1.jpg" alt="Mutual Fund" style="width:100%;height:200px;">
+                            <div class="hover-style1-view">
+                                <a class="link-box" href="/ResourceCenter/MutualFund"><span class="fa fa-link"></span></a>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <a href="/ResourceCenter/MutualFund"><h4>Mutual Funds</h4></a>
+                            <p>We offer management consulting services, including interim management and on the ground operational support, to help run your global operations.</p>
+                            <a class="read-more" href="/ResourceCenter/MutualFund">Learn More <span class="fa fa-angle-double-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Service Block-->
+            <div class="column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="service-block2 hvr-float-shadow">
+                    <div class="inner-box hover-style1">
+                        <div class="image-box hover-style1-img">
+                            <img src="~/images/mediclaim.png" alt="Mediclaim" style="width:100%;height:200px;">
+                            <div class="hover-style1-view">
+                                <a class="link-box" href="/ResourceCenter/Mediclaim"><span class="fa fa-link"></span></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="/ResourceCenter/Mediclaim"><h4>Mediclaim</h4></a>
+                            <p>We offer management consulting services, including interim management and on the ground operational support, to help run your global operations.</p>
+                            <a class="read-more" href="/ResourceCenter/Mediclaim">Learn More <span class="fa fa-angle-double-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Service Block-->
+            <div class="column col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="service-block2 hvr-float-shadow">
+                    <div class="inner-box hover-style1">
+                        <div class="image-box hover-style1-img">
+                            <img src="~/images/homeloan.jpg" alt="Fixed Deposite" style="width:100%;height:200px;">
+                            <div class="hover-style1-view">
+                                <a class="link-box" href="/Knowledge/FixedDeposite"><span class="fa fa-link"></span></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <a href="/Knowledge/FixedDeposite"><h4>Fixed Deposite</h4></a>
+                            <p>We offer management consulting services, including interim management and on the ground operational support, to help run your global operations.</p>
+                            <a class="read-more" href="/Knowledge/FixedDeposite">Learn More <span class="fa fa-angle-double-right"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Sevices-->
+<!--What We Do-->
+<section class="company-value faq-section sec-pad service-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 company-column">
+                <div class="company-title">
+                    <div class="sec-title"><h2>What We Do</h2></div>
+                </div>
+                <div class="company-content">
+                    <div class="company-tab company">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="active"><a data-toggle="pill" href="#menu1"><i class="fa fa-umbrella"></i>  Life Insurance</a></li>
+                            <li><a data-toggle="pill" href="#menu2"><i class="fa fa-medkit"></i>  Health Insurance</a></li>
+                            <li><a data-toggle="pill" href="#menu3"><i class="fa fa-car"></i>  Non-Life Insurance</a></li>
+                            <li><a data-toggle="pill" href="#menu4"><i class="fa fa-inr"></i>  Income Protection</a></li>
+                            <li><a data-toggle="pill" href="#menu5"><i class="fa fa-wheelchair"></i>  Retirement Planning</a></li>
+                            <li><a data-toggle="pill" href="#menu6"><i class="fa fa-child"></i>  Children's Future</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="menu1" class="tab-pane fade in active">
+                                <div class="sec-title">
+                                    <h2>
+                                        Life Insurance
+                                    </h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Have you ever wondered what it the most valuable thing in your family's life?<br />
+                                                It is you.<br />
+                                                You take good care of your family; provide them with good food, clothing, education and the best of everything. Have you ever imagined what will happen to your family in your absence?<br />
+                                                Life insurance can help your family to continue with their existing lifestyle even if you are not there in future.<br />
+                                                5 Reasons why adequate life insurance is must for you<br />
+                                                <ul class="list" style="margin-top:-18px">
+                                                    <li> Promotes regular saving</li>
+                                                    <li> Provides financial security for family</li>
+                                                    <li>Helps you to save tax</li>
+                                                    <li>Returns are tax-free</li>
+                                                    <li>Maturity amount can be used for various goals like retirement, foreign vacation or buying assets</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/life (1).jpg" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;" alt="Life Insurance" />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_3" class="btn-one">LIC Plan</a>
+                                        <a role="button" href="~/Home/WealthValueCalculator" class="btn-one hidden-sm hidden-xs">Calculate Human Life Value</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="menu2" class="tab-pane fade">
+                                <div class="sec-title">
+                                    <h2>
+                                        Health Insurance
+                                    </h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Health is the real wealth. Don't you agree?<br />
+                                                No one plans to get sick or hurt, but most people require medical care at some point or the other.<br />
+                                                Health insurance can help in protecting you from unexpected, high medical costs.<br />
+                                                4 Reasons why adequate health insurance is must for you?<br />
+                                                <ul class="list" style="margin-top:-18px">
+                                                    <li>Provides you with the best treatment in case of illness</li>
+                                                    <li> No need to break your hard earned savings</li>
+                                                    <li>No need to borrow money at high interest rates</li>
+                                                    <li>Ensures peace of mind</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/health.jpg" alt="Health Insurance" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;"  />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_5" class="btn-one">LIC Plan</a>
+                                        @*<a role="button" href="~/Home/WealthValueCalculator" class="btn-one">Calculate Human Health Value</a>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="menu3" class="tab-pane fade">
+                                <div class="sec-title">
+                                    <h2>
+                                        Non-Life Insurance
+                                    </h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Your home is your most precious asset.<br />
+                                                It takes lot of hardwork, money and years to build/buy your dream home.<br />
+                                                So it is very important to secure it with home insurance.<br />
+                                                You need to secure your home & its valuable contents with home insurance because:<br />
+                                                Natural disasters like floods, earthquakes and cyclones are unpredictable and can strike anytime Jewellery, cash and other valuable contents are prone to theft.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/non-life.jpg" alt="Non-Life Insurance" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;" />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_8" class="btn-one">LIC Plan</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="menu4" class="tab-pane fade">
+                                <div class="sec-title">
+                                    <h2>
+                                        Income Protection
+                                    </h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Earning wealth can be difficult.<br />
+                                                Preserving your wealth for long term use can be even more difficult.<br />
+                                                Indian economy is one of the fastest growing economies in the world.<br />
+                                                History has shown that as and when the country progresses, interest rates starts falling.<br />
+                                                <table class="bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">Country</th>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">Interest Rates</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">United States</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">0.50%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">Germany</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">0.00%</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">France</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">0.00%</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">Canada</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">0.50%</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">Australia</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">1.5%</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                                Due to falling interest rates, one can longer depend on traditional investment options like bank fixed deposits and postal schemes. Hence it is very important to invest in the right place, so that your income remains protected for as long as you desire.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/non-life.jpg" alt="Income Protection" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;" />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_10" class="btn-one">LIC Plan</a>
+                                        <a role="button" href="~/Home/FamilyFinancialSecurity" class="btn-one hidden-sm hidden-xs">Investment Planner</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="menu5" class="tab-pane fade">
+                                <div class="sec-title">
+                                    <h2>Retirement</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Have you ever wondered what it the most valuable thing in your family's life?<br />
+                                                It is you.<br />
+                                                You take good care of your family; provide them with good food, clothing, education and the best of everything. Have you ever imagined what will happen to your family in your absence?<br />
+                                                Life insurance can help your family to continue with their existing lifestyle even if you are not there in future.<br />
+                                                5 Reasons why retirement planning is must for you<br />
+                                                <ul class="list">
+                                                    <li>You can live with self-respect</li>
+                                                    <li> You need not worry about money</li>
+                                                    <li>
+                                                        When you have regular income, you can do whatever you want to do
+                                                    </li>
+                                                    <li>
+                                                        Health problems are likely to increase with increasing age
+                                                    </li>
+                                                    <li>
+                                                        With rising inflation, the cost of living will increase manifold
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/retirement-plan.jpg" alt="Retirement" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;" />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_7" class="btn-one">LIC Plan</a>
+                                        <a role="button" href="~/Home/RetirementCalculator" class="btn-one hidden-sm hidden-xs">Retirement Planner</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="menu6" class="tab-pane fade">
+                                <div class="sec-title">
+                                    <h2>Children Future</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text">
+                                            <p style="font-size:13px">
+                                                Have you ever wondered what it the most valuable thing in your family's life?<br />
+                                                It is you.<br />
+                                                You take good care of your family; provide them with good food, clothing, education and the best of everything. Have you ever imagined what will happen to your family in your absence?<br />
+                                                Life insurance can help your family to continue with their existing lifestyle even if you are not there in future.<br />
+                                                <table class="bordered" cellpadding="1" cellspacing="1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">Profession</th>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">Engineer</th>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">Doctor</th>
+                                                            <th style="background-color: #e61e25;height: 50px;color: white;text-align: center !important;width:20%; border: 1px #000000 solid;font-size: 13px;">MBA</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">Today's cost</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">8-12 lakhs</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">25-35 lakhs</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">8-10 lakhs</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">Cost after 20 years</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">22-32 lakhs</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">70-80 lakhs</td>
+                                                            <td style="border:1px solid #000;width:20%;font-size:13px;text-align:center;padding:8px;">25-35 lakhs</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table><br />
+                                                According to a recent study, 80% of parents in India are unable to provide their children the education they desire due to lack of early planning and regular saving.<br />
+                                                If you do not wish to be a part of this 80% you need to act today and start planning for your child's future now.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="padding:0 50px;">
+                                        <img src="~/images/child.jpg" alt="Children's Future" style="width:100%;height:250px;box-shadow: 5px 5px #c5bfbf; border: 3px solid #969696;margin-bottom:30px;" />
+                                        <a role="button" href="~/LicInfo/Plan#collapseOne_4" class="btn-one">LIC Plan</a>
+                                        <a role="button" href="~/Home/ChildPlanner" class="btn-one hidden-xs hidden-sm">Children Education Planner</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End What We Do-->
+<!-- testimonial section -->
+@*<section class="testimonial-section sec-pad">
+          <div class="container">
+                <div class="testimonial-title">
+                    <div class="sec-title"><h2 style="color:#fff">Our Client Say
+                           <a href="/Home/Testimonials" class="button btn-one" style="float:right;">View More</a>
+                        </h2>
+                    </div>
+
+                </div>
+                <div class="testimonial-slider">
+                    @*<div class="testimonial-content">
+                            <div class="text">
+                                <p>Acillum fugiat nulla pariatur excepteur ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua lorem ipsum dolor sida metes consectetur adipisicing elit sed do eiusmod.</p>
+                            </div>
+                            <div class="authore">
+                                <div class="author-img"><figure><img src="~/images/abc.png" alt="" style="width:50px;height:50px;"></figure></div>
+                                <div class="autor-info">
+                                    <h5>Robart Wilmes</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+    </section>*@
+
+<section class="testimonial-section">
+    <div class="container">
+        <div id="testimonial4">
+            <div class="company-title">
+                <div class="sec-title"><h2 style="color:white">Testimonials</h2></div>
+            </div>
+            <div class="manager_text" id="datatest">
+                @foreach (var item in Model.Testimonial)
+                {
+                    <div class="testimonial4_slide">
+                        <img src="http://kazimraza.com/admin/@item.imageurl" alt="Testimonials Images">
+                        <p>
+                            @item.testimonialdes
+                        </p>
+                        <div class="manager">
+                            <h4>@item.name</h4>
+                            @*<h6>Founder abcd company </h6>*@
+                        </div>
+                    </div>
+                }
+                @*<div class="single-manager_text">
+                        <img src="~/img/resources/tm1.jpg" alt="Images">
+                        <p>
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu <br>
+                            feugiat nulla facilisis at vero. Duis autem vel eum iriure dolor in hendrerit in vulputate velit sse molestie consequatvelillum<br>
+                            dolore. eu feugiat nulla molestie consequat, vel illum facilisis at vero.
+                        </p>
+                        <div class="manager">
+                            <h4>Rick Grimes</h4>
+                            <h6>Founder abcd company </h6>
+                        </div>
+                    </div>
+                    <div class="single-manager_text">
+                        <img src="~/img/resources/tm1.jpg" alt="Images">
+                        <p>
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu <br>
+                            feugiat nulla facilisis at vero. Duis autem vel eum iriure dolor in hendrerit in vulputate velit sse molestie consequatvelillum<br>
+                            dolore. eu feugiat nulla molestie consequat, vel illum facilisis at vero.
+                        </p>
+                        <div class="manager">
+                            <h4>Rick Grimes</h4>
+                            <h6>Founder abcd company </h6>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial section end -->
+<!-- Gallery -->
+<section class="welcome-section sec-pad" style="padding-bottom:50px;">
+    <div class="container">
+        <div class="service-title">
+            <div class="sec-title">
+                <h2>
+                    Gallery
+                    <a href="/Gallery/Gallery" class="button btn-one" style="float:right;">View More</a>
+                </h2>
+            </div>
+        </div>
+        <div class="row" id="gallery">
+            @foreach (var item in Model.Gallery)
+            {
+                <div class="col-md-3 col-sm-6 col-xs-12 service-column">
+                    <div class="single-item">
+                        <div class="single-item-overlay">
+                            <div class="img-box">
+                                <a class="fancybox" href="http://kazimraza.com/admin/@item.imageurl" data-fancybox-group="gallery" title="@item.imagedesc">
+                                    <img src="http://kazimraza.com/admin/@item.imageurl" alt="Gallery" style="width:100%;height:300px;margin:10px 0;" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- End Gallery -->
+<!--Graph-->
+<section class="staticback1" ng-app="app">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  text-center wow fadeInUp">
+        <div class="power-sip-head font-light-green">Power  <span class="white ptsanscaption-bold"> of compounding</span> </div>
+        <div class="margin-top-10-375"><img src="/images/white-line.png" alt="Power Of Compounting"></div>
+    </div>
+    <div class="container" style="padding:0px;" ng-controller="Ctrl">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sip-calc">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <form autocomplete="off" class="ng-pristine ng-valid">
+
+                    <div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9">
+                                <span class="tool-lebel">How much do you want to invest ?</span><br />
+                                <div class="col-md-12" style="padding:0px">
+                                    @*<input id="range_51" type="range" onchange="updateInvestInput(this.value);" ng-click="change();">*@
+                                    <input type="text" class="js-range-slider" value="" onchange="updateInvestInput(this.value);" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 text-center input-bg">
+                                <input value="1000" id="monthlyinvestment" class="monthlyinvestment" style="border:none" />
+                                @*<input type="number" id="monthlyinvestment" class="ng-pristine ng-untouched ng-valid" value="1000">*@
+                            </div>
+
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel">Investment Period </span>
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_52" type="range" onchange="updatePeriodInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 input-bg">
+                                <input type="number" id="timeperiod" class="ng-pristine ng-untouched ng-valid" value="10" disabled>
+                                <label for="timeperiod">Years</label>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel"> Expected Annual Returns (%)</span>
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_53" type="range" onchange="updateAnnualInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 input-bg">
+                                <input id="rateOfreturn" type="number" class="ng-pristine ng-untouched ng-valid" value="10" disabled>
+                                <label for="rateOfreturn">%</label>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel">Adjust for inflation ?</span>
+                                <br />
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_13" type="range" onchange="updateInflationInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-3 col-lg-3 input-bg">
+                                <input id="inflationRate" type="number" class="ng-pristine ng-untouched ng-valid" value="5" disabled>
+                                <label for="inflationRate">%</label>
+                            </div>
+                            @*<div id="futureval" class="hidden ng-binding">{"value":0}</div>
+                                <div id="investeda" class="hidden ng-binding"></div>
+                                <div id="wealthg" class="hidden ng-binding"></div>*@
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                <canvas id="canvas" height="250" width="250" class="margin-top-10" style="width: 250px; height: 250px;"></canvas>
+                @*<div id="chartContainer" style="height: 370px; width: 100%;"></div>*@
+                <div class="wealth-gaintext"><span class="wealth-dot"></span>Wealth Gain<div class="font-size-15" style="color:#ff4500"><span style="float: left;padding: 28px 0px 0px 44px;"><i class="fa fa-inr"></i></span><p id="growth" style="float: left;color: #ff4500;"></p></div></div>
+                <div class="amount-investedtext">Amount <br> Invested<div class="font-size-15 poppinssemibold green ng-binding"><span><i class="fa fa-inr" style="color: #07bf6f;float: left;padding-top: 8px;"></i><p id="investment" style="color: #07bf6f;padding: 0 0 0 0px;margin-top: 5px;"></p></span><span class="amount-invested-dot"></span></div></div>
+                <div class="center-resulttext">Expected <br>Maturity Amount<div class="amount ng-binding" style="color: #337ab7"><span class="maturity"><i class="fa fa-inr"></i></span><p id="total" style="float: left;color: #337ab7;padding: 0px 0 0 5px;font-size: 21px;margin: 0px;"></p></div></div>
+                <div id="js-legend" class="chart-legend"></div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right margin-top-15" style="padding: 20px 0 0 0;">
+                    <a href="#" class="start-sip" data-toggle="modal" data-target="#exampleModal1">For More Details Click Here</a>
+                </div>
+            </div>
+
+            @*<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="result-text">If you start investing with <font class="lato-bold-orange ng-binding">@*<font class="rupee">`</font> <i class="fa fa-inr"></i> 0</font> per month, we can help you grow it to <font class="lato-bold-orange ng-binding">@*<font class="rupee">`</font><i class="fa fa-inr"></i> 0</font>*</div>
+                </div>*@
+
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div>
+            <div class="contactmodal-container">
+                <h5>I Have Better & Suitable Financial Solution For your Saving And Investment, If You Want I can Explain to you in detail by clicking on Request Now.</h5>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control" id="contact_name" placeholder="Name" />
+                        <input type="text" class="form-control" id="contact_email" placeholder="Email Id" />
+                        <input type="text" class="form-control" id="contact_mobile" placeholder="Phone no" maxlength="10" />
+                        <input type="text" class="form-control" id="contact_message" style="display:none;" />
+                    </form>
+                </div>
+
+                <div class="modal-footer button ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right" style="padding: 20px 0 0 0;">
+                        <a href="#" class="start-sip" id="compounting"> Send </a>
+                        <a href="#" class="start-sip" data-dismiss="modal"> Close </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Graph-->
+
+<!--Video-->
+<section class="service-section sec-pad">
+    <div class="container Video_blcok">
+        <div class="sec-title">
+            <h2>
+                Videos We Recommend
+                <a href="/ResourceCenter/Videos" class="button btn-one" style="float:right;">View More</a>
+            </h2>
+
+        </div>
+        <div class="row">
+            @*<div class="col-md-6">
+                        <div class="video-container youtube">
+                            <iframe src="https://www.youtube.com/embed/0kXNbjceTUk?rel=0&amp;controls=0&amp;showinfo=0&amp;modestbranding=1" width="100%" height="400" style="border:5px solid white;" allowfullscreen="" frameborder="0"></iframe>
+                        </div>
+                    </div>
+
+                <div class="col-md-6">
+                        <div class="video-container youtube">
+                            <iframe src="https://www.youtube.com/embed/0kXNbjceTUk?rel=0&amp;controls=0&amp;showinfo=0&amp;modestbranding=1" width="100%" height="400" style="border:5px solid white;" allowfullscreen="" frameborder="0"></iframe>
+                        </div>
+                    </div>*@
+            @foreach (var item in Model.video)
+            {
+                <div class="blocks col-md-6">
+                    <div class="blockstart">
+                        <a id="kjH5sY15Bb8" rel="fancyvideo" class="fancybox-media" href="https://youtu.be/@item.linkid">
+                            <img src="https://img.youtube.com/vi/@item.linkid/0.jpg" alt="Videos Images" class="img-responsive blockimg" style="display:initial;">
+                            <span class="fa fa-play" id="@item.linkid"></span>
+                        </a>
+                        <div class="greenhead">@item.title</div>
+                    </div>
+
+                </div>
+            }
+
+            @*<div class="blocks col-md-6">
+                <div class="blockstart">
+                    <a id="ILlewF-DXeI" rel="fancyvideo" class="fancybox-media" href="https://youtu.be/ILlewF-DXeI">
+                        <img src="https://img.youtube.com/vi/ILlewF-DXeI/0.jpg" class="img-responsive blockimg">
+                    </a>
+                    <div class="greenhead">Power Of Insurance Agency</div>
+                </div>
+           </div>*@
+
+        </div>
+    </div>
+</section>
+<!--End Video-->
+<!--Message-->
+<section class="welcome-section sec-pad">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 mb-30">
+                <img alt="grow your investment" src="~/images/tree-grow1.gif" class="img-responsive">
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <div class="content-block pl-10">
+                    <div class="sec-title">
+                        <h2>GROW YOUR INVESTMENT WITH US</h2>
+                    </div>
+                    <p style="line-height: 37px;font-family: Dosis-SemiBold;font-weight: 400;">
+                        Most people invest their money. But only few people know about the right way to invest. Investment is not just about increasing your wealth but also capital protection and reducing the risk exposure. When you partner with us for investing, we provide you 100 percent secured investment options which will not only protect your wealth but also increase your wealth and help you achieve your financial goals easily.
+                    </p>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End MEssage-->
+<!--SMS-->
+@*<section class="sms-section sec-pad">
+            <div class="container">
+                <center>
+                    <div class="sms-title">
+                        <h2 style="color:#fff">Send Free Greetings Daily to your Near & Dear.</h2>
+                    </div>
+                    <p style="color:#fff">Develop a powerful brand for yourself on social media by sending greetings for various festivals and occasions. This can help you build a strong relationship with your prospects and clients.</p>
+                </center>
+                <center>
+                <div style="display:inline-block;">
+                    <div class="button" style="float:left"><a href="#" class="btn-one">Send SMS</a></div>
+                    <div class="button" style="float:left"><a href="#" class="btn-one">Send Email</a></div>
+                </div>
+            </center>
+        </div>
+    </section>*@
+
+<section class="contact-section" style="background: url(/images/background1.png);background-size: cover!important;background-repeat: no-repeat!important;margin-top:150px;">
+    <div class="container">
+        <div class="contact-area" style="background: url(/images/background21.png);">
+            <div class="section-title text-center">
+                <h2>Contact Us</h2>
+            </div>
+            <form class="default-form contact-form" id="contact-form" method="post">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="text" name="name" id="user_name3" placeholder="Your Name" class="requireddata alphabetOnly">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" id="user_Mobile3" placeholder="Phone" class="requireddata numbersOnly validnumber" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="email" name="email" id="user_email3" placeholder="Email" class="requireddata validemail">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="message" id="email_message3" placeholder="Message" class="requireddata">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group text-center">
+                            <a role="button" id="btn3" class="btn-one">submit now</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--End SMS-->
+
+
+@if (Model.popup != null)
+{
+    foreach (var item1 in Model.popup)
+    {
+        <span id="pp"></span>
+        <div id="topbar1" class="fixed1" style="left:5px;top:337px;">
+            <div style="width:90%;text-align:center;vertical-align:center">
+                <table width="300" border="0" align="left" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td width="22" align="left" valign="bottom">
+                                <img src="~/images/left Popup/LeftTop.png" alt="Popup" width="22" height="20" style="margin-top:5px;">
+                            </td>
+                            <td align="right" valign="bottom" style="background:url('/images/left Popup/TopBorder.png') repeat-x; height:20px; background-position:bottom;"></td>
+                            <td width="20" align="right" valign="bottom" style="background:url('/images/left Popup/RightTop.png') no-repeat; height:20px ; width:20px; background-position:bottom;">
+                                <div id="closeBox" style="cursor:pointer;" align="right">
+                                    <img src="~/images/left Popup/close.png" width="30" height="30" border="0" alt="Close" onclick="closebar(); return false" style="margin-left:-9px;">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="top" style="background:url('/images/left Popup/LeftBorder.png') repeat-y; width:22px; background-position:top left;"></td>
+                            <td align="center" valign="top" style="background:url('/images/left Popup/bg.png') repeat ; padding:8px 1px 3px 1px;">
+                                <table width="98%" border="0" cellspacing="2" cellpadding="2">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">
+                                                @if (Model.popup != null)
+                                                {
+                                                    foreach (var item in Model.popup)
+                                                    {
+
+                                                        <a href="@item.link" target="_blank"><img src="http://kazimraza.com/admin/@item.imageurl" class="topimage" title="@item.title" alt="image"></a>
+                                                        <input type="hidden" id="popupstatus" value="1" />
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <input type="hidden" id="popupstatus" value="0" />
+                                                }
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td align="right" valign="top" style="background-image:url('/images/left Popup/RightBorder.png'); background-repeat:repeat-y; width:20px;  background-position:top left;"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" valign="bottom">
+                                <img src="~/images/left Popup/LeftBottom.png" alt="Popup Image" width="22" height="20" style="margin-top:-10px;">
+                            </td>
+                            <td valign="bottom" style="background:url('/images/left Popup/BottomBorder.png') repeat-x; height:20px"></td>
+                            <td align="right" valign="bottom">
+                                <img src="~/images/left Popup/RightBottom.png" alt="Popup Image" width="21" height="20" style="margin-top:-10px;">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+}
+else
+{
+
+}
+
+@section scripts{
+    <script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
+    <script src="../assets/global/plugins/ion.rangeslider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.fancybox.pack.js"></script>
+    <script src="~/js/jquery.fancybox-media.js"></script>
+    <script>
+        function closebar() {
+            document.getElementById("topbar1").style.visibility = "hidden"
+        }
+        $('.fancybox').fancybox();
+    </script>
+    <script>
+        $("#user_Mobile").on("change", function () {
+            var mobNum = $(this).val();
+            var filter = (/^\d*(?:\.\d{1,2})?$/) || (charCode > 31 && (charCode < 48 || charCode > 57));
+
+            if (filter.test(mobNum)) {
+                if (mobNum.length == 10) {
+                    //alert("valid");
+                    $("#mobile-valid").removeClass("hidden");
+                    $("#folio-invalid").addClass("hidden");
+                } else {
+                    $.confirm({
+                        icon: 'fa fa-warning',
+                        title: 'Please put 10  digit mobile number',
+                        content: '',
+                        type: 'red',
+                        typeAnimated: true,
+                        buttons: {
+                            tryAgain: {
+                                text: 'Close',
+                                btnClass: 'btn-red',
+                                action: function () {
+                                }
+                            }
+                        }
+                    });
+                    //alert('Please put 10  digit mobile number');
+                    $("#folio-invalid").removeClass("hidden");
+                    $("#mobile-valid").addClass("hidden");
+                    return false;
+                }
+            }
+            else {
+                $.confirm({
+                    icon: 'fa fa-warning',
+                    title: 'Not a valid number',
+                    content: '',
+                    type: 'red',
+                    typeAnimated: true,
+                    buttons: {
+                        tryAgain: {
+                            text: 'Close',
+                            btnClass: 'btn-red',
+                            action: function () {
+                            }
+                        }
+                    }
+                });
+                //alert('Not a valid number');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+            }
+
+        });
+        $("#user_email").on("change", function () {
+            var emailid = $(this).val();
+            var re = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            if (re.test(emailid) == false) {
+                $.confirm({
+                    icon: 'fa fa-warning',
+                    title: 'Invalid Email Address',
+                    content: '',
+                    type: 'red',
+                    typeAnimated: true,
+                    buttons: {
+                        tryAgain: {
+                            text: 'Close',
+                            btnClass: 'btn-red',
+                            action: function () {
+                            }
+                        }
+                    }
+                });
+                //alert('Invalid Email Address');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $('body').removeClass().removeAttr('style'); $('.modal-backdrop').remove();
+        $('#myModalPopup').on('shown.bs.modal', function () {
+            $(".modal-backdrop.in").remove();
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+            //if ($("#popupstatus").val() == "1") {
+            //    $("#myModalbonus").modal();
+            //}
+            //$('#myModalPopup').modal({
+            //    backdrop: 'static',
+            //    keyboard: false
+            //})
+            mychat();
+        });
+        $(document).ready(function () {
+            var maxLength = 300;
+            $(".show-read-more").each(function () {
+                var myStr = $(this).text();
+                if ($.trim(myStr).length > maxLength) {
+                    var newStr = myStr.substring(0, maxLength);
+                    var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+
+                }
+            });
+
+        });
+    </script>
+    <script>
+
+        function updateInvestInput(val) {
+            document.getElementById('monthlyinvestment').value = val;
+            mychat();
+        }
+        function updatePeriodInput(val) {
+            document.getElementById('timeperiod').value = val;
+            mychat();
+
+        }
+        function updateAnnualInput(val) {
+            document.getElementById('rateOfreturn').value = val;
+            mychat();
+        }
+        function updateInflationInput(val) {
+            document.getElementById('inflationRate').value = val;
+            mychat();
+        }
+
+        //Redraw Graph Function
+        $(".blue-bar, #monthlyinvestment, #timeperiod, #rateOfreturn, #inflationRate").keyup(function () {
+
+            mychat();
+        });
+
+        $(".blue-bar, .green-bar, .red-bar, .yellow-bar").click(function () {
+
+            mychat();
+
+        });
+        $('.more').click(function () {
+            $('html, body').animate({
+                scrollTop: $("#power-sip").offset().top
+            }, 1000);
+        });
+        function mychat() {
+            //debugger;
+            var b1, a3;
+            a1 = parseFloat(document.getElementById('monthlyinvestment').value);
+            a2 = parseFloat(document.getElementById('timeperiod').value);
+            a3 = parseFloat(document.getElementById('rateOfreturn').value);
+            a4 = parseFloat(document.getElementById('inflationRate').value);
+            d = a3 - a4;
+
+            //Total
+            var b1 = parseFloat(a1);
+            c1 = 0;
+            i = parseFloat(1);
+
+            for (i; i < a2 + 1 ; i++) {
+                a = c1;
+                b = b1;
+                c = (d / 100);
+                ab = parseFloat(b + ((b) * (c)));
+                c1 = parseFloat(a1);
+                b1 = parseFloat(c1 + ab);
+            }
+            total = parseFloat(b1).toFixed();
+            //Investment
+            investment = (a1 * a2);
+            //GainGain
+            growth = parseFloat(total - investment);
+            //FullTotal = parseFloat(investment + total);
+
+            //var Future_val = parseInt(document.getElementById('futureval').innerHTML);
+            //var Amount_invested = parseInt(document.getElementById('investeda').innerHTML);
+            //var Wealth_gain = parseInt(document.getElementById('wealthg').innerHTML);
+            //var wg = parseInt((parseInt(document.getElementById('wealthg').innerHTML) / parseInt(document.getElementById('futureval').innerHTML)) * 100);
+            //var ai = parseInt((parseInt(document.getElementById('investeda').innerHTML) / parseInt(document.getElementById('futureval').innerHTML)) * 100);
+            var wg = growth;
+            var ai = investment;
+            var Future_val = total;
+            var Amount_invested = investment;
+            growth1 = parseFloat(growth).toFixed();
+            var Wealth_gain = growth1;
+            var pieData = [{
+                value: wg,
+                color: "#07bf6f",
+                label: 'Wealth Gain',
+                labelColor: 'white',
+                labelFontSize: '16'
+            },
+            {
+                value: ai,
+                color: "#FF4500",
+                label: 'Amount Invested',
+                labelColor: 'white',
+                labelFontSize: '16'
+            }];
+            var options = {
+                percentageInnerCutout: 75
+
+            };
+            canvas.width = 250
+            canvas.height = 250
+
+            var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(pieData, options, {
+                animationSteps: 100,
+                animationEasing: 'easeInOutQuart',
+                showTooltips: true
+            });
+
+            document.getElementById('growth').innerHTML = Wealth_gain;
+            document.getElementById('investment').innerHTML = investment;
+            document.getElementById('total').innerHTML = total;
+            document.getElementById('contact_message').value = "Yearly Invest:" + a1 + " Period:" + a2 + " Annual Return: " + a3 + " Inflation:" + a4 + " Wealth Gain:" + Wealth_gain + " Amount Invested: " + investment + " Expected Maturity Amount:" + total;
+        }
+
+    </script>
+    <script>
+        var $range = $(".js-range-slider"),
+        $from = $(".monthlyinvestment"),
+        min = 1000,
+        max = 1000000,
+        from = 200;
+
+        var updateValues = function () {
+            $from.prop("value", from);
+        };
+        $range.ionRangeSlider({
+            min: min,
+            max: max,
+            onChange: function (data) {
+                from = data.from;
+                updateValues();
+            }
+        });
+        range = $range.data("ionRangeSlider");
+        var updateRange = function () {
+            range.update({
+                from: from,
+            });
+        };
+
+        $from.on("change", function () {
+            from = +$(this).prop("value");
+            if (from < min) {
+                from = min;
+            }
+
+            updateValues();
+            updateRange();
+            mychat();
+        });
+
+    </script>
+    <script>
+        $("#slider1").owlCarousel({
+            items: 1,
+            //nav: false,
+            dots: true,
+            autoplay: true,
+            loop: true,
+            //navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+            mouseDrag: false,
+            touchDrag: false,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                600: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false,
+                    loop: false
+                }
+            }
+
+        });
+
+        $("#slider1").on("translate.owl.carousel", function () {
+            $(".single-slide-item h3, .single-slide-item h2").removeClass("animated fadeInDown").css("opacity", "0");
+            $(".single-slide-item p, .single-slide-item .button").removeClass("animated fadeInUp").css("opacity", "0");
+        });
+
+        $("#slider1").on("translated.owl.carousel", function () {
+            $(".single-slide-item h3, .single-slide-item h2").addClass("animated fadeInDown").css("opacity", "1");
+            $(".single-slide-item p, .single-slide-item .button").addClass("animated fadeInUp").css("opacity", "1");
+        });
+        $('.manager_text').owlCarousel({
+            loop: true,
+            margin: 30,
+            nav: false,
+
+            dots: true,
+            autoplayHoverPause: false,
+            autoplay: 5000,
+            smartSpeed: 1000,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                700: {
+                    items: 1
+                },
+                800: {
+                    items: 1
+                },
+                1024: {
+                    items: 1
+                },
+                1100: {
+                    items: 1
+                },
+            }
+        });
+        //$('.magnific_popup').magnificPopup({
+        //    type: 'image'
+        //    // other options
+        //});
+
+
+    </script>
+    <style type="text/css">
+        .show-read-more .more-text {
+            display: none;
+        }
+    </style>
+    <script>
+        $('#compounting').click(function (e) {
+            $.post("../Home/Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + $("#contact_message").val() + "&subject=Enquiry", function (success) {
+                alert("Message Send Successfully");
+                location.reload();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5b23622f61a2e64e5fb57f15/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <script>
+        $('#btn3').click(function (e) {
+            var f = document.getElementById('contact-form');
+            var result = Validation.Required("#contact-form");
+            if (result == "Fail") {
+                //e.preventDefault();
+                return false;
+            } if (result == "Pass") {
+                e.preventDefault();
+                $.post("../Home/Contact?name=" + $("#user_name3").val() + "&phone=" + $("#user_Mobile3").val() + "&email=" + $("#user_email3").val() + "&msg=" + $("#email_message3").val() + "&subject=Enquiry", function (success) {
+                    alert("Send Message Successfully");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+}

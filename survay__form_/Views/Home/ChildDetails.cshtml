@@ -1,0 +1,452 @@
+﻿@model survay__form_.Models.ChildDetailsModel
+@using survay__form_.Models;
+
+<div id="div2" class="hlv_slide1 item">
+    <div class="HLV_calcInnerBox">
+        <div class="HLV_calcRow">
+            <div class="col-lg-3 col-sm-12" style="text-align:center;">
+                <img class="imgGender@(Model.Id.ToString())" alt="">
+            </div>
+
+            <div class="col-lg-9 col-sm-9">
+                <div class="HLV_calcRow">
+                    <div class="col-lg-6 col-sm-6">
+                        <label class="HLV_calcLabel" for="txtName" id="txtValidName">Child Name:</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        @Html.Hidden("hdChildId" + Model.Id.ToString(), Model.Id)
+                        @Html.TextBoxFor(m => m.Name, new
+                   {
+                       @name = "txtChildName" + Model.Id.ToString(),
+                       @id = "txtChildName" + Model.Id.ToString(),
+                       @class = "HLV_clacInput",
+                       @tabindex = "1",
+                       @onpaste = "return false;",
+                       @maxlength = "30",
+                       @onchange = "fnChildNameChange(" + Model.Id.ToString() + ")",
+                       @onkeypress = "return alphOnly(this, event)"
+                   })
+
+                    </div>
+                </div>
+
+                <div class="HLV_calcRow">
+                    <div class="col-lg-6 col-sm-6">
+                        <label class="HLV_calcLabel" id="txtValidDOB" for="txtDob">Date of birth</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="input-group date form_datetime HLV_clacInput"
+                             data-date="" data-date-format="dd MM yyyy"
+                             data-link-field="txtChildDob@(Model.Id.ToString())"
+                             data-link-format="dd/mm/yyyy">
+                            @Html.TextBoxFor(m => m.DOB, new
+                       {
+                           @name = "txtChildDob" + Model.Id.ToString(),
+                           @id = "txtChildDob" + Model.Id.ToString(),
+                           @size = "16",
+                           @readonly = "readonly",
+                           @value = "",
+                           @style ="background:none; border:none;",
+                           @onchange = "fnDateOnchange('txtChildDob" + Model.Id.ToString() + "','txtChildAge" + Model.Id.ToString() + "')"
+                       })
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar" aria-hidden="true">
+                                </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="HLV_calcRow">
+                    <div class="col-lg-6 col-sm-6">
+                        <label class="HLV_calcLabel">Child's age is</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        @Html.TextBoxFor(m => m.Age, new
+                   {
+                       @name = "txtChildAge" + Model.Id.ToString(),
+                       @id = "txtChildAge" + Model.Id.ToString(),
+                       @class = "HLV_clacInput",
+                       @readonly = "readonly"
+                   })
+                    </div>
+                </div>
+
+                <div class="HLV_calcRow">
+                    <div class="col-lg-5 col-sm-5">
+                        <label class="HLV_calcLabel HLV_gender" for="txtGender" id="txtValidGender">Child's gender</label>
+                    </div>
+                    <div class="col-lg-7 col-sm-7">
+                        @Html.Hidden("hdGender" + Model.Id.ToString(), Model.Gender)
+                        <div class="col-lg-6 col-sm-6">
+                            <span class="HLV_male" id="txtChildMale@(Model.Id.ToString())" onclick="setGender('Male',@(Model.Id.ToString()));"></span>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <span class="HLV_female" id="txtChildFemale@(Model.Id.ToString())" onclick="setGender('Female',@(Model.Id.ToString()));"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 pad">
+                <div class="" style="float:left;">
+                    <a href="#myCarousel" data-slide="prev">
+                        <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                    </a>
+                </div>
+
+                <div class="" style="float:right">
+                    <input type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate(true, @(Model.Id.ToString()), 1)" data-slide="next">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="div2" class="hlv_slide1 item">
+    <div class="HLV_calcInnerBox">
+        <div class="HLV_calcRow">
+
+            <div class="col-lg-12 col-sm-12" style="text-align:center;align-content:center">
+                <label class="HLV_calcLabel" id="lblJunioCollege@(Model.Id.ToString())">
+                    @Model.Name's Need Details for Collage Education
+                </label>
+            </div>
+            <div class="col-lg-3 col-sm-12" style="text-align:center;">
+                <img class="imgGender@(Model.Id.ToString())" alt="">
+            </div>
+
+            @foreach (var expense in Model.Expenses.Where(e => e.ExpenseType == ExpenseType.JuniorCollege))
+            {
+                <div class="col-lg-9 col-sm-9">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="HLV_calcRow">
+                            <div class="col-lg-4 col-sm-4" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtEstimatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    @@age of @expense.Age.ToString():
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "10",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3" style="position:initial !important;">
+                                <label class="HLV_calcLabel">Inflatioan %</label>
+                                @Html.TextBoxFor(m => expense.InflationRate, new
+                           {
+                               @name = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "2",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+                            </div>
+
+                            <div class="col-lg-5 col-sm-5" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtCalculatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    Calculated:
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "15",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-12 pad">
+                <div class="" style="float:left;">
+                    <a href="#myCarousel" data-slide="prev">
+                        <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                    </a>
+                </div>
+
+                <div class="" style="float:right">
+                    <input type="button" value="Next" class="btn_newchgdfhov" onclick="GoToPage(true, false, null)" data-slide="next">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="div2" class="hlv_slide1 item">
+    <div class="HLV_calcInnerBox">
+        <div class="HLV_calcRow">
+
+            <div class="col-lg-12 col-sm-12" style="text-align:center;align-content:center">
+                <label class="HLV_calcLabel" id="lblGraduation@(Model.Id.ToString())">
+                    @Model.Name's Need Details for Graduation
+                </label>
+            </div>
+            <div class="col-lg-3 col-sm-12" style="position:initial !important;text-align:center;">
+                <img class="imgGender@(Model.Id.ToString())" alt="">
+            </div>
+            @foreach (var expense in Model.Expenses.Where(e => e.ExpenseType == ExpenseType.Graduation))
+            {
+                <div class="col-lg-9 col-sm-9">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="HLV_calcRow">
+                            <div class="col-lg-4 col-sm-4" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtEstimatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    @@age of @expense.Age.ToString():
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "10",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3" style="position:initial !important;">
+                                <label class="HLV_calcLabel">Inflatioan %</label>
+                                @Html.TextBoxFor(m => expense.InflationRate, new
+                           {
+                               @name = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "2",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+                            </div>
+
+                            <div class="col-lg-5 col-sm-5" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtCalculatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    Calculated:
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "15",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-12 pad">
+                <div class="" style="float:left;">
+                    <a href="#myCarousel" data-slide="prev">
+                        <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                    </a>
+                </div>
+
+                <div class="" style="float:right">
+                    <input type="button" value="Next" class="btn_newchgdfhov" onclick="GoToPage(true, false, null)" data-slide="next">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="div2" class="hlv_slide1 item">
+    <div class="HLV_calcInnerBox">
+        <div class="HLV_calcRow">
+
+            <div class="col-lg-12 col-sm-12" style="text-align:center;align-content:center">
+                <label class="HLV_calcLabel" id="lblPostGraduation@(Model.Id.ToString())">
+                    @Model.Name's Need Details for Post Graduation
+                </label>
+            </div>
+            <div class="col-lg-3 col-sm-12" style="text-align:center;">
+                <img class="imgGender@(Model.Id.ToString())" alt="">
+            </div>
+            @foreach (var expense in Model.Expenses.Where(e => e.ExpenseType == ExpenseType.PostGraduation))
+            {
+                <div class="col-lg-9 col-sm-9">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="HLV_calcRow">
+                            <div class="col-lg-4 col-sm-4" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtEstimatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    @@age of @expense.Age.ToString():
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "10",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3" style="position:initial !important;">
+                                <label class="HLV_calcLabel">Inflatioan %</label>
+                                @Html.TextBoxFor(m => expense.InflationRate, new
+                           {
+                               @name = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "2",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+                            </div>
+
+                            <div class="col-lg-5 col-sm-5" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtCalculatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    Calculated:
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "15",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-12 pad">
+                <div class="" style="float:left;">
+                    <a href="#myCarousel" data-slide="prev">
+                        <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                    </a>
+                </div>
+
+                <div class="" style="float:right">
+                    <input type="button" value="Next" class="btn_newchgdfhov" onclick="GoToPage(true, false, null)" data-slide="next">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="div2" class="hlv_slide1 item">
+    <div class="HLV_calcInnerBox">
+        <div class="HLV_calcRow">
+
+            <div class="col-lg-12 col-sm-12" style="text-align:left;align-content:initial">
+                <div class="col-lg-3 col-sm-3">
+                </div>
+                <div class="col-lg-0 col-sm-0" style="position:initial !important;">
+                    <label class="HLV_calcLabel" id="lblMarriage@(Model.Id.ToString())">
+                        @Model.Name's Need Details for
+                    </label>
+                    <label class="HLV_calcLabel" id="lblProfEducation@(Model.Id.ToString())">
+                        Others
+                    </label>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-12" style="text-align:center;">
+                <img class="imgGender@(Model.Id.ToString())" alt="">
+            </div>
+            @foreach (var expense in Model.Expenses.Where(e => e.ExpenseType == ExpenseType.ProfessionalEducation))
+            {
+                <div class="col-lg-9 col-sm-9">
+                    <div class="col-lg-12 col-sm-12">
+                        <div class="HLV_calcRow">
+                            <div class="col-lg-4 col-sm-4" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtEstimatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    @@age of @expense.Age.ToString():
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtEstimatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "10",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+
+                            <div class="col-lg-3 col-sm-3" style="position:initial !important;">
+                                <label class="HLV_calcLabel">Inflatioan %</label>
+                                @Html.TextBoxFor(m => expense.InflationRate, new
+                           {
+                               @name = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtInflationRate_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "2",
+                               @onchange = "calculateAmount(" + expense.Age.ToString() + "," + Model.Id.ToString() + ")",
+                               @onkeypress = "return isANumber (event)"
+                           })
+                            </div>
+
+                            <div class="col-lg-5 col-sm-5" style="position:initial !important;">
+                                <label class="HLV_calcLabel" for="txtCalculatedAmount_@(expense.Age.ToString())_@(Model.Id.ToString())">
+                                    Calculated:
+                                </label>
+                                @Html.TextBoxFor(m => expense.EstimatedAmount, new
+                           {
+                               @name = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @id = "txtCalculatedAmount_" + expense.Age.ToString() + "_" + Model.Id.ToString(),
+                               @class = "HLV_clacInput",
+                               @style = "border-color: rgb(102, 102, 102);",
+                               @maxlength = "15",
+                               @onkeypress = "return isANumber (event)"
+                           })
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                foreach (var profession in Model.Parent.Professions)
+                {
+                    <span class="profession@(Model.Id.ToString()) HLV_singlemale @(profession.Name == "Others" ? "HLV_singleActive" : "")"
+                          onclick="setProfession(@(Model.Id.ToString()), @(expense.Age.ToString()), '@(profession.Name)');"
+                          title="@(profession.Name)|@(profession.EstimatedAmount)"
+                          style="background:#fff url(../../ChildEducationPlanner/images/@(profession.ImagePath)) no-repeat;margin-bottom:20px;">
+                    </span>
+                }
+            }
+            <div class="col-md-12 col-sm-12 col-xs-12 pad">
+                <div class="" style="float:left;">
+                    <a href="#myCarousel" data-slide="prev">
+                        <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                    </a>
+                </div>
+                <div class="" style="float:right">
+                    <input type="button" value="Next" class="btn_newchgdfhov" onclick="GoToNextChild()" data-slide="next">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

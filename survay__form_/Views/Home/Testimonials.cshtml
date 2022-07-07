@@ -1,0 +1,141 @@
+﻿@model KazimRaza.Models.Globel
+@{
+    ViewBag.Title = "Testimonials";
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Testimonials">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Testimonials">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Testimonials" />
+    <meta property="og:type" content="Testimonials" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Testimonials" />
+
+}
+
+<style>
+    section .card1
+{
+	position:relative;
+	height:auto;
+	padding:30px 20px;
+	background: rgba(234, 17, 25, 0.18);
+	border-radius:10px;
+	border:4px solid #fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	animation:animate 2s linear infinite;
+	overflow:hidden;
+    margin:20px 0;
+}
+    
+    .container1 {
+        background-color: #F9F9F9;
+    }
+        .container1 img {
+            float: left;
+            margin-right: 20px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .container1 span {
+            font-size: 20px;
+            margin-right: 15px;
+            color: #000000;
+        }
+        .container1 p {
+            color:#000;
+        }
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .container1 img {
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 50%;
+            float:none !important;
+        }
+    }
+</style>
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h1>TESTIMONIALS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ulockd-about">
+    <div class="container">
+        <div class="container1" id="myGrid">
+            @foreach (var item in Model.Testimonial)
+            { 
+            <div class="col-md-12">
+                        <div class="card1">
+                            <img src="http://kazimraza.com/admin/@item.imageurl" class="img-responsive" style="width:100px;height:100px;">
+                            <div class="details col-xs-12">
+                                <h2> @item.name </h2>
+                                </div>
+                            <div class="text col-xs-12">
+                                <p>@item.testimonialdes</p>
+                            </div>
+                        </div>
+                </div>
+            }
+            </div>
+    </div>
+</section>
+
+@section scripts{
+    @*<script>
+    window.addEventListener('load',
+    function TestiMonial() {
+        $.ajax({
+
+            url: 'http://api.bimacare.in/api/Testimonial/41678',
+            dataType: "json",
+
+            type: "Get",
+            // contentType: 'application/json; charset=utf-8',
+            //data: {Id:Id},
+            success: function (data) {
+                var d = data.data;
+                try {
+                    debugger;
+                    var html = "";
+                    $.each(d, function (key, val) {
+                        
+                        //html += '<div class="container"><div class="container1"><img class="img-responsive" src="' + val.Image + '" alt="Client Image" style="height:80px;"><p style="margin-bottom:10px;"><span>' + val.Name + '</span> </p><p>' + val.Testimonial_ + '</p></div></div>';
+                        html += '<div class="col-md-12"><div class="card1"><img src="' + val.Image + '" class="img-responsive" style="width:50px;height:50px;"><div class="details"><h2> "' + val.Name + '" </h2></div><div class="text"><p>' + val.Testimonial_ + '</p></div></div></div>';
+                    });
+                    // html += '';
+                    $('#myGrid').html(html);
+                } catch (e) {
+                    console.log('Error while formatting the data : ' + e.message)
+                }
+            },
+            error: function (xhrequest, error, thrownError) {
+                console.log('Error while ajax call: ' + error)
+            }
+        });
+
+    });
+    </script>*@
+}

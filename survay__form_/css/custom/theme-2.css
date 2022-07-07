@@ -1,0 +1,101 @@
+
+/*============
+
+This file only contains the theme color schemes, (not the style ) If you want to change the color
+ schemes of the theme 
+just change the color code  and rgba value. The whole theme color will be changed.
+
+===========*/
+
+
+
+
+
+/* Filter the 'background' value classes*/
+
+.switcher .switch_btn button,.header-upper,.onoffswitch-checkbox:checked + .onoffswitch-label,.onoffswitch-label,.cart-box,
+.search-box-area,.main-slider .btn-two,.main-slider .btn-one:hover,.btn-one,.our-idea .single-item .lower-content:before,
+.section-title h2:before,.section-title h2:after,.progress-levels .progress-box .bar .bar-fill,.company-tab .nav-pills 
+li.active a:before,.owl-theme .owl-controls .owl-nav [class*="owl-"]:hover,.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span,.news-section .single-item .date,.brand-section,.main-footer .footer-title h4:before,
+.main-footer .contact-wideget .input-box button,.header-lower .search-box-area,.header-lower .search-box-area .form-group button
+,.call-back-form .dropdown-menu>li>a:hover,.error-section  .input-box button,.scroll-to-top,.service-details .sidebar .list 
+li a.active,.service-details .sidebar .download a,.title-two h3:before,.shop .sidebar-search button,.shop .title h3:after,
+.sidebar-catagories .list li a.active, .sidebar-catagories .list li a:hover,.noUi-connect,.noUi-horizontal .noUi-handle,
+.shop .price-text button,.shop .product-tag li a.active:after, .shop .product-tag li a:hover:after,.cart-page .add-to-cart-wrap 
+a,.cart-page .related-product .single-item .new,.checkout-page .title h3:before,.link-btn li a:hover, .link-btn li a.active,
+.blog-details .blog-details-content h3:before,.blog-details .post-share-option .post-social li a.active, .blog-details 
+.post-share-option .post-social li a:hover,.contact-info-section .single-item h4:before,.contact-section h2:before,
+.main-menu .navbar-header .navbar-toggle .icon-bar
+
+{
+	background: #e61e25;
+}
+
+
+/* background style two */
+
+.single-item-overlay .img-box .overlay,.welcome-section .video-gallery:hover .overlay-gallery
+
+{
+	background: rgba(239, 62, 68, 0.72);
+}
+
+
+/* Filter the 'color' value classes*/
+
+.header-upper .top-right li a, .main-menu .navigation > li.current > a,.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li > ul > li:hover > a,.btn-one:hover,.single-project figcaption p,.choose-us-content 
+.single-item .icon-box i:before,.button.simple a,.accordion .acc-btn.active h6,.accordion-box .accordion .acc-btn 
+.toggle-icon .minus::before,.latest-project .project-content .list li:before,.testimonial-section .testimonial-content 
+.autor-info .text,.news-section .single-item .lower-content .meta i:before,.main-footer .footer-social li a:hover,a:hover,
+h5 a:hover, h6 a:hover, h4 a:hover, h4 a:hover, h6 a:hover,.main-footer .service-wideget .list li a:hover:before,
+.main-footer .news-wideget .single-item .text,.main-footer .contact-wideget .single-item .icon-box i:before,.footer-bottom a,
+.footer-bottom .footer-card li a:hover,.single-item-overlay .img-box .overlay ul li a:hover,.bread-crumb .text,.fact-counter 
+span,.team-section .single-item .text,.team-section .single-item .team-social li a:hover,.testimonial-style-two 
+.testimonial-contnet span,.error-section .error-title,.service-details .company-tab .list li:before,.gallery-page 
+.gallery_menu li.active,.shop  .latest-product .single-item .list li i:before,.shop  .latest-product .single-item a,
+.shop .product-tag li a.active, .shop .product-tag li a:hover,.shop .shop-area .single-item .content-box .item-price,
+.shop .shop-area .single-item .content-box .cart a,.single-shop .single-product-area .price h4,
+.single-shop .single-product-area .rating li i:before,.single-shop .company-content .tab-content .single-author 
+.author-rating li,.cart-page .cart-table tbody tr .sub-total,.cart-page .cart-total-box .shipping-cart li span,
+.checkout-page .exisitng-customer h5 a,.checkout-page .order-info .order-total span,.checkout-page .payment-info 
+.card-system ul li a,.login-page .forgot a,.blog-page .sidebar .sidebar-post .single-post .text,
+.blog-details .content-style-two .list li:before,.blog-details .post-share-option .tags li a,
+.blog-details .comment-area .single-comment .date p,.blog-details .comment-area .single-comment a,
+.contact-info-section .single-item i:before,
+.main-menu .navigation > li:hover > a, .main-menu .navigation > li.current > a, .main-menu .navbar-collapse > 
+ul li.dropdown:hover .dropdown-btn span:before, .main-menu .navbar-collapse > ul li.dropdown.current .dropdown-btn 
+span:before
+
+ {
+	color:#e61e25;,
+
+}
+
+/* Filter the 'border color' value classes*/
+
+.main-menu .navigation > li > ul,.onoffswitch-checkbox:checked + .onoffswitch-label,.onoffswitch-label,.main-slider .btn-two,
+.main-slider .btn-one:hover,.btn-one,.btn-one:hover,.single-project figcaption:after,input:focus, textarea:focus,
+.owl-theme .owl-controls .owl-nav [class*="owl-"]:hover,.main-footer .footer-social li a:hover,.main-footer .contact-wideget 
+.input-box input,.header-lower .search-box-area input,.call-back-section input:focus,.team-section .single-item .team-social 
+li a:hover,.service-details .sidebar .list li a.active,.gallery-page .gallery_menu li.active,.sidebar-catagories .list li 
+a.active, .sidebar-catagories .list li a:hover,.link-btn li a:hover, .link-btn li a.active,.blog-details .post-share-option 
+.post-social li a.active, .blog-details .post-share-option .post-social li a:hover,[class*=' imghvr-'] figcaption, [class^=imghvr-] 
+figcaption
+
+
+{
+  border-color:#e61e25;
+}
+
+
+/* change the theme logo for your own color schemes */
+
+.logo-box {
+    background: url('../../images/Kazim Raza Logo.png') no-repeat 9% 100%;
+}
+
+.footer-logo{
+  background: url('../../images/Kazim Raza Logo.png') no-repeat 9% 100%;
+}

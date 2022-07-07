@@ -1,0 +1,521 @@
+/*  Theme HTML Template */
+
+
+
+@media (min-width: 1199px) and (max-width: 1220px) {
+	body {
+		overflow-x:hidden;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	body {
+		overflow-x:hidden !important;
+	}
+}
+@media (min-width: 1200px) and (max-width: 1300px) {
+	.home_boxed .body_wrapper {
+		width:1180px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.home_boxed .body_wrapper {
+		width:980px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.home_boxed .body_wrapper {
+		width:760px;
+	}
+}
+
+@media (max-width: 767px) {
+	.home_boxed .body_wrapper {
+		width:94%;
+		margin:0 3% 0 3%
+	}
+}
+
+@media only screen and (max-width: 1200px){
+
+	.header-lower .info-box {
+	    position: absolute;
+	    top: 30px;
+	    right: 0px;
+	}
+	.menu-bar{
+		float: none;
+	}
+	.main-menu .navigation > li{
+		margin-left: 15px;
+	}
+	.main-footer .footer-social li{
+		margin-bottom: 10px;
+	}
+
+}
+
+@media only screen and (min-width: 768px){
+	.main-menu .navigation > li > ul,
+	.main-menu .navigation > li > ul > li > ul{
+		display:block !important;
+		visibility:hidden;
+		opacity:0;
+		transition: all 900ms ease;
+	}
+}
+
+@media only screen and (max-width: 991px){
+	
+	.logo-box {
+		display: block;
+		width: 170px;
+		margin: auto;
+		margin-top: 0px;
+	}
+	.header-upper .top-left {
+		display: block;
+		/*width: 275px;*/
+		margin: auto;
+        float:left;
+	}
+	.header-upper .top-left li{
+		margin-right: 10px;
+	}
+	.header-upper .top-right {
+		float: none;
+		display: block;
+		/*width: 185px;*/
+		margin: auto;
+        float:left;
+	}
+	.main-menu .navigation > li > a{
+		padding: 15px 6px 25px 6px;
+	}
+	.header-lower .info-box{
+		top: 6px;
+	}
+	.welcome-section{
+		padding-bottom: 100px;
+	}
+	.our-idea .single-item{
+		margin-bottom: 30px;
+	}
+	.service-section .single-item{
+		margin-bottom: 30px;
+	}
+	.company-value .company-content{
+		margin-bottom: 50px;
+	}
+	.call-back-section:after{
+		width: 100%;
+	}
+	.testimonial-section .owl-theme .owl-controls{
+		display: none;
+	}
+	.news-section .single-item{
+		margin-bottom: 30px;
+	}
+	.service-wideget.footer-wideget{
+		margin-bottom: 30px;
+	}
+	.fact-counter .single-item{
+		margin-bottom: 30px;
+	}
+	.team-section .single-item{
+		margin-bottom: 30px;
+	}
+	.testimonials-slider-two{
+		margin-bottom: 50px;
+	}
+	.faq-page .form-area{
+		margin-bottom: 50px;
+	}
+	.service-details .sidebar{
+		margin-bottom: 50px;
+	}
+	.service-details .sidebar-details{
+		margin-left: 0px;
+	}
+	.service-details .faq-content{
+		margin-bottom: 30px;
+	}
+	.shop .sidebar{
+		margin-bottom: 50px;
+	}
+	.shop .shop-area{
+		margin-left: 0px;
+	}
+	.checkout-page .billing-info{
+		margin-bottom: 50px;
+	}
+	.login-page .login-form{
+		margin-bottom: 50px;
+	}
+	.blog-classic-content{
+		margin-bottom: 50px;
+	}
+	.blog-page .sidebar{
+		margin-left: 0px;
+	}
+	.blog-details-content{
+		margin-bottom: 50px;
+	}
+	.contact-info-section .single-item{
+		text-align: center;
+		margin-bottom: 30px;
+	}
+	.contact-info-section .single-item h4:before{
+		left: 50%;
+		margin-left: -25px;
+	}
+	.contact-info-section .single-item h4{
+		margin-bottom: 20px;
+	}
+
+}
+@media only screen and (max-width: 767px) and (max-width: 768px){
+	
+	
+	.main-menu .collapse {
+		overflow:auto;
+		float:none;
+		width:100%;
+		padding:10px 0px 0px;
+		border:none;
+		margin:0px;
+		-ms-border-radius:3px;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+   }
+   
+	.main-menu .collapse.in,
+	.main-menu .collapsing{
+		padding:10px 0px 0px;
+		border:none;
+		-ms-border-radius:3px;
+		-moz-border-radius:3px;
+		-webkit-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;	
+	}
+	
+	
+	.main-menu .navbar-header {
+	    position: relative;
+	    /*display: inline-block;*/
+	    text-align: right;
+	    padding: 12px 0px;
+	    right: 0px;
+	    z-index: 12;
+	}
+	
+	.main-menu .navbar-header .navbar-toggle{
+		display:inline-block;
+		z-index:7;
+		float:none;
+		margin-bottom: 0px;
+		margin-top: 0px;
+	}
+	
+	.main-menu .navbar-header .navbar-toggle .icon-bar{
+		background:#e61e25;	
+	}
+	
+	.main-menu .navbar-collapse > .navigation{
+		float:none !important;
+		margin:0px !important;
+		width:100% !important;
+		background:#fff;
+		border-top: 1px solid #eee;
+		border-right: 1px solid #eee;
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li{
+		margin:0px !important;
+		float:none !important;
+		width:100%;
+	}
+	
+	.main-menu .navigation > li > a,
+	.main-menu .navigation > li > ul:before{
+		border:none;	
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li > a{
+		padding:10px 10px !important;
+		border-bottom: 1px solid #eee;
+	}
+	
+	.main-menu .navigation li.dropdown > a:after,
+	.main-menu .navigation > li.dropdown > a:before,
+	.main-menu .navigation > li > ul > li > a::before,
+	.main-menu .navigation > li > ul > li > ul > li > a::before{
+		color:#ffffff !important;
+		right:15px;
+		font-size:16px;
+		display:none !important;
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li > ul,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > ul{
+		position:relative;
+		border:none;
+		float:none;
+		visibility:visible;
+		opacity:1;
+		display:none;
+		margin:0px;
+		left:auto !important;
+		right:auto !important;
+		top:auto !important;
+		width:100%;
+		background:#222;
+		-webkit-border-radius:0px;
+		-ms-border-radius:0px;
+		-o-border-radius:0px;
+		-moz-border-radius:0px;
+		border-radius:0px;
+		transition:none !important;
+		-webkit-transition:none !important;
+		-ms-transition:none !important;
+		-o-transition:none !important;
+		-moz-transition:none !important;
+	}
+		
+	.main-menu .navbar-collapse > .navigation > li > ul,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > ul{
+		border-top:1px solid rgba(255,255,255,1) !important;	
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li,
+	.main-menu .navbar-collapse > .navigation > li > ul > li,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li{
+		opacity:1 !important;
+		top:0px !important;
+		left:0px !important;
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li:first-child{
+		border:none;	
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li > a,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > a,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li > a{
+		padding:10px 10px !important;
+		line-height:22px;
+		color:#222;
+		background: #fff;
+		text-align:left;
+	}
+	
+	.main-menu .navbar-collapse > .navigation > li:hover > a,
+	.main-menu .navbar-collapse > .navigation > li > ul > li:hover > a,
+	.main-menu .navbar-collapse > .navigation > li > ul > li > ul > li:hover > a,
+	.main-menu .navbar-collapse > .navigation > li.current > a,
+	.main-menu .navbar-collapse > .navigation > li.current-menu-item > a{
+		background: #fff;
+	}
+	
+	.main-menu .navbar-collapse > .navigation li.dropdown .dropdown-btn{
+		display:block;
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		cursor: pointer;
+	}
+	.main-menu .navbar-collapse > .navigation li.dropdown .dropdown-btn span{
+		color: #222;
+		font-size: 20px;
+		z-index: 1;
+	}
+	.main-menu .navigation > li > ul > li > a{
+		border-bottom: 1px solid #eee !important;
+	}
+	.main-menu .navbar-collapse > .navigation li.dropdown:after,
+	.main-menu .navigation > li > ul:before{
+		display:none !important;	
+	}
+	.fixed .logo-box{
+		display: none;
+	}
+	.main-menu{
+		width: 100%;
+	}
+	.welcome-section .welcome-content{
+		margin-bottom: 30px;
+	}
+	.welcome-section{
+		padding-bottom: 0px;
+	}
+	.service-section .single-item{
+		max-width: 370px;
+	}
+	.company-tab .nav-pills li a{
+		display: inline-block;
+		margin-bottom: 0px;
+	}
+	.nav>li{
+		display: inline-block;
+	}
+	.latest-project .project-slider{
+		padding-top: 20px;
+	}
+	.news-section .single-item{
+		max-width: 370px;
+	}
+	.main-footer .logo-wideget{
+		margin-bottom: 30px;
+	}
+	.news-wideget.footer-wideget{
+		margin-bottom: 58px;
+	}
+	.team-section .single-item{
+		max-width: 270px;
+	}
+	.service-details .sidebar .download a{
+		display: inline-block;
+	}
+	.gallery-style-one .single-item,.gallery-style-two .single-item{
+		max-width: 390px;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+	.shop .shop-area .single-item{
+		max-width: 300px;
+		margin: auto;
+		margin-bottom: 30px;
+	}
+	.single-shop .single-product-area .img-box{
+		max-width: 215px;
+		margin-bottom: 30px;
+	}
+	.cart-page .add-to-cart-wrap a{
+		float: none;
+		margin-top: 15px;
+	}
+	.shipping-form.call-back-form{
+		margin-bottom: 30px;
+	}
+	.cart-page .shipping-cart{
+		padding-left: 0px;
+	}
+	.checkout-page .order-info{
+		margin-bottom: 30px;
+		margin-right: 0px;
+	}
+	.checkout-page .payment-info{
+		margin-left: 0px;
+	}
+	.blog-classic .single-item,
+	.blog-details .single-item{
+		max-width: 800px;
+	}
+	.blog-details .content-style-two .img-box{
+		max-width: 370px;
+		margin-bottom: 30px;
+	}
+	.welcome-section .video-gallery{
+		top: 0px;
+	}
+
+}
+
+@media only screen and (max-width: 599px){
+	
+	.footer-bottom .footer-card{
+		float: none;
+		display: block;
+		margin-top: 5px;
+	}
+	.login-page .forgot a{
+		margin-top: 15px;
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 499px) {
+	
+	.main-slider .btn-one{
+		display: block;
+		margin-bottom: 20px;
+	}
+	.main-slider .btn-two{
+		display: block;
+		margin-left: 0px;
+	}
+	.welcome-section .welcome-content .signature-box{
+		display: block;
+		margin-left: 0px;
+		margin-top: 15px;
+	}
+	.cart-page .bottom-box .cupon-box input{
+		margin-bottom: 10px;
+	}
+
+}
+
+@media only screen and (max-width: 399px){
+
+	
+	.switcher .switch_menu{
+		width: 250px;
+	}
+	.switcher #styleOptions li{
+		margin-right: 0px;
+		margin-left: 4px;
+	}
+	.switcher .switch_menu .switcher_container{
+		width: 250px;
+	}
+	.company-tab .nav-pills{
+		background: transparent;
+	}
+	.error-section .error-title{
+		font-size: 140px;
+	}
+	.bread-crumb .text{
+		float: none;
+		display: block;
+	}
+	.addto-cart-box .input-group.bootstrap-touchspin{
+		margin-right: 0px;
+		margin-bottom: 10px;
+	}
+	.cart-page .add-to-cart-wrap a:after{
+		display: none;
+	}
+	.cart-page .add-to-cart-wrap a{
+		padding: 12px 25px 12px 25px;
+	}
+	.checkout-page .order-info .order-box figure{
+		display: block;
+	}
+	.link-btn li{
+		margin: 5px;
+	}
+	.blog-details .post-share-option .post-social{
+		display: block;
+		float: none;
+	}
+	.blog-details .post-share-option .tags{
+		margin-bottom: 15px;
+	}
+	.blog-details .comment-area .single-comment.replay{
+		margin-left: 0px;
+	}
+
+
+}
+
+@media only screen and (max-width: 300px){
+	
+	
+
+
+}

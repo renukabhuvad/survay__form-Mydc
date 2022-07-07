@@ -1,0 +1,338 @@
+﻿@model survay__form_.Models.policyentryview
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title> Digital Calender Agent </title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="">
+    <meta name="description" content="Premium Calender">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Digital Calender of Insurance Policies">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="Digital Calender Members Due Date">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="http://mydc.in/survay/images/favicon.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Digital Calender Members Due Date" />
+    <meta property="og:type" content="Digital Calender Members Due Date" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="http://mydc.in/survay/images/favicon.png" />
+    <meta property="article:section" content="Premium Calender" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="manifest" href="../manifest/@ViewBag.id">
+    <!-- Tell the browser it's a PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Tell iOS it's a PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#d76480">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="http://mydc.in/survay/images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <style>
+        body {
+            font-family: "Asap", sans-serif;
+        }
+
+        .nav {
+            background: #0f3987;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        .nav-item {
+            width: 50%;
+            background: #66aa05;
+        }
+
+        .nav-pills .nav-link {
+            /*font-weight: bold;*/
+            padding-top: 13px;
+            text-align: center;
+            background: #f7ffec;
+            color: #000;
+            border-radius: 0px;
+            height: 50px;
+        }
+
+            .nav-pills .nav-link.active {
+                background: #ffcdc9;
+                color: #000;
+            }
+
+        .tab-content {
+            position: absolute;
+            height: auto;
+            width: 100%;
+            margin-top: 0px;
+            background: #fff;
+            color: #000;
+            z-index: 1000;
+            padding: 15px;
+            border-top: 1px solid #d5d5d5;
+        }
+
+            .tab-content button {
+                border-radius: 15px;
+                width: 100px;
+                margin: 0 auto;
+                float: right;
+            }
+
+        .box {
+            /* border: 1px solid #7499de; */
+            border-radius: 10px;
+            background: #c9dcff;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-shadow: 2px 2px 2px 2px #efefef;
+        }
+
+        .span1 {
+            color: #000;
+            font-weight: 400;
+        }
+
+            .span1 i {
+                width: 17px;
+            }
+
+        .span2 {
+            float: right;
+        }
+
+        .box:nth-child(1n) {
+            background: #fff2d5;
+            border: 1px solid #ffe4a8;
+        }
+
+        .box:nth-child(2n) {
+            background: #e1ecff;
+            border: 1px solid #c6daff;
+        }
+
+        .box:nth-child(3n) {
+            background: #fcf8ff;
+            border: 1px solid #e6c8ff;
+        }
+
+        .box:nth-child(4n) {
+            background: #fafff2;
+            border: 1px solid #cde6a6;
+        }
+
+        .box:nth-child(5n) {
+            background: #ffefef;
+            border: 1px solid #ffc0c0;
+        }
+    </style>
+
+    <style>
+        #loading {
+            background: #fff url('/images/calendergif.gif') no-repeat center center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 9999999;
+        }
+    </style>
+
+    <div id="loading"></div>
+    <div style="display: flex;width: 100%;background: #639f0e;">
+        <span style="padding: 5px 10px;text-align: left;width: 50%;color: #fff;"> <i class="fa fa-user"></i> @ViewBag.name</span> 
+        <span style="padding: 5px 10px;text-align: right;width: 50%;color: #fff;"> <i class="fa fa-phone"></i> @ViewBag.mobile</span>
+    </div>
+    <div style="background:#66aa05;">
+        <span style="color: #fff;text-align: center;margin: auto;display: block;padding: 12px 0px;font-size: 18px;"> Digital Calender </span>
+    </div>
+        <div class="content">
+            <!-- Nav pills -->
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#due1" style="border-top-left-radius:20px;"> Date Wise Due </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#due2" style="border-top-right-radius:20px;"> Member Wise Due </a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="due1" class="tab-pane active">
+                    @{
+                        foreach (var item in Model.policyentries_date)
+                        {
+                            <div class="box">
+                                <div>
+                                    <span class="span1"> <i class="fa fa-user"></i> Name : </span>
+                                    <span class="span2"> @item.fullname </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-file-text-o"></i> Policy Number : </span>
+                                    <span class="span2"> @item.policyno </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-building-o"></i> Product Name : </span>
+                                    <span class="span2"> @item.Insurance </span>
+                                </div>
+                                @*<div>
+                                        <span class="span1"> <i class="fa fa-umbrella"></i> Insure: </span>
+                                        <span class="span2">@item.Insurer </span>
+                                    </div>*@
+                                <div>
+                                    <span class="span1"> <i class="fa fa-rupee"></i> Sum Assured : </span>
+                                    <span class="span2"> @item.sumassured </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-rupee"></i> Premium : </span>
+                                    <span class="span2"> @item.premium </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-calendar"></i> Due Date : </span>
+                                    <input type="hidden" id="fupupdate" value="@item.fupdate" />
+                                    @{
+                                        if (Convert.ToDateTime(item.fupdate) > DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right; color:green;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                        else if (Convert.ToDateTime(item.fupdate) < DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right; color:red;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                        else if (Convert.ToDateTime(item.fupdate) == DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                    }
+
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-clock-o"></i> Term / PPT : </span>
+                                    <span class="span2"> @item.term / @item.ppt </span>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+
+
+                <div id="due2" class="tab-pane fade">
+                    @{
+                        foreach (var item in Model.policyentries_name)
+                        {
+                            <div class="box">
+                                <div>
+                                    <span class="span1"> <i class="fa fa-user"></i> Name : </span>
+                                    <span class="span2"> @item.fullname </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-file-text-o"></i> Policy Number : </span>
+                                    <span class="span2"> @item.policyno </span>
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-building-o"></i> Product Name : </span>
+                                    <span class="span2"> @item.Insurance </span>
+                                </div>
+
+                                @*<div>
+                                    <span class="span1"> <i class="fa fa-umbrella"></i> Insure : </span>
+                                    <span class="span2"> @item.Insurer </span>
+                                </div>*@
+                                
+                                <div>
+                                    <span class="span1"> <i class="fa fa-rupee"></i> Sum Assured : </span>
+                                    <span class="span2"> @item.sumassured </span>
+                                </div>
+                                
+                                <div>
+                                    <span class="span1"> <i class="fa fa-rupee"></i> Premium : </span>
+                                    <span class="span2"> @item.premium </span>
+                                </div>
+                                
+                                <div>
+                                    <span class="span1"> <i class="fa fa-calendar"></i> Due Date : </span>
+                                    @{
+                                        if (Convert.ToDateTime(item.fupdate) > DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right; color:green;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                        else if (Convert.ToDateTime(item.fupdate) < DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right; color:red;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                        else if (Convert.ToDateTime(item.fupdate) == DateTime.Now)
+                                        {
+                                            <span class="spanfup2" style="float:right;font-weight:500;"> @item.fupdate </span>
+                                        }
+                                    }
+                                </div>
+                                <div>
+                                    <span class="span1"> <i class="fa fa-clock-o"></i> Term / PPT : </span>
+                                    <span class="span2"> @item.term / @item.ppt </span>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <input type="hidden" value="0" id="hdnfile" />
+    <script src="http://localhost:61685/service-worker.js"></script>
+    <script>
+        $("#hdnfile").val("@ViewBag.id");
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('../service-worker.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                }).catch(function (err) {
+                    console.log(err)
+                });
+            });
+        }
+        else {
+            console.log('service worker is not supported');
+        }
+    </script>
+
+
+    <script>
+        function hideLoader()
+        {
+            $('#loading').hide();
+        }
+        setTimeout(hideLoader, 3000);
+
+    </script>
+
+</body>
+</html>

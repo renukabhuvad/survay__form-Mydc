@@ -1,0 +1,30 @@
+@media screen and (max-width:700px)
+{
+	.blockUI.blockMsg.blockPage h1
+	{
+		    font-size: 18px;
+			text-align: center;
+			margin: 0;
+	}
+	.blockUI.blockMsg.blockPage
+	{
+		width: 50% !important;
+		top: 50% !important;
+		left: 24% !important;
+	}
+}
+@media screen and (max-width:1024px)
+{
+	.blockUI.blockMsg.blockPage h1
+	{
+		    font-size: 25px;
+			text-align: center;
+			margin: 0;
+	}
+	.blockUI.blockMsg.blockPage
+	{
+		width: 35% !important;
+		top: 40% !important;
+		left: 30% !important;
+	}
+}

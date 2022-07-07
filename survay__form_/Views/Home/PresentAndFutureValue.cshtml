@@ -1,0 +1,498 @@
+﻿
+@{
+    ViewBag.Title = "PresentAndFutureValue";
+    Layout = "~/Views/Shared/child.cshtml";
+
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Present And Future Value">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Present And Future Value">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Present And Future Value" />
+    <meta property="og:type" content="Present And Future Value" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+
+<style>
+    .input-group-addon i 
+    {
+        width: 25px;
+        height: 20px;
+    }
+</style>
+
+<style>
+    .detailed {
+        padding: 15px 0;
+    }
+
+    .HLV_slideCanvas {
+        /*background: url(/images/retirement-background3.jpg);*/
+        background-size: cover;
+    }
+    /*.HLV_calcInnerBox ::before{
+
+     content: " ";
+    height:100%;
+    position:absolute;
+    width:100%;
+    top:140px;
+    }*/
+
+</style>
+
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 5px solid #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            margin: 3px 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 15px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic 
+    {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 5px solid #fff;
+    }
+
+    ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li 
+    {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+    li a 
+    {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+
+    .input-group-addon {
+        color: #fff;
+    }
+
+    .curved {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+
+</style>
+
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <div class="text-center">
+                    <img src="@Model.profileimage" class="profilepic" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="text-left">
+                    <ul class="agname">
+                        <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                        <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.emailid </span> </li>
+                        <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    @@media only screen and (min-width: 1200px) 
+    {
+        .ab 
+        {
+            width: 600px;
+        }
+    }
+</style>
+
+<div class="curved">
+    <div style="">
+        <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> Future Value Calculator </h2>
+    </div>
+</div>
+
+<section style="padding:20px 0;" class="abc">
+    <div class="container ab" style="border-radius: 10px;background: #fcd6cb;margin: 20px auto;">
+
+        @*<ul class="nav nav-tabs" style="padding:5px 10px 0 10px; margin-left:0;">
+                <li class="active"><a data-toggle="tab" href="#branch1" style="color:#000;width:265px;text-align:center;font-size:15px;">Future Value Calculator</a></li>
+                <li><a data-toggle="tab" href="#General" style="color:#000;width:265px;text-align:center;font-size:15px;">Present Value Calculator</a></li>
+            </ul>*@
+        <div class="tab-content" style="padding:10px;">
+            <div id="branch1" class="tab-pane fade in active">
+                <form id="future-form" method="post" role="form" style="display: block;">
+                    <h3 style="text-align:center;font-weight:700;padding:10px 0">Future Value Calculator</h3>
+                    <div style="margin-bottom: 20px" class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user" style="font-size:15px;"></i></span>
+                        <input type="text" name="Future_name" id="Future_name" tabindex="1" class="form-control" placeholder="Name" value="">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-envelope" style="font-size:14px;"></i></span>
+                        <input type="email" name="Future_email" id="Future_email" tabindex="2" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-mobile-phone" style="font-size:20px;"></i></span>
+                        <input type="text" name="Future_mobile" id="Future_mobile" tabindex="3" class="form-control" placeholder="Mobile No" maxlength="10">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-birthday-cake" style="font-size:14px;"></i></span>
+                        <input type="text" name="Future_dob" id="Future_dob" tabindex="4" class="form-control" placeholder="Date of birth">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-child" style="font-size:16px;"></i></span>
+                        <input type="text" name="Future_age" id="Future_age" tabindex="5" class="form-control" placeholder="Age" disabled>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-child" style="font-size:16px;"></i></span>
+                        <input type="text" name="Future_amount" id="Future_amount" tabindex="6" class="form-control" placeholder="Amount required at age">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-rupee" style="font-size:20px;"></i></span>
+                        <input type="text" name="Future_present" id="Future_present" tabindex="7" class="form-control" placeholder="Present Value">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-line-chart" style="font-size:17px;"></i></span>
+                        <input type="text" name="Future_inflation" id="Future_inflation" tabindex="8" class="form-control" placeholder="Inflation" maxlength="2">
+                    </div>
+
+                    @*<div class="form-group">
+                            <input type="text" name="Future_result" id="Future_result" tabindex="9" class="form-control" placeholder="Future Value is">
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                @*<input type="submit" name="future-submit" id="future-submit" tabindex="10" class="form-control btn btn-value" onclick="Future_Value();" data-toggle="modal" data-target="#myModal"  value="Calculate">*@
+                                <button type="button" name="future-submit" onclick="Future_Value();" id="future-submit" data-toggle="modal" data-target="#myModal" class="form-control btn btn-value">Calculate</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+            <!--Start of Future  Value Modal-->
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color:#ffffff">
+                        <div class="modal-header" style="background:#786bfb;">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" style="color:white">Future Value</h4>
+                        </div>
+                        <div class="modal-body">
+                            @*Dear<input type="text" id="Future_name">your Future Value will be <input type="text" id="mytext">*@
+                            <table width="100%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA">
+                                <tr align="left">
+                                    <th style="color:black;background:transparent !important;">Future Value:</th>
+                                    <td><input type="text" id="mytext" readonly style="border:0px !important;"></td>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="color:#fff;">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Future  Value Modal-->
+            <!--End  Future  Value Cal start-->
+            <!-- Present  Value Cal start-->
+
+            <div id="General" class="tab-pane fade">
+                <form id="present-form" method="post" role="form">
+                    <h3 style="text-align:center;font-weight:700;padding:10px 0">Present Value Calculator</h3>
+                    <div style="margin-bottom: 20px" class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user" style="font-size:15px;"></i></span>
+                        <input type="text" name="present_name" id="present_name" tabindex="11" class="form-control" placeholder="Name" value="">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-envelope" style="font-size:14px;"></i></span>
+                        <input type="email" name="present_email" id="present_email" tabindex="12" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-mobile-phone" style="font-size:20px;"></i></span>
+                        <input type="text" name="present_mobile" id="present_mobile" tabindex="13" class="form-control" placeholder="Mobile No" maxlength="10">
+                    </div>
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-birthday-cake" style="font-size:14px;"></i></span>
+                        <input type="text" name="present_dob" id="present_dob" tabindex="14" class="form-control" placeholder="Date of birth">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-child" style="font-size:16px;"></i></span>
+                        <input type="text" name="present_age" id="present_age" tabindex="15" class="form-control" placeholder="Age" disabled>
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-child" style="font-size:20px;"></i></span>
+                        <input type="text" name="present_amount" id="present_amount" tabindex="16" class="form-control" placeholder="Amount required at age">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon"><i class="fa fa-rupee" style="font-size:20px;"></i></span>
+                        <input type="text" name="present_present" id="present_present" tabindex="17" class="form-control" placeholder="Future value">
+                    </div>
+
+                    <div class="input-group" style="margin-bottom: 20px">
+                        <span class="input-group-addon" style="padding: 8px 6px;"><i class="fa fa-line-chart" style="font-size:17px;"></i></span>
+                        <input type="text" name="present_inflation" id="present_inflation" tabindex="18" class="form-control" placeholder="Inflation" maxlength="2">
+                    </div>
+
+                    @*<div class="form-group">
+                            <input type="text" name="present_result" id="present_result" tabindex="19" class="form-control" placeholder="Present Value is">
+                        </div>*@
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                @*<input type="submit" name="register-submit" id="register-submit" tabindex="20" class="form-control btn btn-value" onclick="Present_Value();" value="Calculate">*@
+                                <button type="button" name="future-submit" onclick="Present_Value();" id="future-submit" data-toggle="modal" data-target="#myModal1" class="form-control btn btn-value">Calculate</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--Start of Present Value Modal-->
+
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="background-color:#d0d0d0">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" style="color:white">Present Value</h4>
+                        </div>
+                        <div class="modal-body">
+                            @*Dear<input type="text" id="Future_name">your Future Value will be <input type="text" id="mytext">*@
+                            <table width="50%" align="center" cellpadding="2" cellspacing="2" border="0" bgcolor="#EAEAEA">
+                                <tr align="left">
+
+                                    <th style="color:white;">Present Value :</th>
+                                    <td><input type="text" id="mytext1" readonly></td>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--End of Present Value Modal-->
+            <!--End of Present Value-->
+
+
+        </div>
+
+    </div>
+</section>
+
+@section scripts{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @*<script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>*@
+    <link href="~/DateTimePicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <script src="~/DateTimePicker/bootstrap-datepicker.min.js"></script>
+    <link href="~/DateTimePicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="~/DateTimePicker/bootstrap-datetimepicker.js"></script>
+    <link href="~/DateTimePicker/datepicker.min.css" rel="stylesheet" />
+    <script src="~/DateTimePicker/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/css/custom/jssocials.css" rel="stylesheet" />
+    <link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+    <script src="~/css/custom/jssocials.js"></script>
+    <script src="~/css/custom/jssocials.min.js"></script>
+    <script type="text/javascript">
+        $(window).ready(function () {
+            $("#shareIcons").jsSocials({
+                showLabel: false,
+                showCount: false,
+                shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+            });
+
+        });
+
+    </script>
+    <script>
+        $('#Future_dob').datepicker({
+            format: 'dd/mm/yyyy',
+        });
+        $('#present_dob').datepicker({
+            format: 'dd/mm/yyyy',
+        });
+    </script>
+    <script>
+        $("#Future_dob").change(function () {
+            debugger;
+            var dob = document.getElementById('Future_dob').value;
+            var dateParts = dob.split("/");
+            var year = dateParts[2];
+            var month = dateParts[1] - 1;
+            var day = dateParts[0];
+            var today = new Date();
+            var age = today.getFullYear() - year;
+            if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+                age--;
+            }
+            document.getElementById('Future_age').value = age;
+        });
+        $("#present_dob").change(function () {
+            debugger;
+            var dob = document.getElementById('present_dob').value;
+            var dateParts = dob.split("/");
+            var year = dateParts[2];
+            var month = dateParts[1] - 1;
+            var day = dateParts[0];
+            var today = new Date();
+            var age = today.getFullYear() - year;
+            if (today.getMonth() < month || (today.getMonth() == month && today.getDate() < day)) {
+                age--;
+            }
+            document.getElementById('present_age').value = age;
+        });
+    </script>
+    <script>
+        function Future_Value() {
+            debugger;
+
+            var NumberOfYearsInTheFuture = 0, FinalRate = 0, FutureSumOfMoney = 0, FutureSumOfMoney1 = 0,
+                presentage = 0, retirement = 0, PresentValueOfTheSum = 0, InterestRate = 0;
+
+            presentage = parseInt(document.getElementById("Future_age").value);
+            retirement = parseInt(document.getElementById("Future_amount").value);
+            PresentValueOfTheSum = parseInt(document.getElementById("Future_present").value);
+            InterestRate = parseInt(document.getElementById("Future_inflation").value);
+
+            NumberOfYearsInTheFuture = retirement - presentage;
+
+            FinalRate = 1 + (InterestRate / 100);
+            FutureSumOfMoney = Math.pow(FinalRate, NumberOfYearsInTheFuture);
+            FutureSumOfMoney1 = PresentValueOfTheSum * FutureSumOfMoney;
+
+
+            // alert(Math.round(FutureSumOfMoney1));
+            document.getElementById("mytext").value = Math.round(FutureSumOfMoney1);
+        }
+
+
+        function Present_Value() {
+            debugger;
+
+            var NumberOfYearsInTheFuture = 0, FinalRate = 0, FutureSumOfMoney = 0, FutureSumOfMoney1 = 0,
+                presentage = 0, retirement = 0, PresentValueOfTheSum = 0, InterestRate = 0;
+
+            presentage = parseInt(document.getElementById("present_age").value);
+            retirement = parseInt(document.getElementById("present_amount").value);
+            PresentValueOfTheSum = parseInt(document.getElementById("present_present").value);
+            InterestRate = parseInt(document.getElementById("present_inflation").value);
+
+            NumberOfYearsInTheFuture = retirement - presentage;
+
+            FinalRate = 1 + (InterestRate / 100);
+            FutureSumOfMoney = Math.pow(FinalRate, NumberOfYearsInTheFuture);
+            FutureSumOfMoney1 = PresentValueOfTheSum / FutureSumOfMoney;;
+
+
+            //  alert(Math.round(FutureSumOfMoney1));
+            document.getElementById("mytext1").value = Math.round(FutureSumOfMoney1);
+        }
+    </script>
+}
+
+
+
+

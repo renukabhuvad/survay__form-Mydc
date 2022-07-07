@@ -1,0 +1,95 @@
+﻿@model KazimRaza.Models.Globel
+@{
+    ViewBag.Title = "Vision";
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Vision">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Vision">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Vision" />
+    <meta property="og:type" content="Vision" />
+    <meta property="og:description" content="@Html.Raw(Model.vision.subdata)" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Vision" />
+
+}
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h1>VISION</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ulockd-about">
+    <div class="container">
+        <div class="row">
+            <div id="shareIcons" socialShareURL="kazimraza.com/Vision"></div>
+            <div class="col-sm-12 col-md-7">
+                <div class="section-title">
+                    <h2>Our <span class="text-thm2">Vision</span></h2>
+                   @Html.Raw(Model.vision.data)
+                
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <div class="ulockd-about-box ulockd-mrgn1260">
+                    <div class="ab-thumb"> <img class="img-responsive img-whp sticky" src="~/images/vision.png" alt="1.jpg"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+
+    window.addEventListener('load',
+      function Vision() {
+          $.ajax({
+
+              url: 'http://api.bimacare.in/api/vision/41678',
+              dataType: "json",
+
+              type: "Get",
+              // contentType: 'application/json; charset=utf-8',
+              //data: {Id:Id},
+              success: function (data) {
+
+                  // console.log(data);
+                  // for (var i = 0; i < data.length; i++) {
+                  //tr = tr + "<tr>";
+                  //tr = tr + "<td>" + data[i].Id + "</td>";
+                  //tr = tr + "<td>" + data[i].CustomerName + "</td>";
+                  //tr = tr + "<td>" + data[i].Address + "</td>";
+                  //tr = tr + "<td>" + data[i].City + "</td>";
+                  //tr = tr + "<td>" + data[i].Pincode + "</td>";
+                  //tr = tr + "</tr>";
+                  var d = data;
+                  var ab = d.data[0].vision;
+                  $('#Vision').html(d.data[0].vision);
+                  // }
+
+                  //tblFormate();
+              },
+              error: function (xhr) {
+                  alert('No Valid Data');
+              }
+          });
+      });
+
+</script> 

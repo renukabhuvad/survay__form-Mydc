@@ -1,0 +1,641 @@
+﻿@model survay__form_.Models.ChildEducationCalculator
+@{
+    Layout = "~/Views/Shared/Child.cshtml";
+}
+@section AdditionalMeta
+{
+    <title>@Model.agentname | Child Education Planner</title>
+    <link rel="icon" type="image/x-icon" href="@Model.profileimage">
+    <meta name="keywords" content="@Model.agentname,Child Education Planner, Calculator ">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Child Planner">
+    <meta itemprop="description" content="Child Education Planner Calculator Shared By @Model.agentname">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="@Model.agentname">
+    <meta name="twitter:title" content="Child Planner">
+    <meta name="twitter:description" content="Child Education Planner Calculator Shared By @Model.agentname">
+    <meta name="twitter:creator" content="@Model.agentname">
+    <meta name="twitter:image:src" content="@Model.profileimage">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Child Planner" />
+    <meta property="og:type" content="Child Planner" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="@Model.agentname" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+
+<div>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="~/ChildEducationPlanner/js/caculator.js"></script>
+    <script>
+        $(document).ready(function () {
+            Init();
+        });
+    </script>
+
+    <script src="~/ChildEducationPlanner/js/uisearch.js"></script>
+    <script src="~/ChildEducationPlanner/js/classie.js"></script>
+    <script src="~/ChildEducationPlanner/js/highcharts.js"></script>
+
+</div>
+<div class="clear-fix"></div>
+@*<div class="container">
+        <div class="banner_inn_ful page_banner">
+            @*<img alt="" src="~/images/family1.jpg" class="top_img_inner" style="width:50%">
+            <center>
+
+                <h1 style="color:#000;line-height:100px;text-align:center;"> Children Financial Security Calculators</h1>
+            </center>
+        </div>
+    </div>*@
+
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 3px solid #fff;
+            border-radius:10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            margin: 3px 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 14px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 3px solid #fff;
+        border-radius: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+</style>
+<section class="back-section">
+    <div class="container">
+        <div class="row" style="padding-top:7px;">
+     
+                <div class="col-xs-4 col-md-4">
+                    <div class="text-center">
+                        <img src="@Model.profileimage" class="profilepic" />
+                    </div>
+                </div>
+                <div class="col-xs-8 col-md-8">
+                    <div class="text-left">
+                        <ul class="agname">
+                            <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                            <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.emailid </span> </li>
+                            <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                        </ul>
+                    </div>
+                </div>
+  
+        </div>
+    </div>
+</section>
+<div class="clear-fix"></div>
+
+@*<div class="banner_inn_ful page_banner">
+        <img alt="" src="~/images/main-logo.jpg" class="top_img_inner" style="height:200px;">
+        <div >
+            <div class="banner_inn">
+                <h1>Child Education Planner</h1>
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div>*@
+<!-- Include Date Range Picker -->
+<link href="~/ChildEducationPlanner/css/jquery-ui-WM.css" rel="stylesheet" />
+<link href="~/ChildEducationPlanner/css/css1.css" rel="stylesheet" />
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link href="~/ChildEducationPlanner/css/blockUIResponsive.css" rel="stylesheet" />
+
+<style>
+    .family_image {
+        width: auto;
+        height: auto;
+    }
+
+    @@media screen and (min-width: 790px) {
+        .family_image {
+            width: 250px;
+            height: 270px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .family_image {
+            width: 250px;
+            height: 270px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) 
+    {
+        .family_image 
+        {
+            width: 250px;
+            height: 270px;
+        }
+    }
+    
+    .curved 
+    {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+</style>
+
+@using (Html.BeginForm("ChildEducationCalculator", "Home", FormMethod.Post))
+{
+
+    <div class=" " style="position: relative;">
+        @*<div class="overlay-colored color-bg-gradient opacity-90"></div>*@
+        <div class="curved">
+            <div style="">
+                 <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> Children's Education Planner </h2>
+            </div>
+        </div>
+
+        @*<div class="section-separator wave-1 bottom">
+            <div class="ss-content" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#ffffff" fill-opacity="1" d="M0,192L60,197.3C120,203,240,213,360,208C480,203,600,181,720,192C840,203,960,245,1080,272C1200,299,1320,309,1380,314.7L1440,320L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                </svg>
+            </div>
+             .ss-content 
+        </div>*@
+
+    </div>
+
+    @*<h1 style="color: #fff;text-align: center;padding: 20px 0px;margin-bottom: 0px;font-size: 20px !important;background:linear-gradient(90deg, #111c58 0, #5c2782 51%, #111c58) , url(/images/arches.png);border: 0px;" class="child_font">
+        Children's Education Planner
+    </h1>*@
+    @Html.Hidden("CurrentStepNumber", 0)
+    <div class="HLV_slideCanvas" style="padding-top:0px;">
+        <div class="container" id="HLV_calc">
+            <div class="row">
+
+                <div class="HLV_calc_cnt">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner">
+                            <div id="div1" class="hlv_slide1 item active">
+
+
+                                <div class="HLV_calcInnerBox">
+                                    <div class="HLV_calcRow">
+                                        <div class="col-lg-4 col-sm-4" style="position:initial">
+                                            <img src="../../ChildEducationPlanner/images/familynew2.png" class="family_image" alt="" style="text-align:center;margin:auto;display:block;">
+                                        </div>
+                                        <div class="col-lg-8 col-sm-8">
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel" for="txtName" id="txtValidName"> Proposer Name: </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    @Html.TextBoxFor(m => m.Name, new
+                                               {
+                                                   @name = "txtName",
+                                                   @id = "txtName",
+                                                   @class = "HLV_clacInput",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @tabindex = "1",
+                                                   @onpaste = "return false;",
+                                                   @maxlength = "30",
+                                                   @onchange = "fnFocusChange()",
+                                                   @onkeypress = "return alphOnly(this, event)",
+                                                   @onkeyup = "populatetext();",
+                                               })
+                                                </div>
+                                            </div>
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel" for="txtName" id="txtValidName"> Email Id: </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    @Html.TextBoxFor(m => m.email, new
+                                                    {
+                                                       @name = "txtEmail",
+                                                       @id = "txtEmail",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @onkeyup = "populatetext();",
+                                                    })
+
+                                                </div>
+                                            </div>
+
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel" for="txtName" id="txtValidName"> Mobile No: </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    @Html.TextBoxFor(m => m.mobile, new
+                                               {
+                                                   @name = "txtMobile",
+                                                   @id = "txtMobile",
+                                                   @class = "HLV_clacInput numbersOnly",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @onkeyup = "populatetext();",
+                                                   @maxlength = "10",
+                                                    })
+                                                </div>
+                                            </div>
+
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel" id="txtValidDOB" for="txtDob"> Date Of Birth </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <div class="input-group date form_datetime HLV_clacInput"
+                                                         data-date="" data-date-format="dd MM yyyy" data-link-field="txtDob" data-link-format="dd/mm/yyyy">
+                                                        @Html.TextBoxFor(m => m.DOB, new
+                                                   {
+                                                       @name = "txtDob",
+                                                       @id = "txtDob",
+                                                       //@class = "form-control",
+                                                       @size = "16",
+                                                       @readonly = "readonly",
+                                                       @value = "",
+                                                       @onchange = "fnDateOnchange('txtDob','txtAge')",
+                                                       @style = " background: none;border: none;margin:0px;",
+                                                        })
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar" aria-hidden="true">
+                                                            </i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel"> Proposer's Age Is </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    @Html.TextBoxFor(m => m.Age, new
+                                               {
+                                                   @name = "txtAge",
+                                                   @id = "txtAge",
+                                                   @class = "HLV_clacInput",
+                                                   @readonly = "readonly",
+
+                                               })
+                                                </div>
+                                            </div>
+
+                                            <div class="HLV_calcRow">
+                                                <div class="col-lg-6 col-sm-6">
+                                                    <label class="HLV_calcLabel"> No Of Children </label>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-6">
+                                                    @Html.TextBoxFor(m => m.NoOfChildren, new
+                                               {
+                                                   @name = "txtNoOfChildren",
+                                                   @id = "txtNoOfChildren",
+                                                   @class = "HLV_clacInput",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @maxlength = "1",
+                                                   @onchange = "fnFocusChange()",
+                                                   @onkeypress = "return isANumber (event)",
+                                                   @onkeyup = "populatetext();",
+                                               })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="HLV_calcRow HLV_left">
+                                            <input id="btnClick1" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate(false,0, 1)"
+                                                   data-slide="next">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            @foreach (var child in Model.ChildDetails)
+                            {
+                                @Html.Partial("ChildDetails", child)
+                            }
+
+                            <div class="hlv_slide4 item">
+                                <div class="HLV_calcInnerBox">
+                                    <div class="HLV_calcRow">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <img src="../../ChildEducationPlanner/images/familynew2.png" alt="">
+                                        </div>
+                                        <div class="col-lg-8 col-sm-8">
+                                            <div class="col-lg-8 col-md-8 col-sm-12">
+                                                <label class="HLV_calcLabel" for="txtCurrLiability" id="txtValidCurrLiability">
+                                                    My Current Total Savings
+                                                </label>
+                                                <i class="fa fa-inr" aria-hidden="true"></i>
+                                                <input type="text" class="HLV_clacInput" id="txtCurrSavings"
+                                                       onpaste="return false;" onkeypress="return isANumber (event)"
+                                                       maxlength="10" style="border-color: rgb(102, 102, 102);" onkeyup="populatetext();">
+                                            </div>
+                                            <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                                <img src="../../ChildEducationPlanner/images/hlv_current_liquid_assets.png" alt="">
+                                                <p>Current liquid assets Fixed deposit, Mutual funds Etc.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="padding-top:10px;">
+                                        <div class="" style="float:left;">
+                                            <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToLastChild()"></a>
+                                        </div>
+                                        <div class="" style="float:right">
+                                            <input type="button" value="Next" class="btn_newchgdfhov"
+                                                   onclick="fnValidate(false,0, 3)" data-slide="next">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hlv_slide10 item">
+                                <div class="HLV_calcInnerBox">
+                                    <div class="HLV_calcRow">
+                                        <p style="float:left;font-size:18px;">
+                                            Dear @*<input type="text" id="name_last" readonly="" style="border: none;background: none;width: 65px;height: 22px;">*@<span id="name_last"></span>,
+                                        </p> <br /><br />
+                                        @*<p style="font-size:18px;">
+                                            Your Child’s Future only depends on You.So As Par Given detail For Your Children Future <b><i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalNeed" readonly="" style="border: none;background: none;width:85px;height: 22px;"></b>
+                                            and you already saved <b><i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalSavings" readonly="" style="border: none;background: none;width:85px;height: 22px;"></b>
+                                            So remaining <b><i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalGap" readonly="" style="border: none;background: none;width:85px;height: 22px;"></b>
+                                            For best And Secured Saving option Please Contact us So that I can help you to securing for child future financially.*@
+
+                                        @*Requirement: <i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalNeed" readonly="">
+                                            Savings: <i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalSavings" readonly="">
+                                            Gap: <i class="fa fa-inr" aria-hidden="true"></i> <input type="text" id="txtTotalGap" readonly="">
+                                                                                </p>*@
+
+                                        <p style="font-size:18px;">Your Child’s Future only depends on your saving. So as per the given detail for your Children Future the total needed amount is  <b>  <i class="fa fa-inr" aria-hidden="true"></i>@*<input type="text" id="txtTotalNeed" readonly="" style="border: none;background: none;width:85px;height: 22px;">*@<span id="txtTotalNeeds"></span></b> and your currently saved total amount is <b><i class="fa fa-inr" aria-hidden="true"></i> @*<input type="text" id="txtTotalSavings" readonly="" style="border: none;background: none;width:85px;height: 22px;">*@<span id="txtTotal_Saving"></span></b> so your balance amount which you need to save is <b><i class="fa fa-inr" aria-hidden="true"></i> @*<input type="text" id="txtTotalGap" readonly="" style="border: none;background: none;width:85px;height: 22px;">*@<span id="txtTotal_Gap"></span></b>. So to fulfil this gap with best and Secured Saving option Please Contact us, So we can help you to secure your child future financially.</p>
+
+                                        <p class="sum_head1" style="color:#fff;">Here is the summary of your financial preparedness for your children's education</p>
+
+                                    </div>
+                                    <div class="HLV_calcRow">
+                                        <p class="sum_head2" style="color:#000;">Input details provided</p>
+                                    </div>
+                                    <div class="hlv_inputbg">
+                                        @foreach (var child in Model.ChildDetails)
+                                        {
+                                            <div class="col-lg-12 col-sm-12 sum_head3" id="dvSummary@(child.Id.ToString())">
+                                                <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+                                                    <div class="col-md-6 col-sm-5 col-xs-5">
+                                                        <span class="sum_head1">
+                                                            Name :
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-7 col-xs-7">
+                                                        <span class="sum_head1">
+                                                            <input type="text" id="txtName@(child.Id.ToString())" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+                                                    <div class="col-md-6 col-sm-5 col-xs-5">
+                                                        <span class="sum_head1">
+                                                            DOB
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-7 col-xs-7">
+                                                        <span class="sum_head1">
+                                                            <input type="text" id="txtDOB@(child.Id.ToString())" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+                                                    <div class="col-md-6 col-xs-5 col-sm-5">
+                                                        <span class="sum_head1">
+                                                            Current Age
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-7 col-sm-7">
+                                                        <span class="sum_head1">
+                                                            <input type="text" id="txtCurrentAge@(child.Id.ToString())" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 col-sm-12 col-xs-12 col-xs-12">
+                                                    <div class="col-md-3 col-xs-5 col-sm-5">
+                                                        <span class="sum_head1">
+                                                            Total Need
+                                                        </span>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-7 col-sm-7">
+                                                        <span class="sum_head1">
+                                                            <input type="text" id="txtTotalNeed@(child.Id.ToString())" readonly="">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div id="hlvmessageShow" class="HLV_calcRow HLV_xtraPara" readonly=""></div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="mfscheme-container">
+                                            <div id="display"></div>
+                                        </div>
+                                        <div id="chartContainer" align="center">
+                                        </div>
+                                        <div class="wrapper">
+                                            <div id="containercharts" style="width:100%;height:100%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow" style="padding-bottom:20px;">
+                                    <a href="/home/ChildPlanner" id="btn_again"><input type="button" class="btn_newchgdfhov" value="Calculate Again"></a>
+                                </div>
+                                <div class="hlv_inputbg">
+                                    <div class="col-md-10">
+                                        <p style="font-weight: 800;font-size: 16px;color:#000 !important;">I have Better & Suitable Financial Solutions For Securing Your Children Future, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="button" class="btn_newchgdfhov" value="Request Now" id="btn9" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <link href="~/ChildEducationPlanner/css/homeinn.css" rel="stylesheet" />
+        <script src="~/ChildEducationPlanner/js/general_functions.js"></script>
+        <script src="~/ChildEducationPlanner/js/general_validation.js"></script>
+
+        <!-- Return to Top -->
+        <a href="javascript:" id="return-to-top" style="display: block;"><img src="../../ChildEducationPlanner/images/top.png" alt=""></a>
+        <!-- Return to Top -->
+        <script src="~/ChildEducationPlanner/js/backtotop.js"></script>
+        <link href="~/ChildEducationPlanner/css/rwd_wrk.css" rel="stylesheet" />
+    </div>
+}
+
+<form method="post">
+    <input type="text" name="username" id="contact_name" style="display:none;" />
+    <input type="text" name="email" id="contact_email" style="display:none;" />
+    <input type="text" name="phone" id="contact_mobile" style="display:none;" />
+    <input type="text" name="message" id="contact_message" style="display:none;" />
+    <input type="text" id="contact_children" style="display:none;" />
+    <input type="text" id="contact_income" style="display:none;" />
+    <input type="text" id="contactTotalNeed" style="display:none;" />
+    <input type="text" id="contactTotalGap" style="display:none;" />
+    <input type="text" id="contactTotalSavings" style="display:none;" />
+</form>
+<script>
+    function populatetext() {
+        //document.getElementById('contact_name').value = document.getElementById('txtName').value;
+        //document.getElementById('contact_email').value = document.getElementById('txtemail').value;
+        //document.getElementById('contact_mobile').value = document.getElementById('txtmobile').value;
+        //document.getElementById('contact_income').value = document.getElementById('txtAnnIncome').value;
+        //document.getElementById('contact_liablities').value = document.getElementById('txtCurrLiability').value;
+        //document.getElementById('contact_assets').value = document.getElementById('txtCurrLiquidAssets').value;
+        //document.getElementById('contact_lifecover').value = document.getElementById('txtCurrLifeCover').value;
+
+
+        document.getElementById('contact_name').value = document.getElementById('txtName').value;
+        document.getElementById('name_last').innerHTML = document.getElementById('txtName').value;
+        document.getElementById('contact_email').value = document.getElementById('txtEmail').value;
+        document.getElementById('contact_mobile').value = document.getElementById('txtMobile').value;
+        document.getElementById('contact_children').value = document.getElementById('txtNoOfChildren').value;
+        //document.getElementById('txtTotalNeeds').innerHTML = document.getElementById('contactTotalNeed').value;
+        document.getElementById('contact_income').value = document.getElementById('txtTotalNeed').value + document.getElementById('contactTotalGap').value;
+
+        //document.getElementById('contact_lifecover').value = document.getElementById('txtTotalGap').value;
+        document.getElementById('contact_message').value = "Date of Birth: " + document.getElementById('txtDob').value + " No of Childrens" + document.getElementById('contact_children').value + "Total Need: " + document.getElementById('contactTotalNeed').value + "Total Savings:" + document.getElementById('txtCurrSavings').value + "Total Gap:" + document.getElementById('contactTotalGap').value;
+        //document.getElementById('contactTotalSaving').value = document.getElementById('txtCurrSavings').value;
+        //document.getElementById('contact_message').value = "Date of Birth: " + document.getElementById('txtDob').value + " Retirement Age: " + document.getElementById('txtRetmtAge').value + " Annual Income: " + document.getElementById('contact_income').value + " Current Liablities: " + document.getElementById('contact_liablities').value + " Current Assets: " + document.getElementById('contact_assets').value + " Cuurent Life Cover: " + document.getElementById('contact_lifecover').value;
+    }
+</script>
+
+<script type="text/javascript">
+    var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+    $('#btn9').click(function (e) {
+        var data = "Child Education Planner Calculator: Date of Birth: " + document.getElementById('txtDob').value + ", No of Childrens: " + document.getElementById('contact_children').value + ", Total Need: " + $('#contactTotalNeed').val() + ", Total Savings:" + document.getElementById('txtCurrSavings').value + ", Total Gap:" + document.getElementById('contactTotalGap').value;
+        e.preventDefault();
+        $.post("../Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + data + "&subject=Child Education Calculator", function (success) {
+            alert("Thanks For your Interest we will get Back to you soon.");
+            document.getElementById("contact_name").value = "";
+            document.getElementById("contact_mobile").value = "";
+            document.getElementById("contact_email").value = "";
+            //document.getElementById("txtdate1").value = "";
+            document.getElementById("contact_message").value = "";
+            location.reload();
+        });
+    });
+</script>
+
+<link href="~/css/custom/jssocials.css" rel="stylesheet" />
+<link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+<script src="~/css/custom/jssocials.js"></script>
+<script src="~/css/custom/jssocials.min.js"></script>
+<script type="text/javascript">
+    $(window).ready(function () {
+        $("#shareIcons").jsSocials({
+            showLabel: false,
+            showCount: false,
+            shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+        });
+
+        var currentURL = window.location.href;
+        //alert(currentURL);
+        var auth_key = currentURL.split("/");
+        //alert(auth_key[5])
+        $("#btn_again").prop("href", "../ChildPlanner/" + auth_key[6] + "");
+        
+        
+    });
+
+</script>
+

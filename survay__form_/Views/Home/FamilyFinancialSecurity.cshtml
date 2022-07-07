@@ -1,0 +1,2059 @@
+﻿@model survay__form_.Models.EMIPlanCalculator
+@{
+    ViewBag.Title = "FamilyFinancialSecurity";
+    Layout = "~/Views/Shared/hlv.cshtml";
+}
+
+@section AdditionalMeta
+{
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.agentname | Family Finacial Security</title>
+    <link rel="icon" type="image/x-icon" href="@Model.profileimage">
+    <meta name="keywords" content="@Model.agentname, Family Finacial Security,Family Finacial Security, Calculator">
+    <meta name="description" content="Retirment Calculation Form Shared By @Model.agentname">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Present And Future Value">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="@Model.agentname">
+    <meta name="twitter:title" content="Family Finacial Security">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="@Model.agentname">
+    <meta name="twitter:image:src" content="@Model.profileimage">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="@Model.agentname Family Finacial Security" />
+    <meta property="og:type" content="Family Finacial Security" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="@Model.agentname" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+<script src="~/FamilyFinancialSecurity/js/highcharts.js"></script>
+<script src="~/FamilyFinancialSecurity/js/exporting.js"></script>
+<style>
+    @@media (min-width: 1200px) {
+        .col-lg-7 {
+            /*width: 43.333333%;*/
+        }
+    }
+</style>
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 10% !important;
+            border: 5px solid #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 17px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 5px solid #fff;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li {
+        float: left;
+        list-style: none !important;
+        padding: 62px;
+        margin: 0px !important;
+    }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+</style>
+<style>
+    @@media (max-width:767px) {
+        .hidden-xs {
+            display: none !important;
+        }
+    }
+
+    @@media (min-width:768px) and (max-width:991px) {
+        .hidden-sm {
+            display: none !important;
+        }
+    }
+
+    @@media (max-width:767px) {
+        #return-to-top {
+            display: none !important;
+        }
+    }
+
+    @@media (min-width:768px) and (max-width:991px) {
+        #return-to-top {
+            display: none !important;
+        }
+    }
+</style>
+<style>
+    input, textarea {
+        margin-bottom: 0px !important;
+        line-height: initial;
+    }
+
+    .back-section {
+        position: relative;
+        /*padding-bottom: 92px;*/
+        /*background-image: url('../images/kazimrazabackgroundimage.jpg');*/
+        /*width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;*/
+    }
+
+        .back-section:before {
+            position: absolute;
+            content: '';
+            /*background-color: #6a5cbc;*/
+            background-image: linear-gradient(270deg, #d04d85, #534ab3);
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+        }
+</style>
+<style>
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        h1 {
+            padding-top: 10px;
+            font-size: 35px;
+            line-height: 30px;
+            font-weight: 400;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .navbar-brand {
+            padding: 0px !important;
+        }
+
+            .navbar-brand img {
+                width: 250px !important;
+                padding-top: 5px;
+            }
+
+        .main-menu .navbar-header {
+            padding: 0px;
+        }
+
+        .back-section {
+            padding-bottom: 0px;
+            height: 94px;
+        }
+
+            .back-section h1 {
+                padding-top: 20px !important;
+                line-height: initial;
+            }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    th {
+        background: #7666fe !important;
+        color: #fff;
+        border: 1px solid #fff !important;
+    }
+
+    .navbar-toggle {
+        float: right !important;
+        padding: 22px 19px !important;
+        margin-right: 0px !important;
+    }
+
+    .back-section h1 {
+        padding-top: 40px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+</style>
+<script src="~/js/jquery-1.8.0.min.js"></script>
+
+<div>
+    @*<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">*@
+
+
+    <script>
+        $(document).ready(function () {
+            alertify.defaults.transition = "slide";
+            alertify.defaults.theme.ok = "btn btn-primary";
+            alertify.defaults.theme.cancel = "btn btn-danger";
+            alertify.defaults.theme.input = "form-control";
+            $(window).bind('scroll', function () {
+                var navHeight = $(window).height() - 590;
+                if ($(window).scrollTop() > navHeight) {
+                    $('.top_whiteframe').addClass('fixednav');
+                }
+                else {
+                    $('.top_whiteframe').removeClass('fixednav');
+                }
+            });
+        });
+    </script>
+    <script src="~/FamilyFinancialSecurity/js/uisearch.js"></script>
+    <script src="~/FamilyFinancialSecurity/js/classie.js"></script>
+    <script>
+        $('ul.nav li.dropdown').hover(function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function () {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+    <input type="hidden" id="hfGID" name="hfGID" value="">
+</div>
+<div class="clear-fix"></div>
+
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 5px solid #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            font-size:15px;
+            margin: 3px 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 17px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 5px solid #fff;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+
+
+    .curved {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+
+</style>
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <div class="text-center">
+                    <img src="@Model.profileimage" class="profilepic" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="text-left">
+                    <ul class="agname">
+                        <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                        <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.emailid </span> </li>
+                        <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="clear-fix"></div>
+<div></div>
+<!-- Include Date Range Picker -->
+<link href="~/FamilyFinancialSecurity/css/jquery-ui-WM.css" rel="stylesheet" />
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link href="~/FamilyFinancialSecurity/css/blockUIResponsive.css" rel="stylesheet" />
+<script>
+
+    var strName;
+    var strDOB;
+    var intAge;
+    var strGender = "";
+    var intAnnIncome;
+    var intHouseExpnse;
+    var intCurrLiability;
+    var intCurrLiquidAssets;
+    var strRelStatus = "";
+    var strSpsWrkStatus = "";
+    var intSpouseAnnSalary = 0;
+    var intSpouseIncomeGrowthPercentage = 0;
+    var strInsured = "";
+    var intCurrLifeCover;
+    var today;
+    var strDobAge;
+    var intRetmtAge;
+    var intAnnualIncome;
+    var intFamilyExpenses;
+    var intInflationRate = 0;
+    var intInterestRate = 0;
+    var intAmtBalance = 0;
+    var intAmtRequired = 0;
+    var intAgeDiff = 0;
+    var intPresentValue = 0;
+    var genderID = "";
+
+    /******************************************************************************************************
+                                        Function for Onload - Start
+    /******************************************************************************************************/
+
+    function fnHLVCaluclator() {
+        document.getElementById("txtAge").value = "";
+    }
+
+    /******************************************************************************************************
+                                        Function for Onload - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                                        Function for Alertify JS - Start
+    /******************************************************************************************************/
+    function reset(strFieldName) {
+        $("#toggleCSS").attr("href", "/FamilyFinancialSecurity/css/alertify.default.css");
+        alertify.set({
+            labels: {
+                ok: "OK",
+                cancel: "Cancel"
+            },
+            delay: 5000,
+            buttonFocus: "ok"
+        });
+        if (strFieldName != "") {
+            document.getElementById(strFieldName).focus();
+        }
+    }
+
+    function fnAlert(strFieldName, strMessage) {
+        alertify.alert("Error", strMessage).set('onok', function (closeEvent) {
+            if (strFieldName != "") {
+                document.getElementById(strFieldName).focus();
+            }
+        });
+    }
+
+    /******************************************************************************************************
+                                        Function for Alertify JS - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                                        Function for Date Time Parameter - Start
+    /******************************************************************************************************/
+    $(document).ready(function () {
+        $('.form_datetime').datetimepicker({
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+        //        $("#txtDob").datepicker({
+        //            changeMonth: true,
+        //            changeYear: true,
+        //dateFormat: 'dd/mm/yy',
+        //yearRange : "-70:+0",
+        //beforeShow: function(){
+        //		$(".ui-datepicker").css('font-size', 15),
+        //		$(".ui-datepicker").css('font-family', 'Roboto, sans-serif'),
+        //		$(".ui-datepicker").css('color', '#000000'),
+        //		$(".ui-datepicker").css('background', '#DEE5FB'),
+        //		$(".ui-datepicker").css('color', '#582053')
+        //		$(".ui-datepicker-trigger").css('color', '#582053')
+        //}
+        //        });
+    });
+
+    /******************************************************************************************************
+                                        Function for Date Time Parameter - End
+    /******************************************************************************************************/
+
+
+    /******************************************************************************************************
+                                        Function for only alphabets keypress - Start
+    /******************************************************************************************************/
+    function alphOnly(txt, e) {
+        var arr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' ";
+        var code;
+        if (window.event)
+            code = e.keyCode;
+        else
+            code = e.which;
+        var char = keychar = String.fromCharCode(code);
+        if (arr.indexOf(char) == -1)
+            return false;
+    }
+
+    /******************************************************************************************************
+                                        Function for only alphabets keypress - End
+    /******************************************************************************************************/
+
+
+    /******************************************************************************************************
+                                        Function for Preventing the starting space - Start
+    /******************************************************************************************************/
+    function setCaretPosition(elem, caretPos) {
+        if (elem != null) {
+            if (elem.createTextRange) {
+                var range = elem.createTextRange();
+                range.move('character', caretPos);
+                range.select();
+            }
+            else {
+                if (elem.selectionStart) {
+                    elem.focus();
+                    elem.setSelectionRange(caretPos, caretPos);
+                }
+                else
+                    elem.focus();
+            }
+        }
+    }
+
+    //$(function () {
+    //	$("#txtName").on('input', function (event) {
+    //		var posCaret = this.selectionStart;
+    //		this.value = this.value.replace(/^\s+/, '');
+    //		setCaretPosition(this, posCaret);
+    //	});
+    //});
+
+    /******************************************************************************************************
+                                        Function for Preventing the starting space - End
+    /******************************************************************************************************/
+
+
+    /******************************************************************************************************
+                                        Function to claculate Age on Date change - Start
+    /******************************************************************************************************/
+    function fnDateOnchange() {
+        fnAgeCalc();
+        fnFocusChange();
+    }
+
+
+    function fnAgeCalc() {
+        //debugger;
+        var today = new Date();
+        var stDOB = document.getElementById("txtDob").value;
+        var datearray = stDOB.split('/');
+        var newdate = datearray[1] + '/' + datearray[0] + '/' + datearray[2];
+        var birthDate = new Date(newdate);
+        intAGE = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            intAGE--;
+        }
+
+
+        if (today < strDobAge) {
+            fnAlert('txtDob', 'DOB should be less than current date');
+            document.getElementById("txtDob").style.borderColor = "#ff0000";
+            document.getElementById("txtAge").value = "";
+            return false;
+
+
+        }
+        else {
+            document.getElementById("txtAge").value = intAGE;
+        }
+
+    }
+
+    /******************************************************************************************************
+                                        Function to claculate Age on Date change - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to get back the original color on label after the error color - Start
+    /******************************************************************************************************/
+    function fnFocusChange() {
+        //debugger;
+        document.getElementById("txtName").style.borderColor = "#666666";
+        document.getElementById("txtDob").style.borderColor = "#666666";
+        document.getElementById("txtRetmtAge").style.borderColor = "#666666";
+        document.getElementById("txtAnnIncome").style.borderColor = "#666666";
+        document.getElementById("txtHouseExpnse").style.borderColor = "#666666";
+        document.getElementById("txtCurrLiability").style.borderColor = "#666666";
+        document.getElementById("txtSpouseAnnSalary").style.borderColor = "#666666";
+        document.getElementById("txtSpouseIncomeGrowthPercentage").style.borderColor = "#666666";
+        document.getElementById("txtCurrLifeCover").style.borderColor = "#666666";
+
+    }
+
+    /******************************************************************************************************
+                      Function to get back the original color on label after the error color - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to check if the its number or not - Start
+    /******************************************************************************************************/
+    function isANumber(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+    }
+
+
+    /******************************************************************************************************
+                        Function to check if the its number or not - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to assign values to gender variable - Start
+    /******************************************************************************************************/
+    function funGender(gen) {
+        genderID = gen;
+        //debugger;
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+
+    }
+
+    /******************************************************************************************************
+                        Function to assign values to gender variable - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to assign values to Relation Status variable - Start
+    /******************************************************************************************************/
+    function funRelStaus(relstatus) {
+        //debugger;
+        if (relstatus == "1") {
+            strRelStatus = "Single";
+
+
+        }
+        else if (relstatus == "2") {
+            strRelStatus = "Married";
+        }
+
+    }
+
+    /******************************************************************************************************
+                        Function to assign values to Relation Status variable - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to assign values to Spouse Employeed or not variable - Start
+    /******************************************************************************************************/
+    function funSpseWrkStatus(wrkStatus) {
+        //debugger;
+        if (wrkStatus == "1") {
+            strSpsWrkStatus = "Earning";
+        }
+        else if (wrkStatus == "2") {
+            strSpsWrkStatus = "Not Earning";
+        }
+
+    }
+
+    /******************************************************************************************************
+                        Function to assign values to Spouse Employeed or not variable - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to assign values to check if insured or not - Start
+    /******************************************************************************************************/
+    function funInsured(insu) {
+        //debugger;
+        if (insu == "1") {
+            strInsured = "Insured";
+        }
+        else if (insu == "2") {
+            strInsured = "Not Insured";
+        }
+
+    }
+
+    /******************************************************************************************************
+                        Function to assign values to check if insured or not - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 1st Next Click - Start
+    /******************************************************************************************************/
+
+
+    function fnValidate1() {
+        //debugger;
+        strName = document.getElementById("txtName").value;
+        strDOB = document.getElementById("txtDob").value;
+        intAge = document.getElementById("txtAge").value;
+        intRetmtAge = document.getElementById("txtRetmtAge").value;
+        strEmail = document.getElementById("txtemail").value;
+        intMobile = document.getElementById("txtmobile").value;
+        intInflationRate = document.getElementById("txtInflationRate").value;
+        atpos = strEmail.indexOf("@@");
+        dotpos = strEmail.lastIndexOf(".");
+        filter = (/^\d*(?:\.\d{1,2})?$/) || (charCode > 31 && (charCode < 48 || charCode > 57));
+
+        if (strName == "") {
+            fnAlert('txtName', 'Enter your name');
+            document.getElementById("txtName").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (strDOB == "") {
+            fnAlert('txtDob', 'Select DOB');
+            document.getElementById("txtDob").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (parseInt(intAge) < 0) {
+            fnAlert('txtDob', 'Select proper DOB');
+            document.getElementById("txtDob").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (intRetmtAge == "") {
+            fnAlert('txtRetmtAge', 'Enter your retirement age');
+            document.getElementById("txtRetmtAge").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= strEmail.length) {
+            fnAlert('txtemail', 'Enter your correct Email');
+            document.getElementById("txtemail").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (intMobile == "" || isNaN(intMobile) || intMobile.length != 10) {
+            fnAlert('txtmobile', 'Enter Correct Mobile No');
+            document.getElementById("txtmobile").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (parseInt(intAge) >= parseInt(intRetmtAge)) {
+            fnAlert('txtRetmtAge', 'Retirement age should be greater than date of birth');
+            document.getElementById("txtRetmtAge").style.borderColor = "#ff0000";
+            return false;
+        }
+
+        if (intInflationRate == "" || parseInt(intInflationRate) < 0) {
+            fnAlert('txtInflationRate', 'Enter inflation rate');
+            document.getElementById("txtInflationRate").style.borderColor = "#ff0000";
+            return false;
+        }
+        else if (strGender == "") {
+            fnAlert('', 'Select your gender');
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(1);
+        }
+
+    }
+
+
+    /******************************************************************************************************
+                        Function to validate for 1st Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 2nd Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate2() {
+        //debugger;
+        intAnnIncome = document.getElementById("txtAnnIncome").value;
+
+        if (intAnnIncome == "") {
+            fnAlert('txtAnnIncome', 'Enter your annual salary');
+            document.getElementById("txtAnnIncome").style.borderColor = "#ff0000";
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(2);
+        }
+
+    }
+
+    function fnValidatePrev2() {
+        $("#myCarousel").carousel(0);
+
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+
+    /******************************************************************************************************
+                        Function to validate for 2nd Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 3rd Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate3() {
+        //debugger;
+        intHouseExpnse = document.getElementById("txtHouseExpnse").value;
+
+        if (intHouseExpnse == "") {
+            fnAlert('txtHouseExpnse', 'Enter your household expense');
+            document.getElementById("txtHouseExpnse").style.borderColor = "#ff0000";
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(3);
+        }
+    }
+
+    function fnValidatePrev3() {
+        $("#myCarousel").carousel(1);
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+
+    /******************************************************************************************************
+                        Function to validate for 3rd Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 4th Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate4() {
+        //debugger;
+        intCurrLiability = document.getElementById("txtCurrLiability").value;
+
+        if (intCurrLiability == "") {
+            fnAlert('txtCurrLiability', 'Enter your current liabilities');
+            document.getElementById("txtCurrLiability").style.borderColor = "#ff0000";
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(4);
+        }
+
+    }
+
+    function fnValidate4a() {
+        //debugger;
+        intCurrLiquidAssets = document.getElementById("txtCurrLiquidAssets").value;
+
+        if (intCurrLiquidAssets == "") {
+            fnAlert('txtCurrLiquidAssets', 'Enter your current liquid assets');
+            document.getElementById("txtCurrLiquidAssets").style.borderColor = "#ff0000";
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(5);
+        }
+
+    }
+    function fnValidatePrev4() {
+        $("#myCarousel").carousel(2);
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+
+    function fnValidatePrev4a() {
+        $("#myCarousel").carousel(4);
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+    /******************************************************************************************************
+                        Function to validate for 4th Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 5th Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate5() {
+        //debugger;
+
+        if (strRelStatus == "") {
+            fnAlert('', 'Select your relationship status');
+            return false;
+        }
+        else {
+            if (strRelStatus == "Single") {
+                $("#myCarousel").carousel(8);
+            }
+            else if (strRelStatus == "Married") {
+                $("#myCarousel").carousel(6);
+                $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/status_married.png");
+            }
+        }
+
+    }
+
+    function fnValidatePrev5() {
+        $("#myCarousel").carousel(5);
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+
+    /******************************************************************************************************
+                        Function to validate for 5th Next Click - End
+    /******************************************************************************************************/
+
+
+    /******************************************************************************************************
+                        Function to validate for 6th Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate6() {
+        //debugger;
+        if (strSpsWrkStatus == "") {
+            fnAlert('', 'Select your spouse working status');
+            return false;
+        }
+        else {
+            if (strSpsWrkStatus == "Earning") {
+                $("#myCarousel").carousel(7);
+                $(".HLV_notinsured").removeClass("HLV_insuredActive");
+                $(".HLV_insured").removeClass("HLV_insuredActive");
+
+            }
+            else if (strSpsWrkStatus == "Not Earning") {
+                $("#myCarousel").carousel(8);
+                $(".HLV_insured").removeClass("HLV_insuredActive");
+                $(".HLV_notinsured").removeClass("HLV_insuredActive");
+            }
+
+        }
+    }
+
+    function fnValidatePrev6() {
+        $("#myCarousel").carousel(6);
+        if (genderID == "1") {
+            strGender = "Male";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_maleFull.png");
+
+        }
+        else if (genderID == "2") {
+            strGender = "Female";
+            $(".imgGender").attr("src", "../../FamilyFinancialSecurity/images/hlv_femaleFull.png");
+
+        }
+    }
+
+    /******************************************************************************************************
+                        Function to validate for 6th Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 7th Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate7() {
+        //debugger;
+        intSpouseAnnSalary = document.getElementById("txtSpouseAnnSalary").value;
+        intSpouseIncomeGrowthPercentage = document.getElementById("txtSpouseIncomeGrowthPercentage").value;
+        if (intSpouseAnnSalary == 0) {
+            fnAlert('txtSpouseAnnSalary', 'Enter your spouse annual salary');
+            document.getElementById("txtSpouseAnnSalary").style.borderColor = "#ff0000";
+            return false;
+        }
+        if (intSpouseIncomeGrowthPercentage == 0) {
+            fnAlert('txtSpouseIncomeGrowthPercentage', 'Enter your spouse annual growth percentage');
+            document.getElementById("txtSpouseIncomeGrowthPercentage").style.borderColor = "#ff0000";
+            return false;
+        }
+        else {
+            $("#myCarousel").carousel(8);
+        }
+
+    }
+
+
+    function fnValidatePrev7() {
+        $("#myCarousel").carousel(6);
+    }
+    /******************************************************************************************************
+                        Function to validate for 7th Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 8th Next Click - Start
+    /******************************************************************************************************/
+
+    function fnValidate8() {
+        //debugger;
+        if (strInsured == "") {
+            fnAlert('', 'Select if you are insured or not');
+            return false;
+        }
+        else {
+            if (strInsured == "Insured") {
+                $("#myCarousel").carousel(9);
+            }
+            else if (strInsured == "Not Insured") {
+                fnValidate9();
+                //$("#myCarousel").carousel(9);
+            }
+
+        }
+    }
+
+    function fnValidatePrev() {
+
+        //debugger;
+
+        if (strRelStatus == "Single") {
+            $("#myCarousel").carousel(5);
+        }
+        else if (strSpsWrkStatus == "Earning" && strInsured == "") {
+            $("#myCarousel").carousel(7);
+        }
+        else if (strSpsWrkStatus == "Earning" && strInsured == "") {
+            $("#myCarousel").carousel(7);
+        }
+        else if (strSpsWrkStatus == "Not Earning" && strInsured == "") {
+            $("#myCarousel").carousel(6);
+        }
+        else if (strSpsWrkStatus == "Not Earning" && strInsured == "") {
+            $("#myCarousel").carousel(6);
+        }
+        else if (strSpsWrkStatus == "Earning" && strInsured == "Insured") {
+            $("#myCarousel").carousel(7);
+        }
+        else if (strSpsWrkStatus == "Earning" && strInsured == "Not Insured") {
+            $("#myCarousel").carousel(7);
+        }
+        else if (strSpsWrkStatus == "Not Earning" && strInsured == "Insured") {
+            $("#myCarousel").carousel(6);
+        }
+        else if (strSpsWrkStatus == "Not Earning" && strInsured == "Not Insured") {
+            $("#myCarousel").carousel(6);
+        }
+
+
+    }
+
+    /******************************************************************************************************
+                        Function to validate for 8th Next Click - End
+    /******************************************************************************************************/
+
+    /******************************************************************************************************
+                        Function to validate for 9th Next Click - Start
+    /******************************************************************************************************/
+
+    var reqCashProvision = 0;
+    var reqPCashProvision = 0;
+    var balance = 0;
+    var required = 0;
+    var hlvValue = 0;
+    var hlvmessage = "";
+    var hlvhappnCover = "";
+    var hlvhappnCoverText = "";
+    var hlvotherpercent = "";
+
+
+    function fnValidate9() {
+        //debugger;
+
+        if (strInsured == "Not Insured") {
+            intCurrLifeCover = 0;
+        }
+        else {
+            intCurrLifeCover = document.getElementById("txtCurrLifeCover").value;
+            if (intCurrLifeCover == "") {
+                fnAlert('txtCurrLifeCover', 'Enter your current life cover');
+                document.getElementById("txtCurrLifeCover").style.borderColor = "#ff0000";
+                return false;
+            }
+        }
+
+
+        document.getElementById("txtMyIncome").value = intAnnIncome;
+        document.getElementById("txtSpouseIncome").value = intSpouseAnnSalary;
+        document.getElementById("txtSpouseIncomeGrowthPercentage").value = intSpouseIncomeGrowthPercentage;
+        document.getElementById("txtExpenditure").value = intHouseExpnse;
+        document.getElementById("txtCurLiab").value = intCurrLiability;
+        document.getElementById("txtLifeCover").value = intCurrLifeCover;
+
+        intAnnualIncome = parseInt(intAnnIncome) + parseInt(intSpouseAnnSalary);
+
+        jQuery.support.cors = true;
+
+        var HLVCalcInput =
+        {
+            Name: strName,
+            DOB: strDOB,
+            Age: intAge,
+            RetirementAge: intRetmtAge,
+            AnnualIncome: intAnnualIncome,
+            SpouseAnnualIncome: intSpouseAnnSalary,
+            SpouseIncomeGrowthPercentage: intSpouseIncomeGrowthPercentage,
+            AnnualExpenses: intHouseExpnse,
+            InflationRate: intInflationRate,
+            LifeInsuranceCover: intCurrLifeCover,
+            CurrentLiabilities: intCurrLiability,
+            LiquidableSavings: intCurrLiquidAssets
+        };
+        $.ajax({
+
+            url: '../hlvCalculator',
+            type: 'POST',
+            data: JSON.stringify(HLVCalcInput),
+            contentType: "application/json;charset=utf-8",
+            dataType: "text",
+            success: function (data) {
+                var json = $.parseJSON(data);
+
+                hlvValue = json.HumanLifeValue;
+                hlvmessage = json.HLVMessage;
+
+                if (hlvValue != 0) {
+                    document.getElementById("txtHumanLifeValue").value = hlvValue;
+                    document.getElementById("hlvmessageShow").innerHTML = hlvmessage;
+
+                    hlvhappnCover = json.HappinessIndex;
+                    hlvhappnCover = Math.round(hlvhappnCover);
+                    hlvhappnCoverText = "Happiness Cover";
+                    hlvotherpercent = 100 - parseFloat(hlvhappnCover);
+                    hlvotherpercent = Math.round(hlvotherpercent);
+                    var hlvOtherText = "Required Cover";
+
+                    document.getElementById("hppnCoverPercent").value = hlvhappnCover;
+
+                    strArray = "['" + hlvhappnCoverText.replace("'", "") + "'," + hlvhappnCover + "],";
+                    strArray += "['" + hlvOtherText + "'," + hlvotherpercent + "],";
+
+                    strArray = "[" + strArray.substring(0, strArray.length - 1) + "]";
+
+                    fnGraphComp(strArray.replace(/\"/g, ""));
+                    $("#myCarousel").carousel(10);
+
+                }
+                else {
+                    document.getElementById("txtHumanLifeValue").value = 0;
+                    document.getElementById("hlvmessageShow").innerHTML = "";
+                    document.getElementById("hppnCoverPercent").value = 0;
+                    $("#myCarousel").carousel(10);
+                }
+            },
+            error: function (x) {
+                //alert('Failed' + x);
+            }
+        });
+
+    }
+
+
+    function fnValidatePrev9() {
+        $("#myCarousel").carousel(8);
+    }
+    /******************************************************************************************************
+                        Function to validate for 9th Next Click - End
+    /******************************************************************************************************/
+
+
+
+    function conv_number(expr, decplaces) {
+        var str = "" + Math.round(eval(expr) * Math.pow(10, decplaces));
+        while (str.length <= decplaces) {
+            str = "0" + str;
+        }
+        var decpoint = str.length - decplaces;
+        return (str.substring(0, decpoint) + "." + str.substring(decpoint, str.length));
+    }
+
+
+    // Parameters are rate, total number of periods, payment made each period and future value
+    function pv(rate, nper, pmt, fv) {
+        rate = parseFloat(rate);
+        nper = parseFloat(nper);
+        pmt = parseFloat(pmt);
+        fv = parseFloat(fv);
+        if (nper == 0) {
+            //alert("Why do you want to test me with zeros?");
+            return (0);
+        }
+        if (rate == 0) { // Interest rate is 0
+            pv_value = -(fv + (pmt * nper));
+        } else {
+            x = Math.pow(1 + rate, -nper);
+            y = Math.pow(1 + rate, nper);
+            pv_value = - (x * (fv * rate - pmt + y * pmt)) / rate;
+        }
+        pv_value = conv_number(pv_value, 2);
+        return (pv_value);
+    }
+
+    function PV(rate, nper, pmt) {
+        return pmt / rate * (1 - Math.pow(1 + rate, -nper));
+    }
+
+    function presentValue(fv, freq, rate, periods) {
+        return (fv / Math.pow((1 + (rate / 100 / freq)), periods));
+    }
+
+
+    function fnGraphComp(mf) {
+
+        var srtPiePlot = mf.replace(/'/g, "\"");
+        var srtPiePlotArray = JSON.parse(srtPiePlot);
+
+        // Build the chart
+        $(document).ready(function ()
+        {
+            Highcharts.setOptions({
+                colors: ['#fe6cab', '#7566fd', '#64E572', '#FF9655', '#FFF263', '#6AF9C4', '#058DC7', '#50B432', '#ED561B']
+            });
+
+            Highcharts.chart('chartContainer', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false
+                },
+                title: {
+                    text: 'Family Financial Security'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Browser share',
+                    data: srtPiePlotArray
+                }]
+            });
+
+
+            //Highcharts.chart('chartContainer', {
+            //	chart: {
+            //	plotBackgroundColor: null,
+            //	plotBorderWidth: null,
+            //	plotShadow: false,
+            //	type: 'pie'
+            //	},
+            //	title: {
+            //	text: 'Family Financial Security Calculator'
+            //	},
+            //	tooltip: {
+            //	pointFormat: '{series.name}: <b>{point.y:.2f}%</b>'
+
+            //	},
+            //	plotOptions: {
+            //	pie: {
+            //		allowPointSelect: true,
+            //		cursor: 'pointer',
+            //		dataLabels: {
+            //			enabled: false,
+            //			 format: '<b>{point.name}</b>: {point.y:.2f} %',
+
+            //			style: {
+            //				color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+            //			}
+            //		},
+            //		showInLegend: true
+            //	}
+            //	},
+            //	series: [{
+            //	name: 'percent',
+            //	colorByPoint: true,
+            //	data: srtPiePlotArray
+
+
+            //	}]
+            //	});
+        });
+
+    }
+
+
+</script>
+
+<div class="curved">
+    <div style="">
+        <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> Family Financial Security Calculator </h2>
+    </div>
+</div>
+
+<div class="HLV_slideCanvas">
+    <div class="container" id="HLV_calc">
+        <div class="row">
+
+            <div class="HLV_calc_cnt">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+
+                        <div id="div1" class="hlv_slide1 item active">
+
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel" for="txtName" id="txtValidName"> Name </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="text" name="txtName" id="txtName" class="HLV_clacInput"
+                                               style="border-color: rgb(102, 102, 102);" tabindex="1"
+                                               onpaste="return false;" ondrop="return false" maxlength="30" onchange="fnFocusChange()"
+                                               onkeypress="return alphOnly(this, event)" onkeyup="populateSecondTextBox();">
+                                    </div>
+                                </div>
+
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel" id="txtValidDOB" for="txtDob"> Date Of Birth </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <div class="input-group date form_datetime HLV_clacInput"
+                                             data-date="" data-date-format="dd MM yyyy" data-link-field="txtDob" data-link-format="dd/mm/yyyy">
+                                            <input class="HLV_clacInput" size="16" type="text" id="txtDob" value=""
+                                                   readonly onchange="fnDateOnchange()">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar" aria-hidden="true">
+                                                </i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel"> Age </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="text" id="txtAge" class="HLV_clacInput" readonly="">
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel"> Retirement Age </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="text" id="txtRetmtAge" class="HLV_clacInput"
+                                               maxlength="2" onchange="fnFocusChange()" style="border-color: rgb(102, 102, 102);">
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel"> Email Id </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="email" id="txtemail" class="HLV_clacInput" onkeyup="populateSecondTextBox();">
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel"> Mobile No </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="text" id="txtmobile" class="HLV_clacInput" maxlength="10" onkeyup="populateSecondTextBox();">
+                                    </div>
+                                </div>
+
+
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel"> Inflation Rate </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                        <input type="text" id="txtInflationRate" class="HLV_clacInput"
+                                               maxlength="2" onchange="fnFocusChange()" style="border-color: rgb(102, 102, 102);">
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-5 col-sm-5">
+                                        <label class="HLV_calcLabel HLV_gender" for="txtGender" id="txtValidGender"> My Gender Is </label>
+                                    </div>
+                                    <div class="col-lg-7 col-sm-7">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <span class="HLV_male" id="txtMale" onclick="funGender(1);"></span>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <span class="HLV_female" id="txtFemale" onclick="funGender(2);"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick1" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate1()"
+                                           data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="div2" class="hlv_slide2 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel" for="txtAnnIncome" id="txtValidMonthlyIncome"> Annual Income </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtAnnIncome"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);" onkeyup="populateSecondTextBox()">
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-7 hlv_rightImg">
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_monthly_income.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev2()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick2" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate2()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide3 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel" for="txtHouseExpnse" id="txtValidHouseExpnse"> Household Expenses (Annual) </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtHouseExpnse"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);">
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_household_exp.png" alt="" style="margin-bottom:20px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev3()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick3" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate3()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide4 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel" for="txtCurrLiability" id="txtValidCurrLiability">
+                                                Current Liabilities
+                                            </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtCurrLiability"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);" onkeyup="populateSecondTextBox()">
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_current_liab.png" alt="">
+                                            <p>Outstanding amount of Home Loan, Car Loan, Education Loan Etc.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev4()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick4" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate4()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide4 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel" for="txtCurrLiability" id="txtValidCurrLiability">
+                                                Current Liquid Assets
+                                            </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtCurrLiquidAssets"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);" onkeyup="populateSecondTextBox()">
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_current_liquid_assets.png" alt="">
+                                            <p>Current liquid assets Fixed deposit, Mutual funds Etc.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev4a()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick4" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate4a()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide5 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+
+                                        <label class="HLV_calcLabel"> Relation Status </label>
+
+                                        <div class="hlv_rightImg">
+                                            <div class="col-lg-6 col-sm-6 col-xs-6">
+                                                <span class="HLV_singlemale" id="txtSingle" onclick="funRelStaus(1);"></span>
+                                                <p>Single</p>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6 col-xs-6">
+                                                <span class="HLV_singlefemale" id="txtMarried" onclick="funRelStaus(2);"></span>
+                                                <p>Married</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev5()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick5" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate5()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide6 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-md-3 col-sm-4" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-8">
+
+                                        <label class="HLV_calcLabel"> Spouse </label>
+
+                                        <div class="hlv_rightImg">
+                                            <div class="col-lg-6 col-sm-6 col-xs-6 hvr-grow">
+                                                <span class="HLV_earning" id="txtEarning" onclick="funSpseWrkStatus(1);">
+                                                    <img src="../../FamilyFinancialSecurity/images/hlv_salaried.png" alt="" class="HLV_earningImg">
+                                                </span>
+                                                <p> Earning </p>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6 col-xs-6 hvr-grow">
+                                                <span class="HLV_notearning" id="txtNotEarning" onclick="funSpseWrkStatus(2);">
+                                                    <img src="../../FamilyFinancialSecurity/images/hlv_notsalaried.png" alt="" class="HLV_notearningImg">
+                                                </span>
+                                                <p> Not Earning </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev6()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick6" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate6()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide7 item" id="displaynone7">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-md-3 col-sm-4" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-sm-8">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel" for="txtSpouseAnnSalary" id="txtValidSpouseMSalary"> Spouse Annual Income </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtSpouseAnnSalary"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);">
+                                        </div>
+
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="padding-top:10px;border-bottom: 1px solid #000;"*@>
+                                            <label class="HLV_calcLabel" for="txtSpouseIncomeGrowthPercentage"
+                                                   id="txtValidSpouseIncomeGrowthPercentage">Income Growth Percentage</label>
+                                            <input type="text" class="HLV_clacInput" id="txtSpouseIncomeGrowthPercentage"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="2" style="border-color: rgb(102, 102, 102);">
+                                        </div>
+
+                                        <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                            @*<img src="~/images/hlv_salaried.png" alt="">*@
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_monthly_income.png" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev7()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick7" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate7()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide8 item" id="displaynone8">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-md-3 col-sm-4">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9 col-sm-8">
+
+                                        <label class="HLV_calcLabel">I Am Currently </label>
+
+                                        <div class="hlv_rightImg">
+                                            <div class="col-lg-6 col-sm-6 col-xs-6 hvr-grow">
+                                                <span class="HLV_insured" id="txtInsured" onclick="funInsured(1);">
+                                                    <img src="../../FamilyFinancialSecurity/images/hlv_current_insured.png" alt="">
+                                                </span>
+                                                <p> Insured </p>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-6 col-xs-6 hvr-grow">
+                                                <span class="HLV_notinsured" id="txtNotInsured" onclick="funInsured(2);">
+                                                    <img src="../../FamilyFinancialSecurity/images/hlv_current_notinsured.png" alt="">
+                                                </span>
+                                                <p> Not Insured </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <input href="#myCarousel" id="btnClickPrev" type="button" value="Previous" onclick="fnValidatePrev()" class="btn_newchgdfhov" data-slide="prev">
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick8" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate8()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide9 item" id="displaynone9">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3" style="position:initial">
+                                        <img class="imgGender" src="../../FamilyFinancialSecurity/images/hlv_femaleFull.png" alt="">
+                                    </div>
+                                    <div class="col-lg-9 col-sm-9">
+                                        <div class="col-lg-8 col-md-8 col-sm-12" @*style="border-bottom: 1px solid #000;padding: 0px;"*@>
+                                            <label class="HLV_calcLabel"> Current Life Insurance Cover </label>
+                                            <i class="fa fa-inr" aria-hidden="true"></i>
+                                            <input type="text" class="HLV_clacInput" id="txtCurrLifeCover"
+                                                   onpaste="return false;" onkeypress="return isANumber (event)"
+                                                   maxlength="10" style="border-color: rgb(102, 102, 102);" onkeyup="populateSecondTextBox()">
+                                        </div>
+                                        <div class="col-lg-8 col-md-12 hlv_rightImg" style="position:initial">
+                                            <img src="../../FamilyFinancialSecurity/images/hlv_currentLifeCover.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="HLV_calcRow HLV_right">
+                                    <a href="#myCarousel" data-slide="prev"><input type="button" class="btn_newchgdfhov" value="Previous" onclick="fnValidatePrev9()"></a>
+                                </div>
+                                <div class="HLV_calcRow HLV_left">
+                                    <input id="btnClick9" type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate9()" data-slide="next">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hlv_slide10 item">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <p class="sum_head1">Your human life value: <input type="text" id="txtHumanLifeValue" readonly=""></p>
+                                    <p class="sum_head1" id="txtHLVMessage" readonly=""></p>
+                                    <p class="sum_head1">Here is the summary of your financial preparedness towards any Eventuality</p>
+                                </div>
+                                <div class="HLV_calcRow">
+                                    <p class="sum_head2">Calculation As Par Given Parameters</p>
+                                </div>
+                                <div class="hlv_inputbg">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6 col-sm-6 sum_head3">
+                                            @*<div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">*@
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><span class="sum_head1">Income:</span></div>
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><input type="text" id="txtMyIncome" readonly=""></div>
+                                            @*</div>*@
+                                            @*<div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">*@
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><span class="sum_head1">Spouse's Income:</span></div>
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><input type="text" id="txtSpouseIncome" readonly=""></div>
+                                            @*</div>*@
+                                            @*<div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">*@
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><span class="sum_head1">Expenditure:</span></div>
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><input type="text" id="txtExpenditure" readonly=""></div>
+                                            @*</div>*@
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 sum_head3">
+                                            @*<div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">*@
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><span class="sum_head1">Current Liabilities:</span></div>
+                                            <div class="col-md-6 col-xs-6 col-xss-12"><input type="text" id="txtCurLiab" readonly=""></div>
+                                            @*</div>*@
+                                            @*<div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">*@
+                                            <div class="col-md-8 col-sm-6 col-xs-6 col-xss-12"><span class="sum_head1">Current Life Insurance Coverage:</span></div>
+                                            <div class="col-md-4 col-sm-6 col-xs-6 col-xss-12"><input type="text" id="txtLifeCover" readonly=""></div>
+                                            @*</div>*@
+                                            <div class="col-lg-12 col-sm-12 col-xs-12 col-xss-12">
+                                                <p class="sum_head2"><span style="font-size: 16px;">Your Family Financial Security cover is</span><input type="text" id="hppnCoverPercent" readonly=""><span>%</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="hlvmessageShow" class="HLV_calcRow HLV_xtraPara" readonly="">
+                                </div>
+
+                                <div class="col-md-12 col-xs-12">
+                                    <div class="mfscheme-container">
+                                        <div id="display"></div>
+                                    </div>
+                                    <div id="chartContainer" align="center">
+
+                                        <!--<div id="imgLoadUP" style="display:block;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="HLV_calcRow">
+                                            <img src="~/images/hlv_sumPieChart.png" alt="" />
+                                        </div>-->
+
+
+                                    </div>
+                                    <div class="HLV_calcRow" style="display:block">
+                                        <a href="/Home/FamilyFinancialSecurity" id="btn_again"><input type="button" class="btn_newchgdfhov" value="Calculate Again"></a>
+                                        @*<a href="~/LicInfo/Plan#collapseOne_3"><input type="button" class="btn_newchgdfhov" value="LIC for Family Financial Security"></a>*@
+                                    </div>
+                                    <div class="HLV_calcRow" style="background:#FFF;padding:10px;">
+                                        <div class="col-md-10">
+                                            <p style="font-weight: 800;font-size: 16px;">I Have Better & Suitable Financial Solutions For your Family Financial Security, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="button" class="btn_newchgdfhov" value="Request Now" id="btn9" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*Contact US*@
+<form method="post">
+    <input type="text" name="username" id="contact_name" style="display:none;" />
+    <input type="text" name="email" id="contact_email" style="display:none;" />
+    <input type="text" name="mobile" id="contact_mobile" style="display:none;" />
+    <input type="text" name="message" id="contact_message" style="display:none;" />
+    <input type="text" id="contact_income" style="display:none;" />
+    <input type="text" id="contact_liablities" style="display:none;" />
+    <input type="text" id="contact_assets" style="display:none;" />
+    <input type="text" id="contact_lifecover" style="display:none;" />
+</form>
+
+<script>
+    //debugger
+    //$(document).ready(function () {
+    //    var input_value = $(document.getElementById('txtemail')).val();//collects the value of the *second* input
+    //    console.log(input_value); //logs input_value
+    //});
+    //document.getElementById('txtSecond').value = document.getElementById('txtFirst').value;
+
+    function populateSecondTextBox() {
+        document.getElementById('contact_name').value = document.getElementById('txtName').value;
+        document.getElementById('contact_email').value = document.getElementById('txtemail').value;
+        document.getElementById('contact_mobile').value = document.getElementById('txtmobile').value;
+        document.getElementById('contact_income').value = document.getElementById('txtAnnIncome').value;
+        document.getElementById('contact_liablities').value = document.getElementById('txtCurrLiability').value;
+        document.getElementById('contact_assets').value = document.getElementById('txtCurrLiquidAssets').value;
+        document.getElementById('contact_lifecover').value = document.getElementById('txtCurrLifeCover').value;
+        document.getElementById('contact_message').value = "Family Finanicial Security Calculator: Date of Birth: " + document.getElementById('txtDob').value + " Retirement Age: " + document.getElementById('txtRetmtAge').value + " Annual Income: " + document.getElementById('contact_income').value + " Current Liablities: " + document.getElementById('contact_liablities').value + " Current Assets: " + document.getElementById('contact_assets').value + " Cuurent Life Cover: " + document.getElementById('contact_lifecover').value;
+    }
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(".HLV_calcRow .HLV_female").click(function () {
+            $(".HLV_calcRow .HLV_male").removeClass("HLV_maleActive");
+        });
+        $(".HLV_calcRow .HLV_male").click(function () {
+            $(".HLV_calcRow .HLV_male").addClass("HLV_maleActive");
+            $(".HLV_calcRow .HLV_female").removeClass("HLV_femaleActive");
+        });
+        $(".HLV_calcRow .HLV_female").click(function () {
+            $(".HLV_calcRow .HLV_female").addClass("HLV_femaleActive");
+        });
+        $(".HLV_calcRow .HLV_female, .HLV_calcRow .HLV_male").click(function () {
+            $(".HLV_left .btn_newchgdfhov").removeClass("sliderArrow--disabled");
+        });
+
+
+        $(".HLV_calcRow .HLV_singlemale").click(function () {
+            $(".HLV_calcRow .HLV_singlefemale").removeClass("HLV_singleActive");
+            $(this).addClass("HLV_singleActive");
+        });
+        $(".HLV_calcRow .HLV_singlefemale").click(function () {
+            $(".HLV_calcRow .HLV_singlemale").removeClass("HLV_singleActive");
+            $(this).addClass("HLV_singleActive");
+        });
+
+
+        $(".HLV_calcRow .HLV_earningImg").click(function () {
+            $(".HLV_calcRow .HLV_notearningImg").removeClass("hlv_slide6Active");
+            $(this).addClass("hlv_slide6Active");
+        });
+        $(".HLV_calcRow .HLV_notearningImg").click(function () {
+            $(".HLV_calcRow .HLV_earningImg").removeClass("hlv_slide6Active");
+            $(this).addClass("hlv_slide6Active");
+        });
+
+
+        $(".HLV_calcRow .HLV_insured").click(function () {
+            $(".HLV_calcRow .HLV_notinsured").removeClass("HLV_insuredActive");
+            $(this).addClass("HLV_insuredActive");
+        });
+        $(".HLV_calcRow .HLV_notinsured").click(function () {
+            $(".HLV_calcRow .HLV_insured").removeClass("HLV_insuredActive");
+            $(this).addClass("HLV_insuredActive");
+        });
+
+    });
+</script>
+
+<div class="clear-fix"></div>
+<div>
+    <link href="~/FamilyFinancialSecurity/css/homeinn.css" rel="stylesheet" />
+    <script src="~/FamilyFinancialSecurity/js/general_functions.js"></script>
+    <script src="~/FamilyFinancialSecurity/js/general_validation.js"></script>
+
+    <script language="javascript">
+
+        //For Monthly New Letter
+        function funEmailMemClick() {
+            document.getElementById("txtEnterEmail").value = ""
+        }
+
+        function funEmailMemId() {
+            if (document.getElementById("txtEnterEmail").value == "") {
+                document.getElementById("txtEnterEmail").value = "Enter Your email ID"
+            }
+        }
+        //------------------------------
+
+        //For Quick Contact Email Send
+        function validate_news() {
+            var strRetVal;
+
+            if (frmNews.txtEnterEmail.value == "") {
+                alert("Email Id cannot be blank .\nPlease re-enter your data.");
+                SetFocus(frmNews.txtEnterEmail);
+                return false;
+            }
+
+            if (frmNews.txtEnterEmail.value == "Enter Your email ID") {
+                alert("Email Id cannot be blank .\nPlease re-enter your data.");
+                SetFocus(frmNews.textfield32);
+                return false;
+            }
+
+            strRetVal = CheckEmailAddress(frmNews.txtEnterEmail, "Email Address")
+            if (strRetVal != "") {
+                alert(strRetVal);
+                document.frmNews.txtEnterEmail.focus();
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top" style="display: block;"><img src="../../FamilyFinancialSecurity/images/top.png" alt=""></a>
+    <!-- Return to Top -->
+    <script src="~/FamilyFinancialSecurity/js/backtotop.js"></script>
+    <link href="~/FamilyFinancialSecurity/css/rwd_wrk.css" rel="stylesheet" />
+
+</div>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+     style="font-size: 15px; font-family: Roboto, sans-serif; color: rgb(88, 32, 83); background: rgb(222, 229, 251);
+    position: absolute; top: 543.016px; left: 635.328px; z-index: 3; display: none;">
+    <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+        <a class="ui-datepicker-prev ui-corner-all"
+           data-handler="prev" data-event="click" title="Prev">
+            <span class="ui-icon ui-icon-circle-triangle-w">Prev</span>
+        </a>
+        <a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next">
+            <span class="ui-icon ui-icon-circle-triangle-e">Next</span>
+        </a>
+        <div class="ui-datepicker-title">
+            <select class="ui-datepicker-month" data-handler="selectMonth" data-event="change">
+                <option value="0">Jan</option>
+                <option value="1">Feb</option>
+                <option value="2">Mar</option>
+                <option value="3">Apr</option>
+                <option value="4">May</option>
+                <option value="5" selected="selected">Jun</option>
+                <option value="6">Jul</option>
+                <option value="7">Aug</option>
+                <option value="8">Sep</option>
+                <option value="9">Oct</option>
+                <option value="10">Nov</option>
+                <option value="11">Dec</option>
+            </select><select class="ui-datepicker-year" data-handler="selectYear" data-event="change"><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004" selected="selected">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option></select>
+        </div>
+    </div><table class="ui-datepicker-calendar">
+        <thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th><span title="Monday">Mo</span></th><th><span title="Tuesday">Tu</span></th><th><span title="Wednesday">We</span></th><th><span title="Thursday">Th</span></th><th><span title="Friday">Fr</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead>
+        <tbody>
+            <tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">1</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">2</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">4</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">5</a></td></tr>
+            <tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default ui-state-active" href="#">8</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">11</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">12</a></td></tr>
+            <tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">15</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">18</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">19</a></td></tr>
+            <tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">22</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">25</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">26</a></td></tr>
+            <tr>
+                <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">27</a></td>
+                <td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">28</a></td>
+                <td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">29</a></td>
+                <td class=" " data-handler="selectDay" data-event="click" data-month="5" data-year="2004"><a class="ui-state-default" href="#">30</a></td>
+                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="alertify-cover" class="alertify-cover alertify-cover-hidden"></div>
+<script type="text/javascript">
+    var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+    $('#btn9').click(function (e) {
+        e.preventDefault();
+        $.post("../Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + $("#contact_message").val() + "&subject=Family Financial Security", function (success) {
+            alert("Thanks For your Interest we will get Back to you soon.");
+            document.getElementById("contact_name").value = "";
+            document.getElementById("contact_mobile").value = "";
+            document.getElementById("contact_email").value = "";
+            //document.getElementById("txtdate1").value = "";
+            document.getElementById("contact_message").value = "";
+            location.reload();
+        });
+    });
+
+    var currentURL = window.location.href;
+    //alert(currentURL);
+    var auth_key = currentURL.split("/");
+    //alert(auth_key[5])
+    $("#btn_again").prop("href", "../FamilyFinancialSecurity/" + auth_key[6] + "");
+
+</script>
+
+
+

@@ -1,0 +1,165 @@
+﻿.staticback{
+   background: url(/PowerOfCompounting/images/power-of-compounding-image.png) no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    min-height: 70vh;
+   font-family: "Open Sans",sans-serif;
+}
+.power-sip-head {
+    font-size: 30px;
+    line-height: 55px;
+}
+.font-light-green {
+    color: #b2eb1a;
+    font-family: "Open Sans",sans-serif;
+}
+.white {
+    color: #ffffff !important;
+}
+.staticback p {
+    /*padding-top: 5px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #fff;
+    padding-bottom: 20px;*/
+    /* width: 60%; */
+    /* margin-left: 20%; */
+    /*text-transform: none;
+    font-family: "Open Sans",sans-serif;*/
+}
+#sip-calc {
+    background: #ffffff;
+    min-height: 365px;
+    color: #3a3b3c;
+    font-size: 14px;
+    font-family: "Open Sans",sans-serif;
+    border: 1px solid #929292;
+    border-radius: 10px;
+    padding-top: 28px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+#sip-calc .input-bg {
+    background: none;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: center;
+    border-radius: 28px !important;
+    font-size: 14px;
+    color: #3a3b3c;
+    border: 1px solid #000;
+    margin-top:27px;
+}
+#sip-calc select {
+    background: #f1f1f1;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #3a3b3c;
+    border: 0px;
+    outline: none;
+    margin-top:10px;
+}
+#sip-calc input[type=number] {
+    width: 100px;
+    background: none;
+    border: none;
+    outline: none;
+}
+#sip-calc label {
+    position: absolute;
+    top: 7px;
+    left: 40px;
+    font-weight: normal;
+}
+input {
+    line-height: normal;
+}
+.wealth-gaintext {
+    position: absolute;
+    top: 2%;
+    right: -1%;
+    width: 29%;
+    color: #202020;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: "Open Sans",sans-serif;
+}
+.amount-investedtext {
+    position: absolute;
+    /*bottom: 7%;
+    left: 5%;
+    width: 19%;*/
+    color: #000;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: "Open Sans",sans-serif;
+}
+.center-resulttext {
+    position: absolute;
+    top: 36%;
+    left: 25%;
+    width: 50%;
+    min-height: 100px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: "Open Sans",sans-serif;
+}
+.staticback a.start-sip
+{
+	background: #ff4500 !important;
+    border: 2px solid #ff4500;
+    padding: 8px 24px!important;
+    cursor: pointer;
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 25px !important;
+    width: 156px;
+    text-align: center;
+    text-decoration:none;
+}
+.staticback a:hover.start-sip
+{
+    background: #009454!important;
+    border: 2px solid #009454;
+    color: #fff;
+}
+
+.amount {
+    color: #0664a6;
+    font-family: 'Lato';
+    font-size: 22px;
+    margin-top: 10px;
+}
+.tool-lebel
+{
+    font-size:18px;
+    font-family: "Open Sans",sans-serif;
+}
+.result-text {
+    font-size:18px;
+    font-family: "Open Sans",sans-serif;
+}
+.middle_result{
+    float: left;
+    padding: 6px 0 0 100px;
+}
+
+@media screen and (max-width: 520px) and (min-width: 220px)
+{
+    .amount-investedtext {
+    margin-top: -33px;
+}
+    .middle_result{
+    padding: 6px 0 0 40px;
+}
+}
+
+}

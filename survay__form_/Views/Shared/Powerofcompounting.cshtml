@@ -1,0 +1,345 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kazim Raza</title>
+    @RenderSection("AdditionalMeta", false)
+    <link rel="icon" href="~/images/kazim_raza_logo_1VI_icon.ico" type="image/x-icon">
+    <link rel="icon" href="http://kazimraza.com/images/Kazim%20Raza%20Logo.png" sizes="16x16">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="~/css/style1.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" id="jssDefault" href="/css/custom/theme-2.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+    @*<link href="~/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />*@
+    @*<link href="~/css/rowReorder.dataTables.min.css" rel="stylesheet" />
+        <link href="~/css/responsive.dataTables.min.css" rel="stylesheet" />*@
+    <link href="~/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/select.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/colorboxcss.css" rel="stylesheet" />
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <link href="../assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/global/css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="../assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="../assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/global/css/style.css" rel="stylesheet" />
+    <link href="~/css/style1.css" rel="stylesheet" />
+    @*<link href="~/css/custom/theme-2.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />*@
+    <style>
+        .pad {
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    </style>
+    <style>
+        @@media screen and (max-width: 520px) and (min-width: 220px) {
+            .logo-box a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+            }
+
+            .logo-box {
+                width: 307px;
+            }
+
+            h1 {
+                padding-top: 10px;
+                font-size: 35px;
+                line-height: 30px;
+                font-weight: 400;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            .contact-section .contact-area {
+                padding: 60px 35px;
+            }
+
+            .service-block2 .inner-box .image-box {
+                padding-top: 25px;
+            }
+
+            .blockstart {
+                height: 250px !important;
+            }
+
+            .blockimg {
+                width: 100%;
+                height: 200px !important;
+            }
+
+            .Video_blcok .blocks .greenhead {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+    <style>
+        @@media (max-width:767px) {
+            .hidden-xs {
+                display: none !important;
+            }
+        }
+
+        @@media (min-width:768px) and (max-width:991px) {
+            .hidden-sm {
+                display: none !important;
+            }
+        }
+
+        @@media (max-width:767px) {
+            #return-to-top {
+                display: none !important;
+            }
+        }
+
+        @@media (min-width:768px) and (max-width:991px) {
+            #return-to-top {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <!-- header upper -->
+        <div class="header-upper">
+            <div class="container">
+                <ul class="top-left">
+                    <li><a href="/home/index">Welcome to Kazim Raza</a></li>
+                    <li><a href="#">info@kazimraza.com</a></li>
+                </ul>
+                <div class="top-right">
+                    <ul class="social-top">
+                        <li><a href="https://www.facebook.com/kazim.raza.71" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCHbD8q8OWP-fO0RPe2vf9AQ" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header upper -->
+        <!-- header lower/fixed-header -->
+        <div class="header-lower menu_fixed">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-xs-12" style="padding:0px;">
+                        <div class="logo-box">
+                            <a href="/home/index"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="menu-bar">
+                            <nav class="main-menu">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        @*<li class="current">
+                                                <a href="/home/index">Home</a>
+                                            </li>*@
+                                        <li class="dropdown">
+                                            <a href="#">Our Profile</a>
+                                            <ul>
+                                                <li><a href="~/Home/About">About us</a></li>
+                                                <li><a href="~/Home/Vision">Our Vision</a></li>
+                                                <li><a href="~/Home/Testimonials">Testimonials</a></li>
+                                            </ul>
+
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">LIC Information</a>
+                                            <ul>
+                                                <li><a href="~/LicInfo/Plan">LIC Plan</a></li>
+                                                <li><a href="~/LicInfo/BusinessInsurance">Business Insurance</a></li>
+                                                <li><a href="~/LicInfo/BonusRate">LIC Bonus Rates</a></li>
+                                                <li><a href="~/LicInfo/BranchLocator">LIC Branch Locator</a></li>
+                                                <li><a href="~/LicInfo/DoctorLocator">LIC Doctor Locator</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Knowledge Center</a>
+                                            <ul>
+                                                <li><a href="~/Knowledge/why">Why Life Insurance</a></li>
+                                                <li><a href="~/Knowledge/TaxInfo">Tax Info</a></li>
+                                                <li><a href="~/Knowledge/Articles">Articles</a></li>
+                                                <li><a href="~/Knowledge/Lic_Home">LIC Home Loan</a></li>
+                                                <li><a href="~/Knowledge/Industry_News">Industry News</a></li>
+                                                <li><a href="~/Knowledge/FAQ">FAQ'S</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Resource Center</a>
+                                            <ul>
+                                                <li><a href="~/ResourceCenter/Important_Form">Important Forms</a></li>
+                                                @*<li><a href="~/ResourceCenter/OnlineGreetings">Online Greetings</a></li>*@
+                                                <li><a href="~/ResourceCenter/OnlinePayment">Online Premium Payment</a></li>
+                                                <li><a href="~/ResourceCenter/PolicyEnquiry">Policy Enquiry</a></li>
+                                                <li><a href="~/ResourceCenter/Videos">Important Videos</a></li>
+                                                @*<li><a href="#" data-toggle="modal" data-target="#myModal">Send Free SMS</a></li>*@
+                                                <li><a href="~/ResourceCenter/TPA">TPA</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="~/Home/Calculator">Calculator</a></li>
+                                        <li><a href="~/Gallery/Gallery">Gallery</a></li>
+                                        <li><a href="~/Home/Contact">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header lower/fixed-header -->
+
+    </header>
+    @RenderBody()
+
+  
+    @RenderSection("scripts", required: false)
+
+    <!-- j Query -->
+    <script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
+    <link href="~/css/custom/jssocials.css" rel="stylesheet" />
+    <link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+    <script src="~/css/custom/jssocials.js"></script>
+    <script src="~/css/custom/jssocials.min.js"></script>
+    <script type="text/javascript">
+        $(window).ready(function () {
+            $("#shareIcons").jsSocials({
+                showLabel: false,
+                showCount: false,
+                shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+            });
+
+        });
+
+    </script>
+   
+    <!-- Bootstrap JS -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Style-switcher  -->
+    <script type="text/javascript" src="/js/jQuery.style.switcher.min.js"></script>
+
+    <!-- revolution slider js -->
+    <script src="/js/slider-active.js" type="text/javascript"></script>
+    <script src="/revolution/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.actions.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.carousel.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.kenburn.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.layeranimation.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.migration.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.navigation.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.parallax.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.slideanims.min.js" type="text/javascript"></script>
+    <script src="/revolution/js/extensions/revolution.extension.video.min.js" type="text/javascript"></script>
+
+    <!-- owl.carousel js -->
+    <script src="~/js/colorbox.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+
+    <!-- jQuery ui js -->
+    <script src="/js/jquery-ui.js"></script>
+
+    <!-- jQuery fancybox js -->
+    <script src="/js/jquery.fancybox.pack.js"></script>
+
+    <!-- jQuery wow js -->
+    <script src="/js/wow.js"></script>
+
+    <!-- jQuery google map js -->
+    <script src="/js/gmaps.js"></script>
+    <script src="/js/map-helper.js"></script>
+
+    <!-- jQurery isotop js -->
+    <script src="/js/isotope.js"></script>
+    <script src="/js/jquery.bootstrap-touchspin.js"></script>
+
+    <!-- jQuery contact form js -->
+    <script src="/js/validation.js"></script>
+
+    <!-- jQuery contact form js -->
+    <script type="text/javascript" src="/js/SmoothScroll.js"></script>
+
+    <!-- jQuery select menu js -->
+    <script src="/js/bootstrap-select.min.js"></script>
+
+    <!-- jQuery nouislider js -->
+    <script src="/js/nouislider.js"></script>
+
+    <!-- Image zoom js -->
+    <script src="/js/imagezoom.js"></script>
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../assets/global/plugins/ion.rangeslider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
+    @*<script src="http://ionden.com/a/plugins/ion.rangeSlider/static/js/ion-rangeSlider/ion.rangeSlider.js"></script>*@
+    <script src="../assets/global/plugins/bootstrap-markdown/lib/markdown.js" type="text/javascript"></script>
+    <script src="./../assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/bootstrap-summernote/summernote.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL SCRIPTS -->
+    <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+    <!-- END THEME GLOBAL SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../assets/pages/scripts/components-ion-sliders.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME LAYOUT SCRIPTS -->
+    <script src="../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+    <script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
+    <script src="~/Charts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+   
+
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/js/dataTables.select.min.js"></script>
+
+    <link href="~/css/style2.css" rel="stylesheet" />
+    <script src="~/js/right-popup-js/custom.js"></script>
+    <script src="~/js/right-popup-js/jquery-ui.min.js"></script>
+    <script src="~/js/right-popup-js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/right-popup-js/owl.carousel.min.js"></script>
+
+    <!-- jQuery main js -->
+    <script src="/js/script.js"></script>
+    <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b23622f61a2e64e5fb57f15/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,276 @@
+﻿
+@{
+    ViewBag.Title = "Calculator";
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Gallery">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Calculator">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Calculator" />
+    <meta property="og:type" content="Calculator" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+}
+
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center" >
+                    <h1>CALCULATOR</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+        .flip {
+            -webkit-perspective: 800;
+            perspective: 800;
+            position: relative;
+            text-align: center;
+        }
+
+            .flip .card.flipped {
+                -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+            }
+
+            .flip .card {
+                width: 100%;
+                height: auto;
+                -webkit-transform-style: preserve-3d;
+                -webkit-transition: 0.5s;
+                transform-style: preserve-3d;
+                transition: 0.5s;
+                background-color: #fff;
+            }
+
+                .flip .card .face {
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    z-index: 2;
+                }
+
+                .flip .card .front {
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                }
+                /*.flip .card .img {
+       position:relative;
+       width: 270px;
+       height: 178px;
+       z-index: 1;
+       border: 2px solid #000;
+    }*/
+                .flip .card .back {
+                    /*padding-top: 10%;*/
+                    -webkit-transform: rotateY(-180deg);
+                    transform: rotateY(-180deg);
+                    background: #e61e25;
+                    box-shadow: 5px 10px 18px #ff000047;
+                }
+
+        .inner {
+            margin: 0px !important;
+            background: #f7f6f4;
+            padding: 25px;
+            box-shadow: 5px 10px 8px #888888;
+        }
+
+        .inner1 {
+            margin: 0px !important;
+            background: #e61e25;
+            padding: 10px;
+        }
+
+            .inner1 h3 {
+                color: #fff;
+            }
+
+        .inner h5 {
+            color: #000;
+            font-weight: 600;
+        }
+         @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .navbar-toggle {
+            float: right !important;
+            padding: 17px 9px !important;
+            margin-top: 10px !important;
+        }
+    }
+</style>
+
+<section class="ulockd-about">
+    <div class="container">
+        <div class="row">
+            <div id="shareIcons" socialShareURL="kazimraza.com/Home/Calculator"></div>
+            @*<div class="col-md-4 main">
+                    <div class="calculator">
+                        <p style="padding:10px">
+                            <b> Wealth Calculator</b></p>
+                           <p> <img src="~/images/abc.png" />
+                        </p>
+                    </div>
+                    <div class="cal">
+                        <p>
+                            Calculate the future wealth your regular investments can create for you...Value of Existing Investments<br /><br /></p>
+                          <p>  <a class="calculate">Calculate</a>
+
+                        </p>
+
+                    </div>
+                </div>*@
+            <div class="row">
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;">
+                                        <img src="~/images/childicon.png" /> </p> <h3><b style="font-size:20px;">Children's Education Planner</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;">
+                                        <img src="~/images/childicon1.png" /><h3> <b style="font-size:20px;">Children's Education Planner</b></h3>
+                                        <a role="button" class="btn btn-primary" href="/Home/ChildPlanner" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;"><img src="~/images/wealthicon.png" /></p><h3><b style="font-size:20px;">Family Financial Security</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;"><img src="~/images/wealthicon1.png" /></p><h3> <b style="font-size:20px;">Family Financial Security</b></h3>
+                                    <a role="button" class="btn btn-primary" href="~/Home/FamilyFinancialSecurity" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;"><img src="~/images/retirementicon.png" style="font-size:20px;"></p><h3><b style="font-size:20px;">Retirement Planner</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;"><img src="~/images/retirementicon1.png" /></p><h3><b style="font-size:20px;">Retirement Planner</b></h3>
+                                    <a type="button" class="btn btn-primary" href="~/Home/RetirementCalculator" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;"><img src="~/images/wealthgrowth.png" style="font-size:20px;"></p><h3><b style="font-size:20px;">Wealth Value Calculator</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;"><img src="~/images/wealthgrowth1.png" /></p><h3><b style="font-size:20px;">Wealth Value Calculator</b></h3>
+                                    <a role="button" class="btn btn-primary" href="~/Home/WealthValueCalculator" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;"><img src="~/images/emiPlanner1.png" style="font-size:20px;"></p><h3><b style="font-size:20px;">EMI Planner</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;"><img src="~/images/emiplanner2.png" /></p><h3><b style="font-size:20px;">EMI Planner</b></h3>
+                                    <a role="button" class="btn btn-primary" href="~/Home/EMI" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" style="padding-top:15px;">
+                    <div class="flip">
+                        <div class="card">
+                            <div class="face front">
+                                <div class="inner">
+                                    <p style="text-align:center;"><img src="~/images/powerofcompounting1.png" style="font-size:20px;"></p><h3><b style="font-size:20px;">Present And Future Calculator</b></h3>
+                                    @*<h5>To help you determine investments you need to make regularly in order to fulfill your little one's dream</h5>*@
+                                </div>
+                            </div>
+                            <div class="face back">
+                                <div class="inner1 text-center">
+                                    <p style="text-align:center;"><img src="~/images/powerofcompounting.png" /></p><h3><b style="font-size:20px;">Present And Future Calculator</b></h3>
+                                    <a role="button" class="btn btn-primary" href="~/Home/PresentAndFutureValue" target="_blank">Plan Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section scripts{
+
+    <script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
+    <script>
+    $('.flip').hover(function () {
+        $(this).find('.card').toggleClass('flipped');
+
+    });
+    </script>
+
+}
+
+
+
+

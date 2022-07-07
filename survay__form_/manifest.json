@@ -1,0 +1,25 @@
+{
+  "short_name": "Premium Calender",
+  "name": "Premium Calender",
+  "icons": [
+    {
+      "src": "/images/calendar128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/calendar256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/calendar512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fff",
+  "theme_color": "#222",
+  "display": "standalone"
+}

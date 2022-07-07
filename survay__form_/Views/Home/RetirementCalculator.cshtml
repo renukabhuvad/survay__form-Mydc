@@ -1,0 +1,845 @@
+﻿@model survay__form_.Models.RetirementPlanCalculator
+@{
+    Layout = "~/Views/Shared/RetirementPlanner.cshtml";
+}
+@section AdditionalMeta
+{
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.agentname | Retirment Calculation Form</title>
+    <link rel="icon" type="image/x-icon" href="@Model.profileimage">
+    <meta name="keywords" content="@Model.agentname, Retirment,Retirment Calculator, Calculator">
+    <meta name="description" content="Retirment Calculation Form Shared By @Model.agentname">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Present And Future Value">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="@Model.agentname">
+    <meta name="twitter:title" content="Retirement Calculator">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="@Model.agentname">
+    <meta name="twitter:image:src" content="@Model.profileimage">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="@Model.agentname Retirement Calculator" />
+    <meta property="og:type" content="Retirement Calculator" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="@Model.agentname" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+<div>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="~/RetiremnetPlanner/js/caculator.js"></script>
+    <script>
+        $(document).ready(function () {
+            Init();
+        });
+    </script>
+    <script src="~/RetiremnetPlanner/js/uisearch.js"></script>
+    <script src="~/RetiremnetPlanner/js/classie.js"></script>
+    <script src="~/RetiremnetPlanner/js/highcharts.js"></script>
+
+</div>
+
+@*<div class="banner_inn_ful page_banner">
+    @*<img alt="" src="~/images/main-logo.jpg" class="top_img_inner" style="height:200px;">
+    <div class="container">
+        <center>
+            <h1 style="color:#000;line-height:100px;text-align:center;"> Retirement Calculator</h1>
+        </center>
+    </div>
+</div>*@
+
+<style>
+    .detailed {
+        padding: 15px 0;
+    }
+
+    .HLV_slideCanvas {
+        /*background: url(/images/retirement-background3.jpg);*/
+        background-size: cover;
+    }
+    /*.HLV_calcInnerBox ::before{
+
+     content: " ";
+    height:100%;
+    position:absolute;
+    width:100%;
+    top:140px;
+    }*/
+
+</style>
+
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 3px solid #fff;
+            border-radius:10px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            margin: 3px 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 15px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic 
+    {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 3px solid #fff;
+        border-radius:10px;
+    }
+
+    ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li 
+    {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+    li a 
+    {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+
+    .curved {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+
+</style>
+
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <div class="text-center">
+                    <img src="@Model.profileimage" class="profilepic" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="text-left">
+                    <ul class="agname">
+                        <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                        <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.EmailId_ </span> </li>
+                        <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <!-- Include Date Range Picker -->
+    <link href="~/RetiremnetPlanner/css/jquery-ui-WM.css" rel="stylesheet" />
+    <link href="~/RetiremnetPlanner/css/css1.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link href="~/RetiremnetPlanner/css/blockUIResponsive.css" rel="stylesheet" />
+    @using (Html.BeginForm("RetirementPlanCalculator", "Home", FormMethod.Post))
+    {
+        <div class="curved">
+            <div style="">
+                <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> Retirement Calculator </h2>
+            </div>
+        </div>
+
+        @Html.Hidden("CurrentStepNumber", 0)
+
+        <div class="HLV_slideCanvas">
+            <div class="container" id="HLV_calc">
+                <div class="row">
+
+                    <div class="HLV_calc_cnt">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <div class="carousel-inner">
+                                <div id="div1" class="hlv_slide1 item active">
+                                    <div class="HLV_calcInnerBox">
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-3 col-sm-3" style="position:initial">
+                                                <img class="imgGender" src="../../RetiremnetPlanner/images/retirement_both.png" alt="">
+                                            </div>
+                                            <div class="col-lg-9 col-sm-9">
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel" for="txtName">Name:</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        @Html.TextBoxFor(m => m.Name, new
+                                                   {
+                                                       @name = "txtName",
+                                                       @id = "txtName",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "1",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "30",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeypress = "return alphOnly(this, event)",
+                                                       @onkeyup = "populateRetirementtext();"
+                                                   })
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel" for="txtMobileNo">Mobile No:</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        @Html.TextBoxFor(m => m.MobileNo, new
+                                                   {
+                                                       @name = "txtMobileNo",
+                                                       @id = "txtMobileNo",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "text-transform: uppercase; border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "2",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "10",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeypress = "return isANumber(event)",
+                                                       @onkeyup = "populateRetirementtext();"
+                                                   })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel" for="txtEmailId">Email Id:</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        @Html.TextBoxFor(m => m.EmailId, new
+                                                   {
+                                                       @name = "txtEmailId",
+                                                       @id = "txtEmailId",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "3",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "50",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeyup = "populateRetirementtext();"
+                                                   })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel" for="txtDob">Date of Birth:</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        <div class="input-group date form_datetime HLV_clacInput"
+                                                             data-date="" data-date-format="dd MM yyyy" data-link-field="txtDob" data-link-format="dd/mm/yyyy">
+                                                            @Html.TextBoxFor(m => m.DOB, new
+                                                       {
+                                                           @name = "txtDob",
+                                                           @id = "txtDob",
+                                                           //@class = "form-control",
+                                                           @tabindex = "3",
+                                                           @size = "16",
+                                                           @readonly = "readonly",
+                                                           @value = "",
+                                                           @onchange = "fnDateOnchange('txtDob','txtAge')",
+                                                           @style = "background:none;border:none;"
+                                                       })
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-calendar" aria-hidden="true">
+                                                                </i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel">Your Age is:</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        @Html.TextBoxFor(m => m.Age, new
+                                                   {
+                                                       @name = "txtAge",
+                                                       @id = "txtAge",
+                                                       @class = "HLV_clacInput",
+                                                       @readonly = "readonly",
+                                                       @tabindex ="4"
+                                                   })
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-3 col-sm-3">
+                                                        <label class="HLV_calcLabel" for="txtRetirementAge">
+                                                            Retirement Age:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-sm-9">
+                                                        @Html.TextBoxFor(m => m.RetirementAge, new
+                                                   {
+                                                       @name = "txtRetirementAge",
+                                                       @id = "txtRetirementAge",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "5",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "2",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeypress = "return isANumber(event)"
+                                                   })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    @Html.Hidden("hdGender", Model.Gender)
+                                                    <div class="col-lg-4 col-sm-4">
+                                                        <label class="HLV_calcLabel HLV_gender">Gender</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-sm-8">
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <span class="HLV_male" id="txtMale" onclick="setGender('Male');"></span>
+                                                        </div>
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <span class="HLV_female" id="txtFemale" onclick="setGender('Female');"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="HLV_calcRow HLV_left">
+                                                <input type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate(1)"
+                                                       data-slide="next">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="hlv_slide1 item">
+                                    <div class="HLV_calcInnerBox">
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-3 col-sm-3" style="position:initial">
+                                                <img class="imgGender" src="../../RetiremnetPlanner/images/retirement_both.png" alt="">
+                                            </div>
+
+                                            <div class="col-lg-9 col-sm-9">
+
+                                                @*<div class="HLV_calcRow">
+                                                         <div class="col-lg-4 col-sm-4">
+                                                             <label class="HLV_calcLabel" for="txtEmailId">Email Id:</label>
+                                                         </div>
+                                                         <div class="col-lg-8 col-sm-8">
+                                                             @Html.TextBoxFor(m => m.EmailId, new
+                                                    {
+                                                        @name = "txtEmailId",
+                                                        @id = "txtEmailId",
+                                                        @class = "HLV_clacInput",
+                                                        @style = "border-color: rgb(102, 102, 102);",
+                                                        @tabindex = "3",
+                                                        @onpaste = "return false;",
+                                                        @maxlength = "50",
+                                                        @onchange = "fnFocusChange()"
+                                                    })
+
+                                                         </div>
+                                                     </div>*@
+
+                                                @*<div class="HLV_calcRow">
+                                                        <div class="col-lg-4 col-sm-4">
+                                                            <label class="HLV_calcLabel" for="txtDob">Date of birth:</label>
+                                                        </div>
+                                                        <div class="col-lg-8 col-sm-8">
+                                                            <div class="input-group date form_datetime HLV_clacInput"
+                                                                 data-date="" data-date-format="dd MM yyyy" data-link-field="txtDob" data-link-format="dd/mm/yyyy">
+                                                                @Html.TextBoxFor(m => m.DOB, new
+                                                       {
+                                                           @name = "txtDob",
+                                                           @id = "txtDob",
+                                                           @class = "form-control",
+                                                           @size = "16",
+                                                           @readonly = "readonly",
+                                                           @value = "",
+                                                           @onchange = "fnDateOnchange('txtDob','txtAge')"
+                                                       })
+                                                                <span class="input-group-addon">
+                                                                    <i class="fa fa-calendar" aria-hidden="true">
+                                                                    </i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+
+                                                @*<div class="HLV_calcRow">
+                                                         <div class="col-lg-4 col-sm-4">
+                                                             <label class="HLV_calcLabel">Your Age is:</label>
+                                                         </div>
+                                                         <div class="col-lg-8 col-sm-8">
+                                                             @Html.TextBoxFor(m => m.Age, new
+                                                    {
+                                                        @name = "txtAge",
+                                                        @id = "txtAge",
+                                                        @class = "HLV_clacInput",
+                                                        @readonly = "readonly"
+                                                    })
+                                                         </div>
+                                                     </div>*@
+
+                                                @*<div class="HLV_calcRow">
+                                                         <div class="col-lg-4 col-sm-4">
+                                                             <label class="HLV_calcLabel" for="txtRetirementAge">
+                                                                 Retirement Age:
+                                                             </label>
+                                                         </div>
+                                                         <div class="col-lg-8 col-sm-8">
+                                                             @Html.TextBoxFor(m => m.RetirementAge, new
+                                                    {
+                                                        @name = "txtRetirementAge",
+                                                        @id = "txtRetirementAge",
+                                                        @class = "HLV_clacInput",
+                                                        @style = "border-color: rgb(102, 102, 102);",
+                                                        @tabindex = "4",
+                                                        @onpaste = "return false;",
+                                                        @maxlength = "2",
+                                                        @onchange = "fnFocusChange()",
+                                                        @onkeypress = "return isANumber(event)"
+                                                    })
+
+                                                         </div>
+                                                     </div>*@
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-5 col-sm-5">
+                                                        <label class="HLV_calcLabel" for="txtCurrentSavings">
+                                                            Current Savings:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-7 col-sm-7">
+                                                        @Html.TextBoxFor(m => m.CurrentSavings, new
+                                                   {
+                                                       @name = "txtCurrentSavings",
+                                                       @id = "txtCurrentSavings",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "6",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "10",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeypress = "return isANumber(event)",
+                                                       @onkeyup = "populateRetirementtext();"
+                                                   })
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-5 col-sm-5">
+                                                        <label class="HLV_calcLabel" for="txtInterestRate">
+                                                            Interest Rate on Saving:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-7 col-sm-7">
+                                                        @Html.TextBoxFor(m => m.InterestRate, new
+                                                   {
+                                                       @name = "txtInterestRate",
+                                                       @id = "txtInterestRate",
+                                                       @class = "HLV_clacInput",
+                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                       @tabindex = "7",
+                                                       @onpaste = "return false;",
+                                                       @maxlength = "2",
+                                                       @onchange = "fnFocusChange()",
+                                                       @onkeypress = "return isANumber(event)"
+                                                   })
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-5 col-sm-5">
+                                                        <label class="HLV_calcLabel" for="txtInflationRate">Inflation Rate:</label>
+                                                    </div>
+                                                    <div class="col-lg-7 col-sm-7">
+                                                        @Html.TextBoxFor(m => m.InflationRate, new
+                                               {
+                                                   @name = "txtInflationRate",
+                                                   @id = "txtInflationRate",
+                                                   @class = "HLV_clacInput",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @tabindex = "8",
+                                                   @onpaste = "return false;",
+                                                   @maxlength = "2",
+                                                   @onchange = "fnFocusChange()",
+                                                   @onkeypress = "return isANumber(event)"
+                                               })
+
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="HLV_calcRow">
+                                                    <div class="col-lg-5 col-sm-5">
+                                                        <label class="HLV_calcLabel" for="txtPensionAge">
+                                                            Pension Required upto age:
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-7 col-sm-7">
+                                                        @Html.TextBoxFor(m => m.PensionAge, new
+                                               {
+                                                   @name = "txtPensionAge",
+                                                   @id = "txtPensionAge",
+                                                   @class = "HLV_clacInput",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @tabindex = "9",
+                                                   @onpaste = "return false;",
+                                                   @maxlength = "2",
+                                                   @onchange = "fnFocusChange()"
+                                               })
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="HLV_calcRow HLV_right">
+                                                <a href="#myCarousel" data-slide="prev">
+                                                    <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                                                </a>
+                                            </div>
+
+                                            <div class="HLV_calcRow HLV_left">
+                                                <input id="btnClick1" type="button" value="Next" class="btn_newchgdfhov"
+                                                       onclick="fnValidate(2)" data-slide="next">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="hlv_slide4 item">
+                                    <div class="HLV_calcInnerBox">
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-3 col-sm-3" style="position:initial">
+                                                <img class="imgGender" src="~/images/status_married.png" alt="">
+                                            </div>
+                                            <div class="col-lg-9 col-sm-9">
+                                                <div class="HLV_calcRow" style="margin:0px;">
+                                                    <div class="col-lg-12 col-sm-12">
+                                                        <label class="HLV_calcLabel" for="txtCurrLiability">
+                                                            <p style="font-size:25px;"> Monthly Expenses</p>
+                                                            <p style="font-size:15px;">(IF YOU RETIRED TODAY)</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="panel with-nav-tabs panel-default" style="border-bottom:none;">
+                                                    <div class="panel-heading" style="border-color:none;background:#fff !important;">
+                                                        <ul class="nav nav-tabs">
+                                                            <li class="active radio-inline" style="width: 305px;padding: 0px;margin: 0px;"><a href="#tab1default" data-toggle="tab" name="optradio" value="M" style="text-align:center;border: 1px solid #ddd;">Monthly</a></li>
+                                                            <li class="radio-inline" style="width: 305px;padding: 0px;margin: 0px;"><a href="#tab2default" data-toggle="tab" name="optradio" value="C" style="text-align:center;border: 1px solid #ddd;">Category wise</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="panel-body" style="background: #fff;">
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane fade active in" name="optradio" id="tab1default" value="M">
+                                                                <div class="HLV_calcRow monthly">
+                                                                    <div class="col-lg-6 col-sm-6">
+                                                                        <label class="HLV_calcLabel" style="text-align:left;align-content:initial">
+                                                                            Monthly Expense:
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-sm-6">
+
+                                                                        @Html.TextBoxFor(m => m.MonthlyExpense, new
+                                                                   {
+                                                                       @name = "txtMonthlyExpense",
+                                                                       @type= "text",
+                                                                       @id = "txtMonthlyExpense",
+                                                                       @class = "HLV_clacInput",
+                                                                       @style = "border-color: rgb(102, 102, 102);",
+                                                                       @tabindex = "10",
+                                                                       @onpaste = "return false;",
+                                                                       @maxlength = "10",
+                                                                       @onchange = "fnFocusChange()",
+                                                                       @onkeypress = "return isANumber(event)",
+                                                                       @onkeyup = "populateRetirementtext();"
+                                                                   })
+
+                                                                    </div>
+                                                                    <p style="text-align:center;position:initial;"><img src="../../FamilyFinancialSecurity/images/hlv_household_exp.png" style="margin:10px 0px;" /></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" name="optradio" id="tab2default" value="C">
+                                                                @foreach (var item in Model.Expenses)
+                                                                {
+                                                                    <div class="col-md-6 detailed">
+                                                                        <div class="col-lg-6 col-sm-6">
+                                                                            <label class="" style="text-align:left;align-content:initial">
+
+                                                                                @*<img src="~/images/@(item.ImagePath)" style="width:30px;height:30px;" />*@
+                                                                                <img src="../../RetiremnetPlanner/images/@(item.ImagePath)" style="width:30px;height:30px;" />
+                                                                                @(item.Name):
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-sm-6">
+                                                                            @Html.TextBoxFor(m => item.ExpenseAmount, new
+                                                                       {
+                                                                           @name = "txtMonthlyExpense" + item.Id.ToString(),
+                                                                           @id = "txtMonthlyExpense" + item.Id.ToString(),
+                                                                           @style = "border: none;border-bottom: 1px solid;background: none;width: 100%;font-size:20px;text-align: center; ",
+                                                                           @tabindex = "11",
+                                                                           @onpaste = "return false;",
+                                                                           @maxlength = "10",
+                                                                           @onchange = "fnFocusChange()",
+                                                                           @onkeypress = "return isANumber(event)"
+                                                                   })
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                @*<div class="HLV_calcRow">
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <label class="radio-inline HLV_calcLabel">
+                                                                <input type="radio" name="optradio" value="M" checked>Monthly
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="col-lg-6 col-sm-6">
+                                                            <label class="radio-inline HLV_calcLabel">
+                                                                <input type="radio" name="optradio" value="C">Category wise
+                                                            </label>
+                                                        </div>
+                                                    </div>*@
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="HLV_calcRow HLV_right">
+                                            <a href="#myCarousel" data-slide="prev">
+                                                <input type="button" class="btn_newchgdfhov" value="Previous" onclick="GoToPage(false, true, null)">
+                                            </a>
+                                        </div>
+
+                                        <div class="HLV_calcRow HLV_left">
+                                            <input type="button" value="Next" class="btn_newchgdfhov"
+                                                   onclick="fnValidate(3)" data-slide="next">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="hlv_slide10 item">
+                                    <div class="HLV_calcInnerBox">
+                                        <div class="HLV_calcRow">
+                                            @*<p class="sum_head1">
+                                                    Total Need: <i class="fa fa-inr" aria-hidden="true"></i>
+                                                    <input type="text" id="txtTotalNeed" readonly="">
+                                                    Savings: <i class="fa fa-inr" aria-hidden="true"></i>
+                                                    <input type="text" id="txtTotalSavings" readonly="">
+                                                    Gap: <i class="fa fa-inr" aria-hidden="true"></i>
+                                                    <input type="text" id="txtTotalGap" readonly="">
+                                                </p>*@
+                                            <p class="sum_head1" id="rpMessage">
+
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="HLV_calcInnerBox" style="padding-top: 0px;">
+                                        <div class="HLV_calcRow">
+                                            <div class="col-md-10">
+                                                <p style="font-weight: 800;font-size: 16px;">I Have Better &amp; Suitable Financial Solutions For your Retirement Planning, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                            </div>
+                                            <div class="col-md-2" style="padding:0px;">
+                                                <input type="button" id="btnRetirement9" class="btn_newchgdfhov" value="Request Now">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="HLV_calcRow">
+                                        <a href="/Home/RetirementCalculator" id="btn_again"><input type="button" class="btn_newchgdfhov" value="Calculate Again"></a>
+                                    </div>
+                                    
+                                    @*<div class="HLV_calcRow" style="background:#fff;padding:15px;">
+                                            <div class="col-md-10">
+                                            <p style="font-weight: 800;font-size: 16px;">I Have Better & Suitable Financial Solutions For your Retirement Planning, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type="button" id="btnRetirement9" class="btn_newchgdfhov" value="Request Now" />
+                                            </div>
+                                        </div>*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <link href="~/RetiremnetPlanner/css/homeinn.css" rel="stylesheet" />
+            <script src="~/RetiremnetPlanner/js/general_functions.js"></script>
+            <script src="~/RetiremnetPlanner/js/general_validation.js"></script>
+
+
+            <!-- Return to Top -->
+            <a href="javascript:" id="return-to-top" style="display: block;"><img src="../../RetiremnetPlanner/images/top.png" alt=""></a>
+            <!-- Return to Top -->
+            <script src="~/RetiremnetPlanner/js/backtotop.js"></script>
+            <link href="~/RetiremnetPlanner/css/rwd_wrk.css" rel="stylesheet" />
+
+        </div>
+    }
+</div>
+<form method="post">
+    <input type="text" name="username" id="contact_name" style="display:none;" />
+    <input type="text" name="email" id="contact_email" style="display:none;" />
+    <input type="text" name="mobile" id="contact_mobile" style="display:none;" />
+    <input type="text" name="message" id="contact_message" style="display:none;" />
+    <input type="text" id="EMI" style="display:none;" />
+    <input type="text" id="expense" style="display:none;" />
+</form>
+
+
+@section scripts{
+    <script>
+        function populateRetirementtext() {
+            document.getElementById('contact_name').value = document.getElementById('txtName').value;
+            document.getElementById('contact_email').value = document.getElementById('txtEmailId').value;
+            document.getElementById('contact_mobile').value = document.getElementById('txtMobileNo').value;
+            document.getElementById('EMI').value = document.getElementById('txtCurrentSavings').value;
+            document.getElementById('expense').value = document.getElementById('txtMonthlyExpense').value;
+            //document.getElementById('contact_message').value = "Dear " + model.Name + "<br> Retirement is the longest vacation without regular income but with regular expenses. <br> As per the given details your monthly income requirement on your retirement at age: " + model.Age + " is <i class='fa fa-inr'></i>" + (Math.Round(model.MonthlyEMI, 0) * 30) + "(with " + model.InflationRate + "% Inflation) which you will receive till the age: <i class='fa fa-inr'></i>" + model.PensionAge + ". So total amount required  amount comes to <i class='fa fa-inr'></i>" + Math.Round(model.TotalNeed, 0) + ". You already have saved <i class='fa fa-inr'></i>" + Math.Round(model.CurrentSavings, 0) + " which will become <i class='fa fa-inr'></i>" + Math.Round(model.TotalNeed, 0) + " on your Retirement at saving interest rate of " + model.InterestRate + "%.<br> Now you need to save an additional <i class='fa fa-inr'></i>" + Math.Round(model.MonthlyEMI, 0) + " daily till your retirement to fulfil the gap of <i class='fa fa-inr'></i>" + Math.Round(model.Gap, 0) + " to enjoy your desired retirement life Without Worries .";
+            document.getElementById('contact_message').value = "Retirement Calculator: Name: " + document.getElementById('txtName').value + ", Current Saving: " + document.getElementById('EMI').value + ", Monthly Expense : " + document.getElementById('expense').value;
+        }
+    </script>
+    <script type="text/javascript">
+        var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+        $('#btnRetirement9').click(function (e) {
+            e.preventDefault();
+            $.post("../Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + $("#contact_message").val() + "&subject=Retirement Calculator", function (success) {
+                alert("Thanks For your Interest we will get Back to you soon.");
+                document.getElementById("contact_name").value = "";
+                document.getElementById("contact_mobile").value = "";
+                document.getElementById("contact_email").value = "";
+                //document.getElementById("txtdate1").value = "";
+                document.getElementById("contact_message").value = "";
+                location.reload();
+            });
+        });
+    </script>
+    <link href="~/css/custom/jssocials.css" rel="stylesheet" />
+    <link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+    <script src="~/css/custom/jssocials.js"></script>
+    <script src="~/css/custom/jssocials.min.js"></script>
+    <script type="text/javascript">
+        $(window).ready(function ()
+        {
+            $("#shareIcons").jsSocials({
+                showLabel: false,
+                showCount: false,
+                shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+            });
+        });
+
+        var currentURL = window.location.href;
+        //alert(currentURL);
+        var auth_key = currentURL.split("/");
+        //alert(auth_key[5])
+        $("#btn_again").prop("href", "../RetirementCalculator/" + auth_key[6] + "");
+
+    </script>
+
+}
+

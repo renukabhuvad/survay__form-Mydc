@@ -1,0 +1,793 @@
+﻿@model survay__form_.Models.EMIPlanCalculator
+@{
+    Layout = "~/Views/Shared/EMICalculator.cshtml";
+}
+@*<div class="banner_inn_ful page_banner">
+        <img alt="" src="~/EMIPlanner/images/main-logo.jpg" class="top_img_inner" style="height:200px;">
+        <div class="container">
+            <div class="banner_inn">
+                <h1>EMI Planner</h1>
+            </div>
+        </div>
+    </div>*@
+
+@section AdditionalMeta
+{
+    <title> @Model.agentname | EMI Planner </title>
+    <link rel="icon" type="image/x-icon" href="@Model.profileimage">
+    <meta name="keywords" content="@Model.agentname,EMI Planner, Calculator ">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Child Planner">
+    <meta itemprop="description" content="EMI Planner Calculator Shared By @Model.agentname">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="@Model.agentname">
+    <meta name="twitter:title" content="Child Planner">
+    <meta name="twitter:description" content="EMI Planner Calculator Shared By @Model.agentname">
+    <meta name="twitter:creator" content="@Model.agentname">
+    <meta name="twitter:image:src" content="@Model.profileimage">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="EMI Planner" />
+    <meta property="og:type" content="EMI Planner" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="@Model.agentname" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+
+<style>
+    .detailed {
+        padding: 15px 0;
+    }
+
+    .HLV_slideCanvas {
+        /*background: url(/images/retirement-background3.jpg);*/
+        background-size: cover;
+    }
+    /*.HLV_calcInnerBox ::before{
+
+     content: " ";
+    height:100%;
+    position:absolute;
+    width:100%;
+    top:140px;
+    }*/
+
+</style>
+
+<style>
+    .child_font {
+    }
+
+    @@media screen and (min-width: 790px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 790px) and (min-width: 520px) {
+        .child_font {
+            font-size: 25px;
+        }
+    }
+
+    @@media screen and (max-width: 520px) and (min-width: 220px) {
+        .child_font {
+            font-size: 25px !important;
+        }
+
+        .profilepic {
+            width: 85% !important;
+            padding: 0px !important;
+            margin-top: 2% !important;
+            border: 5px solid #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /*background-color: #333333;*/
+        }
+
+        li {
+            float: left;
+            list-style: none !important;
+            padding: 0px !important;
+            margin: 3px 0px !important;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+        .agname {
+            font-size: 14px !important;
+            color: #fff;
+        }
+    }
+
+    .profilepic {
+        width: 35%;
+        padding: 0px;
+        margin-top: 10px;
+        border: 5px solid #fff;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333333;*/
+    }
+
+    li {
+        float: left;
+        list-style: none !important;
+        padding: 62px 30px;
+        margin: 0px !important;
+    }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+    .agname {
+        font-size: 21px;
+        color: #fff;
+    }
+
+    .input-group-addon {
+        color: #fff;
+    }
+</style>
+
+<style>
+    input, textarea {
+        margin-bottom: 0px !important;
+        line-height: initial;
+    }
+
+    .back-section 
+    {
+        position: relative;
+        /*padding-bottom: 92px;*/
+        /*background-image: url('../images/kazimrazabackgroundimage.jpg');*/
+        /*width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;*/
+    }
+
+    .back-section:before 
+    {
+        position: absolute;
+        content: '';
+        /*background-color: #6a5cbc;*/
+        background-image: linear-gradient(270deg, #d04d85, #534ab3);
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+</style>
+
+<style>
+    @@media screen and (max-width: 520px) and (min-width: 220px) 
+    {
+        h1 
+        {
+            padding-top: 10px;
+            font-size: 35px;
+            line-height: 30px;
+            font-weight: 400;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .navbar-brand 
+        {
+            padding: 0px !important;
+        }
+
+        .navbar-brand img 
+        {
+            width: 250px !important;
+            padding-top: 5px;
+        }
+
+        .main-menu .navbar-header 
+        {
+            padding: 0px;
+        }
+
+        .back-section 
+        {
+            padding-bottom: 0px;
+            height: 94px;
+        }
+
+        .back-section h1 
+        {
+            padding-top: 20px !important;
+            line-height: initial;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    th 
+    {
+        background: #7666fe !important;
+        color: #fff;
+        border: 1px solid #fff !important;
+    }
+
+    .navbar-toggle 
+    {
+        float: right !important;
+        padding: 22px 19px !important;
+        margin-right: 0px !important;
+    }
+
+    .back-section h1 
+    {
+        padding-top: 40px;
+        font-size: 30px;
+        font-weight: 300;
+    }
+
+    .curved 
+    {
+        position: relative;
+        background: linear-gradient(270deg, #ff6cab, #7366ff);
+        height: 15vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+    }
+
+</style>
+
+<section class="back-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <div class="text-center">
+                    <img src="@Model.profileimage" class="profilepic" />
+                </div>
+            </div>
+            <div class="col-xs-8 col-md-8">
+                <div class="text-left">
+                    <ul class="agname">
+                        <li style="display:block;"> <img src="~/images/user.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.agentname </span> </li>
+                        <li style="display:block;"> <img src="~/images/email1.png" class="img-responsive" style="float:left;width:20px;margin:5px;" /> <span style="float:left;"> @Model.emailid </span> </li>
+                        <li style="display:block;"> <img src="~/images/phone.png" class="img-responsive" style="float:left;width:15px;margin:5px;" /> <span style="float:left;"> @Model.personalcontact </span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="curved">
+    <div style="">
+        <h2 style="padding: 25px 20px 25px 20px;color: #fff;font-size: 24px;text-align: center;"> EMI Planner </h2>
+    </div>
+</div>
+
+<div class="HLV_slideCanvas">
+    <div class="container" id="HLV_calc">
+        <div class="row">
+            <div class="HLV_calc_cnt">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <div id="div1" class="hlv_slide1 item active">
+                            <div class="HLV_calcInnerBox">
+                                <div class="HLV_calcRow">
+                                    <div class="col-lg-3 col-sm-3">
+                                        <img class="imgGender" src="~/EMIPlanner/images/status_married.png" alt="">
+                                    </div>
+                                    <div class="col-lg-8 col-sm-8">
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <label class="HLV_calcLabel" for="txtName">Name:</label>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8">
+                                                @Html.TextBoxFor(m => m.Name, new
+                                               {
+                                                   @name = "txtName",
+                                                   @id = "txtName",
+                                                   @class = "HLV_clacInput",
+                                                   @style = "border-color: rgb(102, 102, 102);",
+                                                   @tabindex = "1",
+                                                   @onpaste = "return false;",
+                                                   @maxlength = "30",
+                                                   @onchange = "fnFocusChange()",
+                                                   @onkeypress = "return alphOnly(this, event)",
+                                                   @onkeyup = "populateEMI();"
+                                               })
+                                            </div>
+                                        </div>
+
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <label class="HLV_calcLabel" for="txtMobileNo">Mobile No:</label>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8">
+                                                @Html.TextBoxFor(m => m.MobileNo, new
+                                           {
+                                               @name = "txtMobileNo",
+                                               @id = "txtMobileNo",
+                                               @class = "HLV_clacInput",
+                                               @style = "border-color: rgb(102, 102, 102);",
+                                               @tabindex = "2",
+                                               @onpaste = "return false;",
+                                               @maxlength = "10",
+                                               @onchange = "fnFocusChange()",
+                                               @onkeypress = "return isANumber(event)",
+                                               @onkeyup = "populateEMI();"
+                                           })
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <label class="HLV_calcLabel" for="txtEmailId">Email Id:</label>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8">
+                                                @Html.TextBoxFor(m => m.EmailId, new
+                                           {
+                                               @name = "txtEmailId",
+                                               @id = "txtEmailId",
+                                               @class = "HLV_clacInput",
+                                               @style = "border-color: rgb(102, 102, 102);",
+                                               @tabindex = "3",
+                                               @onpaste = "return false;",
+                                               @maxlength = "50",
+                                               @onchange = "fnFocusChange()",
+                                               @onkeyup = "populateEMI();"
+                                           })
+
+                                            </div>
+                                        </div>
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <label class="HLV_calcLabel" for="txtEmailId">Age:</label>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8">
+                                                @Html.TextBoxFor(m => m.DOB, new
+                                           {
+                                               @name = "txtAge",
+                                               @id = "txtAge",
+                                               @class = "HLV_clacInput",
+                                               @style = "border-color: rgb(102, 102, 102);",
+                                               @tabindex = "3",
+                                               @onpaste = "return false;",
+                                               @maxlength = "50",
+                                               @onchange = "fnFocusChange()",
+                                               @onkeyup = "populateEMI();"
+
+                                           })
+
+                                            </div>
+                                        </div>
+
+
+
+                                        @*<div class="HLV_calcRow">
+                                                <div class="col-lg-4 col-sm-4">
+                                                    <label class="HLV_calcLabel" for="txtDob">Age:</label>
+                                                </div>
+                                                <div class="col-lg-8 col-sm-8">
+                                                    <div class="input-group date form_datetime HLV_clacInput"
+                                                         data-date="" data-date-format="dd MM yyyy" data-link-field="txtDob" data-link-format="dd/mm/yyyy">
+                                                        @Html.TextBoxFor(m => m.DOB, new
+                                                       {
+                                                           @name = "txtDob",
+                                                           @id = "txtDob",
+                                                           @class = "form-control",
+                                                           @size = "16",
+                                                           @readonly = "readonly",
+                                                           @value = "",
+                                                           @onchange = "fnDateOnchange('txtDob','txtAge')"
+                                                       })
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar" aria-hidden="true">
+                                                            </i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+                                        <div class="HLV_calcRow">
+                                            <div class="col-lg-4 col-sm-4">
+                                                <label class="HLV_calcLabel" for="txtMobileNo">Loan Type:</label>
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8">
+                                                <style>
+                                                    .width33 
+                                                    {
+                                                        width: 100%;
+                                                    }
+
+                                                    .width33 label 
+                                                    {
+                                                        width: 33%;
+                                                        background: #fff;
+                                                        color: #000;
+                                                    }
+
+                                                    .btn-default.active, .btn-default.active:hover, .btn-default:active, .open > .dropdown-toggle.btn-default 
+                                                    {
+                                                        color: #333;
+                                                        background-color: #e6e6e6;
+                                                        border-color: #adadad;
+                                                        color: #000;
+                                                    }
+
+                                                    @@media only screen and (max-width:520px) and (min-width:220px) 
+                                                    {
+                                                        .width33 label 
+                                                        {
+                                                            width: 33%;
+                                                            font-size: 13px;
+                                                            text-align: center;
+                                                            margin: auto;
+                                                            display: block;
+                                                        }
+                                                    }
+
+                                                    #emipaymenttable table td {
+                                                        color: #000;
+                                                    }
+                                                </style>
+
+
+                                                <div class="btn-group float-right gutter-left no-gutter-right tenure-choice width33" data-toggle="buttons">
+                                                    <label class="btn btn-default active">
+                                                        <img src="~/images/EmiHomeloan.png" style="width:50px;height:50px;" />
+                                                        <br />
+
+                                                        <input type="radio" name="emitype" id="emitypeHomeLoan"
+                                                               value="home-loan" tabindex="4" class="emitype"
+                                                               autocomplete="off" checked="checked" />Home Loan
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <img src="~/images/EmiPersonalLoan.png" style="width:50px;height:50px;" />
+                                                        <br />
+                                                        <input type="radio" name="emitype" id="emitypePersonalLoan"
+                                                               value="personal-loan" tabindex="4" class="emitype"
+                                                               autocomplete="off" />Personal Loan
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <img src="~/images/EmiCarLoan.png"
+                                                             style="width:50px;height:50px;" />
+                                                        <br />
+                                                        <input type="radio" name="emitype" id="emitypeCarLoan" value="car-loan"
+                                                               tabindex="5" autocomplete="off" class="emitype" />Car Loan
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="HLV_calcRow HLV_left">
+                                        <input type="button" value="Next" class="btn_newchgdfhov" onclick="fnValidate(1)"
+                                               data-slide="next">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="hlv_slide1 item">
+                            <div class="HLV_calcInnerBox" style="padding:0px;">
+                                <div class="HLV_calcRow">
+                                    <div class="wrap container" role="document">
+                                        <div class="content row">
+                                            <div class="calculatorcontainer">
+                                                <div class="emicalculatorcontainer">
+                                                    <div id="loanformcontainer" class="row">
+                                                        @*<div class="col-sm-2"></div>*@
+                                                        <div id="emicalculatordashboard" class="col-sm-12">
+                                                            <ul class="loanproduct-nav">
+                                                                <li id="home-loan" class="active">
+                                                                    <a href="#">Home Loan</a>
+                                                                </li>
+                                                                <li id="personal-loan" style="display:none;">
+                                                                    <a href="#">Personal Loan</a>
+                                                                </li>
+                                                                <li id="car-loan" style="display:none;">
+                                                                    <a href="#">Car Loan</a>
+                                                                </li>
+                                                            </ul>
+
+                                                            <div class="cleardiv"></div>
+
+                                                            <div id="emicalculatorinnerformwrapper">
+                                                                <form id="emicalculatorform">
+                                                                    <div class="form-horizontal" id="emicalculatorinnerform">
+                                                                        <div class="form-group lamount">
+                                                                            <label class="col-md-4 control-label" for="loanamount">Home Loan Amount</label><div class="col-md-6">
+                                                                                <div class="input-group">
+                                                                                    <input class="form-control" id="loanamount" name="loanamount" value="25,00,000" type="text" />
+                                                                                    <span class="input-group-addon">₹</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><div id="loanamountslider"></div><div id="loanamountsteps" class="steps">
+                                                                            <span class="tick" style="left: 0%;">
+                                                                                |<br /><span class="marker">0</span>
+                                                                            </span>
+                                                                            <span class="tick hidden-xs" style="left: 12.5%;">
+                                                                                |<br /><span class="marker">25L</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 25%;">
+                                                                                |<br /><span class="marker">50L</span>
+                                                                            </span>
+                                                                            <span class="tick hidden-xs" style="left: 37.5%;">
+                                                                                |<br /><span class="marker">75L</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 50%;">
+                                                                                |<br /><span class="marker">100L</span>
+                                                                            </span>
+                                                                            <span class="tick hidden-xs" style="left: 62.5%;">
+                                                                                |<br /><span class="marker">125L</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 75%;">
+                                                                                |<br /><span class="marker">150L</span>
+                                                                            </span>
+                                                                            <span class="tick hidden-xs" style="left: 87.5%;">
+                                                                                |<br /><span class="marker">175L</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 100%;">
+                                                                                |<br /><span class="marker">200L</span>
+                                                                            </span>
+                                                                        </div><div class="sep form-group lint">
+                                                                            <label class="col-md-4 control-label" for="loaninterest">Interest Rate</label><div class="col-md-6">
+                                                                                <div class="input-group">
+                                                                                    <input class="form-control" id="loaninterest" name="loaninterest" value="10.5" type="text" />
+                                                                                    <span class="input-group-addon">%</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><div id="loaninterestslider"></div><div id="loanintereststeps" class="steps">
+                                                                            <span class="tick" style="left: 0%;">
+                                                                                |<br /><span class="marker">5</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 16.67%;">
+                                                                                |<br /><span class="marker">7.5</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 33.34%;">
+                                                                                |<br /><span class="marker">10</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 50%;">
+                                                                                |<br /><span class="marker">12.5</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 66.67%;">
+                                                                                |<br /><span class="marker">15</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 83.34%;">
+                                                                                |<br /><span class="marker">17.5</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 100%;">
+                                                                                |<br /><span class="marker">20</span>
+                                                                            </span>
+                                                                        </div><div class="sep form-group form-inline lterm">
+                                                                            <label class="col-md-4 control-label" for="loanterm">Loan Tenure</label><div class="col-md-6">
+                                                                                <div class="loantermwrapper">
+                                                                                    <div class="btn-group float-right gutter-left no-gutter-right tenure-choice" data-toggle="buttons">
+                                                                                        <label class="btn btn-default active">
+                                                                                            <input type="radio" name="loantenure" id="loanyears" value="loanyears" tabindex="4" autocomplete="off" checked="checked" />Yr
+                                                                                        </label>
+                                                                                        <label class="btn btn-default">
+                                                                                            <input type="radio" name="loantenure" id="loanmonths" value="loanmonths" tabindex="5" autocomplete="off" />Mo
+                                                                                        </label>
+                                                                                    </div><div class="input-group fill-width">
+                                                                                        <input class="form-control" id="loanterm" name="loanterm" value="20" type="text" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><div id="loantermslider"></div><div id="loantermsteps" class="steps">
+                                                                            <span class="tick" style="left: 0%;">
+                                                                                |<br /><span class="marker">0</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 16.67%;">
+                                                                                |<br /><span class="marker">5</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 33.33%;">
+                                                                                |<br /><span class="marker">10</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 50%;">
+                                                                                |<br /><span class="marker">15</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 66.67%;">
+                                                                                |<br /><span class="marker">20</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 83.33%;">
+                                                                                |<br /><span class="marker">25</span>
+                                                                            </span>
+                                                                            <span class="tick" style="left: 100%;">
+                                                                                |<br /><span class="marker">30</span>
+                                                                            </span>
+                                                                        </div><div id="leschemewrapper" class="sep toggle-visible">
+                                                                            <div class="form-group escheme">
+                                                                                <label class="col-md-4 control-label" for="emischeme">EMI Scheme</label><div class="col-md-8">
+                                                                                    <div class="input-group emischemes">
+                                                                                        <div class="btn-group add-check" data-toggle="buttons">
+                                                                                            <label class="btn btn-default">
+                                                                                                <input type="radio" name="emischeme" id="emiadvance" value="emiadvance" tabindex="4" autocomplete="off" />EMI in Advance
+                                                                                            </label>
+                                                                                            <label class="btn btn-default active">
+                                                                                                <input type="radio" name="emischeme" id="emiarrears" value="emiarrears" tabindex="5" autocomplete="off" checked="checked" />EMI in Arrears
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <input id="loanproduct" name="loanproduct" value="" type="hidden" />
+                                                                    <input id="loanstartdate" name="loanstartdate" value="" type="hidden" />
+                                                                    <input id="loandata" name="loandata" value="" type="hidden" />
+                                                                    <input id="calcversion" name="calcversion" value="4.0" type="hidden" />
+                                                                </form>
+
+                                                                <div class="row gutter-left gutter-right">
+                                                                    <div id="emipaymentsummary" class="col-sm-5 col-md-6 no-gutter-left no-gutter-right">
+                                                                        <div id="emiamount">
+                                                                            <h4>Loan EMI</h4>
+                                                                            <p>₹<span>24,959</span></p>
+                                                                        </div>
+
+                                                                        <div id="emitotalinterest">
+                                                                            <h4>Total Interest Payable</h4>
+                                                                            <p>₹<span>34,90,279</span></p>
+                                                                        </div>
+
+                                                                        <div id="emitotalamount" class="column-last">
+                                                                            <h4>
+                                                                                Total Payment<br />
+                                                                                (Principal + Interest)
+                                                                            </h4>
+                                                                            <p>₹<span>59,90,279</span></p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="emipiechart"
+                                                                         class="no-gutter-left no-gutter-right col-sm-12 col-xs-12 col-md-6 highcharts-container">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="cleardiv"></div>
+                                                            </div>
+                                                        </div>
+                                                        @*<div class="col-sm-2"></div>*@
+                                                    </div>
+
+                                                    <div id="emipaymentdetails">
+                                                        <form class="gutter-left gutter-right form-horizontal">
+                                                            <div class="form-group" id="emipaymentscheduleheader">
+                                                                <label class="col-sm-12 col-xs-12 control-label" for="startmonthyear">Schedule showing EMI payments starting from</label>
+                                                                <div class="col-sm-12 col-xs-12 col-md-4">
+                                                                    <div class="input-group">
+                                                                        <input class="form-control" id="startmonthyear" name="startmonthyear" value="" type="text" />
+                                                                        <span class="input-group-addon">
+                                                                            <i class="fa fa-calendar"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
+                                                        <div id="emibarchart" class="hidden-ts highcharts-container col-sm-12 col-xs-12">
+                                                        </div>
+
+                                                        <div id="emipaymenttable">
+
+                                                        </div>
+
+                                                        <div id="ecalprintandshare">
+                                                            <div id="loader">
+                                                                <i class="fa fa-spinner fa-pulse"></i>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12" style="padding-top:10px;">
+                                                        <div class="col-md-10">
+                                                            <p style="font-weight: 800;font-size: 16px;">I Have Better &amp; Suitable Financial Solutions For your Home ,Car , Personal Loan Planning, If You Want I can Explain to you in detail by clicking on Request Now.</p>
+                                                        </div>
+                                                        <div class="col-md-2" style="padding:0px;">
+                                                            <input type="button" id="btnRetirement9" class="btn_newchgdfhov" value="Request Now">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post">
+    <input type="text" name="username" id="contact_name" style="display:none;" />
+    <input type="text" name="email" id="contact_email" style="display:none;" />
+    <input type="text" name="mobile" id="contact_mobile" style="display:none;" />
+    <input type="text" id="loan_type" style="display:none;" />
+    <input type="text" name="message" id="contact_message" style="display:none;" />
+    <input type="text" id="age" style="display:none;" />
+
+    <input type="text" id="contact_emiamount" style="display:none" onkeyup="populateEMI();" />
+
+</form>
+<script>
+    function populateEMI() {
+        document.getElementById('contact_name').value = document.getElementById('txtName').value;
+        document.getElementById('contact_email').value = document.getElementById('txtEmailId').value;
+        document.getElementById('contact_mobile').value = document.getElementById('txtMobileNo').value;
+        document.getElementById('age').value = document.getElementById('txtAge').value;
+        document.getElementById('contact_emiamount').value = document.getElementById('loan_type').value;
+        document.getElementById('contact_message').value = "Your Age is: " + document.getElementById('age').value + " Loan Type: " + document.getElementById('contact_emiamount').value;
+    }
+
+
+</script>
+<script type="text/javascript">
+    var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+    $('#btnRetirement9').click(function (e) {
+        var data = "EMI Calculator: Your Age is: " + document.getElementById('age').value + " Loan Type: " + document.getElementById('loan_type').value;
+        e.preventDefault();
+        $.post("../Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + data + "&subject=EMI Calculator", function (success) {
+            alert("Thanks For your Interest we will get Back to you soon.");
+            document.getElementById("contact_name").value = "";
+            document.getElementById("contact_mobile").value = "";
+            document.getElementById("contact_email").value = "";
+            //document.getElementById("txtdate1").value = "";
+            document.getElementById("contact_message").value = "";
+            location.reload();
+        });
+    });
+</script>
+<script type="text/javascript" src="~/EMIPlanner/js/core.min.js"></script>
+<script type='text/javascript' src="~/EMIPlanner/js/widget.min.js"></script>
+<script type='text/javascript' src="~/EMIPlanner/js/mouse.min.js"></script>
+<script type='text/javascript' src="~/EMIPlanner/js/slider.min.js"></script>
+<script type='text/javascript' src="~/EMIPlanner/js/commoncalculator.js"></script>
+<script type='text/javascript' src="~/EMIPlanner/js/emicalculator.js"></script>
+<div>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="~/EMIPlanner/js/caculator.js"></script>
+    <script>
+        $(document).ready(function () {
+            Init();
+        });
+    </script>
+    <script src="~/EMIPlanner/js/uisearch.js"></script>
+    <script src="~/EMIPlanner/js/classie.js"></script>
+</div>
+

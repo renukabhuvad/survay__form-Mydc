@@ -1,0 +1,114 @@
+﻿
+@font-face {
+    font-family: 'Dosis-Bold';
+    src: url('../fonts/Dosis-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Dosis-Book';
+    src: url('../fonts/Dosis-Book.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Dosis-ExtraBold';
+    src: url('../fonts/Dosis-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Dosis-ExtraLight';
+    src: url('../fonts/Dosis-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Dosis-SemiBold';
+    src: url('../fonts/Dosis-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Dosis-Medium';
+    src: url('../fonts/Dosis-Medium.ttf') format('truetype');
+}
+#appiontment-now-box {
+    position: fixed;
+    right: 0;
+    top: 20%;
+    text-align: center;
+    z-index: 999999;
+}
+
+#appiontment-now-box .appiontment-now {
+    position: relative;
+    width: 1px;
+    border-width: 0;
+    background: #fff;
+    padding: 25px 0;
+    border-radius: 2px;
+    overflow-x: hidden;
+    opacity: 0;
+}
+
+#appiontment-now-box .appiontment-now.open {
+    width: 390px;
+    padding: 25px 20px;
+    border-right: 3px solid #8b0110;
+    opacity: 0.95;
+}
+
+@media (min-width: 320px) and (max-width: 650px) {
+ #appiontment-now-box .appiontment-now.open {
+    width: 300px;
+    padding: 25px 20px;
+    border-right: 3px solid #8b0110;
+    opacity: 0.95;
+}
+}
+#appiontment-now-box .toggle {
+    position: absolute;
+    left: -93px;
+    top: 45%;
+    font-size: 13px;
+    color: #ffffff;
+    width: 165px;
+    opacity: 1;
+    -webkit-transition: all ease 0.35s;
+    -o-transition: all ease 0.35s;
+    transition: all ease 0.35s;
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    cursor: pointer;
+    padding: 5px 0 10px 0;
+    text-transform: uppercase;
+    background-color: #061320;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+}
+
+#appiontment-now-box .appiontment-form p {
+    font-family:Dosis-SemiBold;;
+    font-size: 15px;
+    color: #353535;
+    padding: 0 15px 20px 15px;    
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+#appiontment-now-box .form-control {
+    font-family:Dosis-SemiBold;;
+    background: #F2F3F3;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    border: 1px solid #8b0110;
+}
+
+#appiontment-now-box .form-control:focus {
+    border-color: #8b0110;
+    background: #ffffff;
+    outline: 0;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(102, 175, 233, 0);
+    -ms-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(102, 175, 233, 0);
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(102, 175, 233, 0);
+    -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(102, 175, 233, 0);
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(102, 175, 233, 0);
+}

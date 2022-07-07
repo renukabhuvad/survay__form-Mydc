@@ -1,0 +1,1895 @@
+/******---------------------------------------------------------
+ responsive work css for website starts from here. 
+Put this file at bottom of the website OR call this file 
+in the bottom include. 
+------------------------------------------------------------ ******/
+
+
+
+
+
+/** =======================================================================		onboarding.decrwealth INNDERPAGES rwd css =====================================================================================
+	=======================================================================						starts here				  =====================================================================================**/
+	.hlv_slide9 .hlv_rightImg img
+	{
+		width:45%;
+	}
+	.pad0
+	{
+		padding:0px;
+	}
+	.my_portDiv + #ui-datepicker-div 
+	{
+    z-index: 9999 !important;
+}
+.banner_inn_ful img.top_img_inner {
+    width: 100%;
+}
+.know_boxes .modal-content
+{
+    border-width: 6px 6px 6px 6px;
+	border-color: #fff;
+}
+.know_boxes .modal-header
+{
+	padding:0px;
+}
+.know_boxes .modal-header .close
+{
+    display: block;
+    margin: 0px;
+    /* margin-bottom: 0px; */
+    line-height: 15px;
+    opacity: 1;
+	font-family: fantasy;
+    font-weight: bolder;
+    font-size: 25px;
+    background-color: #949494;
+    color: #fff;
+    border-radius: 50px;
+    text-shadow: none;
+    padding: 4px;
+    position: absolute;
+    right: -18px;
+    top: -11px;
+    border: 3px solid #fff;
+}
+.modal-backdrop.in
+{
+    opacity: 0.8;	
+}
+
+/**-- solution for drop-down get hide in scroll --**/
+
+.recomend_fund .mobPosDropdown
+{
+    border-radius: 4px;
+    box-shadow: none;
+    margin-top: 10px;
+    width: 240px;
+    min-width: 0;
+    margin-left: -173px;
+    box-shadow: 0 0 20px;
+    right: 0;
+    z-index: 99999;
+}
+.recomend_fund .mobPosDropdown:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 78px;
+    z-index: 10;
+}
+.recomend_fund .mobPosDropdown:before {
+    right: 40px;
+}
+.recomend_fund .mobPosDropdown .form-horizontal .form-group {
+    margin: 5px auto;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+.recomend_fund .mobPosDropdown input.form-control, .recomend_fund .mobPosDropdown input.form-control {
+    /* width: 85%; */
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.recomend_fund .mobPosDropdown .form-horizontal .form-group .addtocartbtn {
+    border: 1px solid #7599bc;
+    border-radius: 5px;
+    background-color: #eaf0ff;
+    color: #09559f;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    font-family: Dosis-SemiBold;
+    font-size: 14px;
+    /* text-transform: uppercase; */
+}
+
+/**-- solution for drop-down get hide in scroll --**/
+
+
+/**--- growth calc ---- **/
+.growth_calcSect .growth_calc100per:nth-child(2) input
+{
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+/**--- growth calc ---- **/
+	
+
+/**--- why_mutualfund.asp ---- **/
+.page_banner h1 {
+    color:darkcyan;
+}
+#general_tab .nav-tabs, #life_tab .nav-tabs, #mf_tab .nav-tabs
+{
+	text-align:center;
+}
+/**--- why_mutualfund.asp ---- **/
+
+
+/**--- HLV_Calculator.asp ---- **/
+.hlv_slide10 .HLV_calcRow.HLV_xtraPara
+{
+	background-color:#adadad;
+	color:#000;
+	margin-top:0px;
+	text-align:center;
+	font-family: Dosis-SemiBold;
+	font-size: 23px;
+	padding: 10px 0px;
+	word-wrap: break-word;
+	margin-bottom:15px;
+}
+.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child
+{
+	text-align:center;
+	width: 100%;
+    float: left;
+}
+.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input
+{
+    text-align: left;
+    width: 20%;	
+}
+.hlv_slide10 .sum_head1 input#txtHLVMessage
+{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.hlv_slide10 .sum_head2 #hppnCoverPercent
+{
+	border:0px;
+	/* width:100%; 
+	float:left;	*/
+	font-family: Dosis-SemiBold;
+	font-size: 23px;
+	font-weight:bold;
+	color:#666666;	
+	box-shadow:none;
+	border-radius:0px;
+    transition: all 0.5s ease-out;	
+	background-color:transparent;
+    -webkit-text-fill-color: #075bde;	
+}
+.hlv_slide10 .hlv_inputbg .sum_head3 .sum_head2 span
+{
+	float:left;
+	width:auto;
+}
+.hlv_slide10 .sum_head2 #hppnCoverPercent
+{
+	width: 18%;
+    text-align: left;
+	float:left;
+	padding:0px 15px;
+	-webkit-text-fill-color: #000;
+}
+ .hlv_slide10 .HLV_calcInnerBox .sum_head3 .sum_head2
+ {
+	 color:#000;
+	 font-weight:bold;
+	  -webkit-text-fill-color: #000;
+ }
+.hlv_slide10 .sum_head1, .hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child, #txtHumanLifeValue, .hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input
+
+{
+	color:#000;
+}
+.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input, .hlv_slide10 .sum_head3 input
+{
+	font-weight:bold;
+    font-size: 30px;
+    -webkit-text-fill-color: #000;	
+}
+.hlv_slide10 .HLV_calcRow:first-child
+{
+	background-color:#b38dfe;
+	padding: 30px 0px;
+}
+.hlv_slide10 .HLV_calcInnerBox > .HLV_calcRow:nth-child(2)
+{
+	background-color:#000;
+	margin-top:0px;
+}
+.hlv_slide10 .HLV_calcInnerBox > .HLV_calcRow:nth-child(2) p
+{
+	color:#fff;
+	margin:0px;
+	padding:10px 0px;
+}
+.hlv_slide10 .HLV_calcInnerBox .sum_head3 span, .hlv_slide10 .HLV_calcInnerBox .sum_head3 input, .hlv_slide10 .HLV_calcInnerBox .sum_head3 .sum_head2
+{
+	text-align:left;
+}
+.hlv_slide10 .hlv_inputbg
+{
+	background-color:#d5d5d5;
+	width:100%;
+	float:left;
+	padding:40px 0px 20px 0px;
+    /* margin-bottom: 30px;	 */
+}
+.hlv_slide10 .hlv_inputbg .sum_head3 > DIV
+{
+	margin-top:20px;
+	padding:0px;
+}
+.hlv_slide10 .hlv_inputbg .sum_head3 > DIV:nth-child(1)
+{
+	margin-top:0px;
+}
+.hlv_slide10 .HLV_calcInnerBox .sum_head1
+{
+    font-size: 21px;
+	line-height: 44px;
+}
+
+/**--- HLV_Calculator.asp ---- **/
+
+/**---- wm_portfolio.asp ---- **/
+.show_rptDiv
+{
+	width:100%;
+	float:left;
+	text-align:center;
+	margin-top:20px;
+}
+.blue_commonbtn
+{
+    border: 1px solid #7599bc;
+    border-radius: 5px;
+    background-color: #eaf0ff;
+    color: #09559f;
+    display: inline-block;
+    margin: 0 10px;
+    width: auto;
+    padding: 5px 10px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    font-family: Dosis-SemiBold;
+    font-size: 14px;
+    text-transform: uppercase;	
+}
+.popupRed_cross
+{
+    background-color: #A71506;
+	color:#fff;	
+}
+/**---- wm_portfolio.asp ---- **/
+
+
+/** income tax calculator --**/
+#Income_Calc .IncomeCalc_DedctnBox > DIV:last-child > .row:last-child > DIV {
+    padding: 0px 15px;
+}
+.IncomeCalc_DedctnBox > DIV:last-child > .row:first-child > DIV:first-child .DedctnBox_row:last-child label
+{
+	font-weight:normal;
+}
+.deduct_calcbtn
+{
+	margin-top: 178px;
+}
+.IncomeCalc_FinalSum
+{
+	margin-top: 20px;	
+}
+#Income_Calc .row:last-child > DIV:last-child
+{
+	padding:0px;
+}
+#Income_Calc .IncomeCalc_calcBtn
+{
+	float:left;
+}
+.BaInfoBox_row > DIV > DIV input:focus, .IncomeCalc_groSal input:focus, .BaInfoBox_row .blue_hover img:focus, .AlloDetBox_inner span input:focus,
+.calcHraBox_row input[type=text]:focus, .DedctnBox_row input[type=text]:focus
+{
+    border-color:#66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);	
+}
+.BaInfoBox_row .age_grp:focus, .Actage_grp
+{
+    border-color: #582d83;	
+	outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88,45,131,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(88,45,131,.6);		
+}
+.AlloDetBox_inner span input
+{
+	border:1px solid #ccc;
+}
+/** income tax calculator --**/
+
+/**-- NFO page --**/
+.nfo_cntdiv #dtNFO_length select {
+    /* display: block; */
+    margin-bottom: 10px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.nfo_cntdiv #dtNFO_filter input {
+    /* display: block; */
+    margin-bottom: 10px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.nfo_cntdiv .newfuntab table tr th
+{
+	white-space: nowrap;
+}
+/**-- NFO page --**/
+
+/**-- Gainers_Losers page --**/
+#gain_lose .popover__wrapper a
+{
+	color:#337ab7;
+	cursor: pointer;
+}
+#gain_lose_tab .divi_declaredTable table th
+{
+	white-space:nowrap;
+}
+#gain_lose_tab .divi_declaredTable table.table-responsive
+{
+	/*display:block;*/
+}
+/**-- Gainers_Losers page --**/
+
+/**-- growth calculator page --**/
+.growth_calcTable table th
+{
+	white-space:nowrap;
+}
+.growth_calcTable .table-responsive
+{
+	display:block;
+}
+.growth_calcTable .table-responsive:nth-child(4)
+{
+	display:inline-table;
+}
+@media screen and (max-width:580px)
+{
+	#growth_calc .growth_calcTable > .table-responsive:nth-child(4) 
+	{
+		display: block;
+	}	
+}
+/**-- growth calculator page --**/
+
+/**-- risk profile page --**/
+.frame4content.riskprofilepg #myCarousel .riskproslid_optndv .customdivtabslid7rp1 .slid7tablerp tr th
+{
+	white-space:nowrap;
+}
+/**-- risk profile page --**/
+
+
+/**-- child calculator page --**/
+	.child_innerbox 
+	{
+		padding: 22px 142px;
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2
+	{
+	    font-size: 18px;
+		line-height: 17px;
+	}
+	.child_corpus_amt
+	{
+	    top: 72px;	
+	}
+/**-- child calculator page --**/
+
+
+/**-- life insurance page --**/
+
+#life_tab .dark_blue > DIV:last-child, #life_tab .light_orange > DIV:last-child, #life_tab .light_yellow > DIV:last-child, #life_tab .light_grey > DIV:last-child, #life_tab .light_blue > DIV:last-child
+{
+    padding-left: 5px;	
+}
+#life_tab .dark_blue img, #life_tab .light_orange img, #life_tab .light_yellow img, #life_tab .light_grey img, #life_tab .light_blue img {
+    width: 100%;
+}
+/**-- life insurance page --**/
+
+
+/**-- life insurance product page --**/
+
+.prdt_infor .margintoprwd > .container
+{
+	display:none;
+}
+
+/**-- life insurance product page --**/
+
+/**-- Premium calculator page --**/
+.sum_assure 
+{
+    padding: 17px 19px;
+}
+/**-- Premium calculator page --**/
+
+/**-- myaccount.asp --**/
+#divAddiAccoButton .last_loginMyAc
+{
+	float:left;
+}
+#divAddiAccoButton .last_loginMyAc p, #divAddiAccoButton .last_loginMyAc #divLogindetails
+{
+	float:left;
+	width:auto;
+	margin:0px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: Dosis-SemiBold;	
+}
+ #divAddiAccoButton .last_loginMyAc #divLogindetails
+ {
+	padding-left:0px;
+	font-weight: bold;	 
+ }
+/**-- myaccount.asp --**/
+
+
+
+
+@media screen and (max-width:1360px) and (min-width:1201px)
+{
+	#life_insu .whattobuy img
+	{
+		width:100%;
+	}	
+	.page_banner .container .banner_inn {
+		padding-top: 26px;
+	}	
+}
+
+@media screen and (max-width:1200px)
+{
+	.nl_learnmore .Gi_Anchor5
+	{
+		margin-bottom:5px;
+	}
+	
+	#taxguide_main .Pinfo_tbl .Pinfo_tblHeading 
+	{
+		margin: 10px 0px;
+		font-size: 14px;
+		line-height: 60px;		
+	}
+	#taxguide_main .productrightdiv .hvr-shutter-out-vertical, #taxguide_main .productrightdiv .hvr-shutter-out-vertical.produbuttonnew1
+	{
+		width:117px;
+	}	
+	#taxguide_main .Pinfo_area .Pinfo_BorderBTm
+	{
+		margin-right: -15px;
+		margin-left: -15px;
+	}
+	#taxguide_main .Pinfo_BorderBTm .text-right img
+	{
+		width:100%;
+		margin-top: 16px;		
+	}
+	.fancybox-opened.fancybox-opened {
+		z-index: 99999;
+	}	
+	#general_insu .Gi_AnchorInfo
+	{
+	    width: 100%;	
+	}
+	#general_insu .Gi_AnchorArea > DIV a {
+		font-size: 11px;
+		font-weight: normal;
+	}
+	#general_insu .Gi_AnchorArea > DIV {
+		padding: 0px 2px;
+		margin-bottom:5px;
+	}
+	#general_insu .GIcell ul li	
+	{
+		width: 100%;
+		font-size: 13px;		
+	}
+	#general_insu .GIForms_down 
+	{
+		font-size: 14px;
+	}
+	#general_insu .Pinfo_BorderBTm
+	{
+		margin-right: -15px;
+		margin-left: -15px;		
+	}
+	
+	.hlv_slide10 .sum_head2
+	{
+		font-size:19px;
+	}
+	.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input, .hlv_slide10 .sum_head3 input, .hlv_slide10 .sum_head2 #hppnCoverPercent, .hlv_slide10 .HLV_calcRow.HLV_xtraPara
+	{
+	    font-size: 21px;	
+	}
+	.hlv_slide10 .HLV_calcInnerBox .sum_head1 
+	{
+		font-size: 17px;
+		line-height: 35px;		
+	}
+	.hlv_slide2 .HLV_calcInnerBox, .hlv_slide3 .HLV_calcInnerBox, .hlv_slide4 .HLV_calcInnerBox, .hlv_slide5 .HLV_calcInnerBox, .hlv_slide6 .HLV_calcInnerBox, .hlv_slide7 .HLV_calcInnerBox, .hlv_slide8 .HLV_calcInnerBox, .hlv_slide9 .HLV_calcInnerBox, .hlv_slide10 .HLV_calcInnerBox
+	{
+		padding: 45px 90px;	
+	}
+	.hlv_slide6 .HLV_calcInnerBox .imgGender, .hlv_slide7 .HLV_calcInnerBox .imgGender, .hlv_slide9 .HLV_calcInnerBox .imgGender, .hlv_slide10 .HLV_calcInnerBox .imgGender
+	{
+		width:100%;
+	}		
+	.HLV_calcLabel, .hlv_slide10 .sum_head1
+	{
+		font-size: 19px;	
+	}
+	.HLV_slideCanvas
+	{
+		padding: 40px 0px;	
+	}
+	.hlv_slide1.item .HLV_calcInnerBox {
+		padding: 45px 193px;
+	}	
+	.prdt_infor .product_popnnn .btn
+	{
+		padding: 6px 2px;
+		width: 100%;
+		font-size: 12px;
+	}	
+	#life_insu .whattobuy img
+	{
+		width:100%;
+	}
+	button.inscal_genins, button.inscal_genins:hover, button.inscal_genins:focus, button.inscal_genins:active	
+	{
+		font-size: 15px;	
+	}
+	button.btn_gtlatstinolic, button.btn_gtlatstinolic:hover, button.btn_gtlatstinolic:focus, button.btn_gtlatstinolic:active	
+	{
+	    padding: 6px 0px 6px 7px;
+		font-size: 14px;		
+	}
+	#life_tab .nav-tabs>li 
+	{
+		width: 147px;
+		margin-bottom:5px;
+	}
+	#life_tab .nav-tabs>li a
+	{
+	    padding: 6px 7px;	
+	}	
+	.child_corpus h1
+	{
+		margin-top:0px;
+	}
+	.child_inflatn h2
+	{
+	    margin-bottom: 24px;	
+	}
+	.child_age input, .child_degree select, .child_cost input
+	{
+		margin-top:14px;
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2
+	{
+	    font-size: 16px;		
+	}
+	.child_step1, .child_step2 {
+		padding: 38px 0px;
+	}
+	.child_innerbox {
+		padding: 22px 80px;
+	}	
+	#gain_lose_tab .gainLose_btndiv label
+	{
+		font-size:12px;
+	}
+	.buymfonlinebbg.panel5 .subcategorydropdwn {
+		padding: 5px 20px 5px 2px;
+	}	
+	.div14.recomend_fund .buymfonlinebbg.panel5 .subcategorydropdwn 
+	{
+		padding: 3px 18px 3px 3px;
+		font-size: 13px;
+	}
+	.comp_assestAlloGraph > DIV:first-child .table-responsive
+	{
+		display:inline-block;
+	}	
+	#why_mf .nav-tabs>li
+	{
+	    width: 147px;	
+	}
+	table.inscal_table_genins td 
+	{
+		padding: 8px 0px 8px 8px;
+		font-size: 13px;
+	}
+
+}
+
+@media only screen and (max-width:1024px)
+{
+	.hlv_slide2 .HLV_calcRow i, .hlv_slide3 .HLV_calcRow i, .hlv_slide4 .HLV_calcRow i, .hlv_slide7 .HLV_calcRow i, .hlv_slide9 .HLV_calcRow i
+	{
+	    line-height: 100px;
+		font-size: 25px;		
+	}
+	.HLV_calcRow .HLV_clacInput
+	{
+	    font-size: 20px;	
+	}
+	.child_main .child_result > h1
+	{
+	    font-size: 31px;
+		margin-top:0px;
+	}
+	.child_corpus_amt 
+	{
+		top: 98px;
+	}
+	.child_corpus input
+	{
+	    font-size: 27px;	
+	}
+	.child_corpus h1
+	{
+	    font-size: 22px;	
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2 
+	{
+		font-size: 13px;
+	}
+	.child_innerbox 
+	{
+		padding: 22px 22px;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .subcategorydropdwn 
+	{
+		padding: 3px 16px 3px 3px;
+		font-size: 12px;
+	}		
+	#why_mf .nav-tabs>li
+	{
+	    width: 147px;	
+	}
+		table.inscal_table_genins td 
+	{
+		padding: 8px 0px 8px 8px;
+		font-size: 13px;
+	}
+	.table_kc_knwcent td 
+	{
+		padding: 6px 0px 6px 6px;
+	}	
+}
+
+@media only screen and (max-width:991px)
+{
+	#general_tab .panel-title>a
+	{
+	    font-weight: 400;	
+	}
+	.newletter_div h1, .bottom_social h1 
+	{
+		font-size: 15px;
+	}
+	.hlv_slide10 .HLV_calcInnerBox .sum_head1 
+	{
+		font-size: 15px;
+	}
+	.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input, .hlv_slide10 .sum_head3 input, .hlv_slide10 .sum_head2 #hppnCoverPercent, .hlv_slide10 .HLV_calcRow.HLV_xtraPara 
+	{
+		font-size: 19px;
+	}	
+	.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input, .hlv_slide10 .sum_head3 input, .hlv_slide10 .sum_head2 #hppnCoverPercent, .hlv_slide10 .HLV_calcRow.HLV_xtraPara 
+	{
+		font-size: 20px;
+	}	
+	.hlv_slide10 .sum_head2 #hppnCoverPercent 
+	{
+		width: 18%;
+		padding: 0px 8px;
+	}
+	.hlv_slide2 .HLV_calcInnerBox, .hlv_slide3 .HLV_calcInnerBox, .hlv_slide4 .HLV_calcInnerBox, .hlv_slide5 .HLV_calcInnerBox, .hlv_slide6 .HLV_calcInnerBox, .hlv_slide7 .HLV_calcInnerBox, .hlv_slide8 .HLV_calcInnerBox, .hlv_slide9 .HLV_calcInnerBox, .hlv_slide10 .HLV_calcInnerBox 
+	{
+		padding: 45px 40px;
+	}	
+	.hlv_slide2 .HLV_calcRow i, .hlv_slide3 .HLV_calcRow i, .hlv_slide4 .HLV_calcRow i, .hlv_slide7 .HLV_calcRow i, .hlv_slide9 .HLV_calcRow i 
+	{
+		line-height: 95px;
+		font-size: 22px;
+	}	
+	.HLV_calcLabel, .hlv_slide10 .sum_head1 
+	{
+		font-size: 17px;
+	}
+	.hlv_slide7 .hlv_rightImg > div
+	{
+		text-align:Center;
+	}
+	.hlv_slide7 .hlv_rightImg > img
+	{
+		width:50%;
+		margin-top: 55px;
+	}
+	.hlv_slide5 .hlv_rightImg p, .hlv_slide6 .hlv_rightImg p, .hlv_slide8 .hlv_rightImg p
+	{
+		font-size: 18px;	
+	}
+	/*.hlv_slide6 .HLV_earning img, .hlv_slide6 .HLV_notearning img
+	{
+		width:100%;
+	}*/	
+	.hlv_rightImg
+	{
+		float:right;
+		margin-top:5px;
+	}
+	.hlv_slide2 .HLV_calcInnerBox .imgGender, .hlv_slide3 .HLV_calcInnerBox .imgGender, .hlv_slide4 .HLV_calcInnerBox .imgGender, .hlv_slide5 .HLV_calcInnerBox .imgGender, .hlv_slide6 .HLV_calcInnerBox .imgGender, .hlv_slide7 .HLV_calcInnerBox .imgGender, .hlv_slide8 .HLV_calcInnerBox .imgGender, .hlv_slide9 .HLV_calcInnerBox .imgGender, .hlv_slide10 .HLV_calcInnerBox .imgGender, 
+	.hlv_slide3.hlv_rightImg img, .hlv_slide5 .hlv_rightImg, .hlv_slide8 .HLV_insured img, .hlv_slide8 .HLV_notinsured img
+	{
+		width:100%;
+	}
+	.hlv_slide1.item .HLV_calcInnerBox 
+	{
+		padding: 30px 70px;
+	}
+	#life_insu .whattobuy img, #life_tab #resp-tab1 .tab1_cnt_box > DIV img
+	{
+		width:auto;
+	}
+	#life_insu .whattobuy, #life_tab #resp-tab1 .tab1_cnt_box > DIV
+	{
+		text-align:center;
+	}
+	#life_tab p, #mf_tab p
+	{
+	    word-wrap: break-word;	
+	}
+	#life_tab #resp-tab4 .tab1_cnt_box.boi_cnt:nth-child(8) .full_width {
+		padding: 61px 0px;
+	}	
+	#life_tab #resp-tab4 .tab1_cnt_box.boi_cnt:nth-child(7) .full_width {
+		padding: 29px 0px;
+	}	
+	#life_tab #resp-tab4 .tab1_cnt_box.boi_cnt:nth-child(5) .full_width 
+	{
+		padding: 44px 0px;
+	}
+	#life_tab .boi_cnt > DIV:first-child .full_width
+	{
+		padding: 16px 7px;	
+	}
+	#life_tab #resp-tab4 .tab1_cnt_box.boi_cnt:nth-child(4) .full_width {
+		padding: 44px 0px;
+	}	
+	.child_corpus .child_corpus_amt 
+	{
+		top: 70px!important;
+	}
+	.input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group
+	{
+		margin-top:0px;
+	}
+	.child_oldage input
+	{
+		margin-top:14px;
+	}
+	.sip_5box .input-group-btn:first-child>.btn, .sip_5box .input-group-btn:last-child>.btn
+	{
+	    margin-top: 0px;	
+	}
+	.startSIPpg #custompopupstartsipwin label
+	{
+		margin-bottom: 3px;
+	}
+	.startSIPpg .dropdown div.dropdown-menu.new_width
+	{
+	    margin-right: 17px;	
+		z-index: 998;
+	}
+	.startSIPpg .buymfonlinebbg.panel5 .spansubcat
+	{
+		font-size: 13px !important;		
+	}
+	.startSIPpg .buymfonlinebbg.panel5 .subcategorydropdwn
+	{
+		padding: 3px 18px 3px 3px;	
+		font-size: 13px !important;
+	}
+	.startSIPpg .buymfonlinebbg.panel5 .subcatlargecap
+	{
+		width:100%;
+	}
+	.frame4content.riskprofilepg #myCarousel .riskproslid_optndv .customdivtabslid7rp1 .table-responsive
+	{
+		display:inline;
+	}
+	#gain_lose_tab .gainLose_btndiv label
+	{
+		font-size:13px;
+	}
+	.cartCount 
+	{
+		right: 30px;
+		top: 1px;
+	}
+	.buymfonlinebbg.panel5 .ul-li-container ul li
+	{
+		padding: 5px 15px;
+	}
+	.buymfonlinebbg.panel5 .celconmansel > DIV:nth-child(3) 
+	{
+		/* padding-left: 15px; */
+		float:right;
+	}
+	.buymfonlinebbg.panel5 .celconmansel .col-sm-offset-1.col-cust-offset-1, .buymfonlinebbg.panel5 .celconmansel .col-sm-6.col-cust-4
+	{
+	
+		margin-left:0px;
+	}
+	.buymfonlinebbg.panel5 .celconmansel .col-sm-1.col-cust-1
+	{
+		width:inherit;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .subcategorydropdwn 
+	{
+		padding: 3px 20px 3px 3px;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .row > DIV:nth-child(4)
+	{
+	    width: 20%;	
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .row > DIV:nth-child(5)
+	{
+	    width:16%;	
+	}	
+	.fundsnpshotdeatilspg .table-responsive
+	{
+		border:0px;
+	}
+	.basicinfo_table1 table tr th, .fund_perfor1 table tr th, .fund_perfor1 table tr th:last-child
+	{
+	    white-space: nowrap;	
+	}
+	.fundsnpshotdeatilspg .basicinfo_table1 table, .comp_assestAlloGraph > DIV:first-child	.table-responsive, .sect_assestAlloGraph #divSect .table-responsive
+	{
+		margin-bottom:0px;
+		border:0px;
+	}
+	.fundsnpshotdeatilspg .basicinfo_table1 #divBasicInfoRow1, .fundsnpshotdeatilspg .basicinfo_table1 #divBasicInfoRow2, .fund_perfor1 #divFundPerfTable, 
+	.comp_assestAlloGraph > DIV:first-child, .sect_assestAlloGraph #divSect .table-responsive
+	{
+		border: 1px solid #ddd;		
+	}
+	#why_mf .nav-tabs>li 
+	{
+		width: 147px;
+	}
+	.sect_assestAlloGraph #divSect .table-responsive, .fund_perfor1 #divFundPerfTable .table-responsive
+	{
+		display: table;
+		margin-bottom:0px;
+	}	
+	.comp_assestAlloGraph > DIV:first-child	
+	{
+		padding:0px;
+	}
+	.comp_assestAlloGraph > DIV:first-child, .sect_assestAlloGraph > DIV:first-child
+	{
+		padding:0px;
+	}	
+}
+
+@media screen and (max-width:767px)
+{
+	#taxguide_main .productrightdiv .hvr-shutter-out-vertical, #taxguide_main .productrightdiv .hvr-shutter-out-vertical.produbuttonnew1
+	{
+		width:117px;
+	}
+	#taxguide_main .producinfornew .productrightdiv
+	{
+		margin-right: 0px;
+	}
+	.Pinfo_healthform
+	{
+		margin-top: 3% !important;
+		float: none;
+	}
+	#taxguide_main .Pinfo_BorderBTm .Pinfo_tblGreen
+	{
+		width: 100%;
+		font-size: 20px;
+		text-align: center;
+	}
+	#taxguide_main .Pinfo_BorderBTm .text-right
+	{
+		text-align:center;
+	}
+	#taxguide_main .Pinfo_BorderBTm .text-right img
+	{
+		width:auto;
+	}
+	#divNL4 .tb .table-responsive
+	{
+		padding:0px;
+	}
+	#divNL2 img, #divNL3 img, #divNL4 img
+	{
+		width:100%;
+	}
+	#general_insu .panel-default>.panel-heading+.panel-collapse>.panel-body
+	{
+		padding:0px;
+	}
+	#GI_Tb {
+		margin: 0;
+		border: 1px solid #e0e9ff;
+		border-top: 0px;
+		border-radius: 1px;		
+	}	
+	.GIrow 
+	{
+		position: relative;
+		display: block;
+		border-bottom: 1px solid #ccc;
+	}
+	.GIheader-row {
+		display: none;
+	}
+	#GI_Tb .GIrow input[type=radio] 
+	{
+		display: block;		
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;		
+	}	
+	.GIcell 
+	{
+		display: block;
+		border: none;
+		position: relative;
+		height: auto;
+		line-height: 45px;
+		text-align: left;
+	}	
+	.GIprimary 
+	{
+		cursor: pointer;
+	}
+	.GIprimary:after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 18px;
+		z-index: 2;
+		width: 0;
+		height: 0;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-right: 10px solid #ccc;
+	}	
+	.GIcell:nth-of-type(n+2) {
+		display: none;
+	}	
+	input[type="radio"]:checked ~ .GIcell:nth-of-type(n+2), input[type="checkbox"]:checked ~ .GIcell:nth-of-type(n+2) 
+	{
+		background: #e0e0e0;
+	}	
+	input[type="radio"]:checked ~ .GIcell, input[type="checkbox"]:checked ~ .GIcell 
+	{
+		display: block;
+		border-bottom: 1px solid #eee;
+	}
+	input[type="radio"]:checked ~ .GIcell:nth-of-type(n+2):before, input[type="checkbox"]:checked ~ .GIcell:nth-of-type(n+2):before {
+		content: attr(data-label);
+		display: inline-block;
+		width: 60px;
+		background: #c9d0d6;
+		border-radius: 4px;
+		height: 30px;
+		line-height: 30px;
+		margin-right: 10px;
+		font-size: 18px;
+		text-align: center;
+		color: #00283a;
+		width: 100%;
+		border: 1px solid #00283a;
+	}
+	#general_tab .Gi_AnchorArea > DIV
+	{
+		margin-bottom:5px
+	}	
+	
+	
+	.hlv_slide2 .HLV_calcRow > DIV:last-child > DIV:first-child, .hlv_slide3 .HLV_calcRow > DIV:last-child > DIV:first-child, .hlv_slide4 .HLV_calcRow > DIV:last-child > DIV:first-child, .hlv_slide5 .HLV_calcRow > DIV:last-child > .HLV_calcLabel, .hlv_slide6 .HLV_calcRow > DIV:last-child > .HLV_calcLabel, .hlv_slide7 .HLV_calcRow > DIV:last-child > DIV:first-child, .hlv_slide8 .HLV_calcRow > DIV:last-child > .HLV_calcLabel, .hlv_slide9 .HLV_calcRow > DIV:last-child > DIV:first-child
+	{
+		margin-top:30px;
+	}
+	.imgGender
+	{
+		display:none;
+	}	
+	.hlv_slide3.hlv_rightImg img, .hlv_slide5 .hlv_rightImg, .hlv_slide8 .HLV_insured img, .hlv_slide8 .HLV_notinsured img
+	{
+		width:100%;
+	}
+	.HLV_calcLabel, .hlv_slide10 .sum_head1
+	{
+	    font-size: 19px;	
+	}
+	.HLV_gender 
+	{
+		line-height: 53px;
+	}
+	.HLV_slideCanvas {
+		padding: 15px 0px;
+	}
+	#life_insu .full_page
+	{
+		padding:5px;
+	}
+	.prdt_infor .cell:nth-of-type(3) 
+	{
+		display: none;
+	}
+	.prdt_infor .primary:after 
+	{
+		content: "";
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 16px;
+		z-index: 2;
+		width: 0;
+		height: 0;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid #00283a;
+	}
+	.prdt_infor .primary 
+	{
+		background-color: #c9d0d6;
+		font-size: 14px;
+		font-weight: 700;
+	}
+	.prdt_infor .Pro_category input[type="radio"]:checked ~ .cell, .prdt_infor .Pro_category input[type="checkbox"]:checked ~ .cell 
+	{
+		display: block;
+		border-radius: 5px;
+		border-bottom: 1px solid #eee;
+	}
+	.prdt_infor .Pro_PlanImage 
+	{
+		display: none !important;
+	}
+	.prdt_infor .cell 
+	{
+		display: block;
+		border: none;
+		/* position: relative; */
+		height: auto;
+		line-height: 32px;
+		text-align: left;
+		width: 94%;
+		margin: auto;
+		border-radius: 5px;
+	}
+	.Pro_category .cell 
+	{
+		width: 99%;
+	}
+	.prdt_infor .Pro_category input[type=radio], .prdt_infor input[type=checkbox] 
+	{
+		display: block;
+		position: absolute;
+		z-index: 1;
+		width: 99%;
+		height: 100%;
+		opacity: 0;
+	}
+	.prdt_infor .Pro_category 
+	{
+		position: relative;
+		display: block;
+		border-bottom: 3px solid transparent !important;
+	}
+	.prdt_infor #Planstable 
+	{
+		display: block;
+		margin: 2px 0 0 0;
+	}
+	.prdt_infor .pro_GreenHeader 
+	{
+		display: none;
+	}
+	.Pro_category .cell 
+	{
+		width: 99%;
+	}
+	.prdt_infor .Pro_category input[type=radio], input[type=checkbox] {
+		display: block;
+		position: absolute;
+		z-index: 1;
+		width: 99%;
+		height: 100%;
+		opacity: 0;
+	}	
+	.prdt_infor .Pro_category {
+		position: relative;
+		display: block;
+		border-bottom: 3px solid transparent !important;
+	}	
+	.prdt_infor .pro_Complogo img 
+	{
+		max-width: 150px;
+		width: 100%;
+	}
+	.prdt_infor .pro_Complogo {
+		width: 100%;
+		background: #fff;
+		display: block;
+		vertical-align: middle;
+		border: none;
+		padding: 1%;
+		text-align: center;
+		position: relative;
+	}
+	.prdt_infor .pro_Comptext {
+		width: 100%;
+		background: #fff;
+		display: block;
+		vertical-align: middle;
+		border: none;
+		color: #00283a;
+	}	
+	.child_main .child_result > h1
+	{
+		margin-bottom:30px;
+	}
+	.child_step1 .mri
+	{
+		margin-bottom: 0px;
+	}
+	.child_main .child_result > h1 
+	{
+		font-size: 27px;
+	}
+	.child_corpus .child_corpus_amt h1 
+	{
+		font-size: 18px!important;
+		margin-top: -13px;
+	}
+	.child_oldage label
+	{
+		margin-top: 26px;	
+	}
+	.child_step1, .child_step2 
+	{
+		padding: 25px 0px;
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2 
+	{
+		font-size: 16px;
+	}
+	.child_innerbox 
+	{
+		padding: 22px 25px;
+	}
+	.child_main
+	{
+		padding-top:0px;
+	}
+	/*.recomend_fund .cartCount 
+	{
+		left: 26px;
+		bottom: 0px;
+		right:0px;
+		top:4px;
+	}*/
+	.buymfonlinebbg.panel5 .imgcart
+	{
+		margin:0px;
+	}
+	.buymfonlinebbg.panel5 .pnl5_col_cust_4
+	{
+		padding-left:15px;
+	}
+	.buymfonlinebbg.panel5 .subcatlargecap
+	{
+		margin-bottom:10px;
+	}
+	#txtSIPAmt2
+	{
+		width: 65%;
+		margin-bottom:10px;
+	}
+	.buymfonlinebbg.panel5 .celconmansel .dropdown div.dropdown-menu.dd2cus2nd
+	{
+		left:auto;
+		width: 260px;
+	}
+	.div14.recomend_fund #divTopPerformance .dropdown .dropdown-menu.new_width, .div14.recomend_fund ul.cartcusul .dropdown div.dropdown-menu
+	{
+		left:0;
+		margin:0px auto;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .row > DIV:nth-child(4)
+	{
+		width:50%;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .row > DIV:nth-child(5)
+	{
+		width:33.33333333%;
+	}
+	.fundsnpshotdeatilspg .shareinfo_con, .fundsnpshotdeatilspg .shareinfo_condate
+	{
+		text-align:left;
+	}	
+	.assest_allocation .assest_head
+	{
+		width:35%;
+		float:none;
+		margin:0px auto;
+	}
+		.comp_assestAlloGraph > DIV:first-child .table-responsive
+	{
+		display:table;
+	}	
+	#mf_tab #resp-tab3 .color4_boxes > DIV, #mf_tab #resp-tab3 .color4_boxes > DIV .green_box, #mf_tab #resp-tab3 .color4_boxes > DIV .black_box, #mf_tab #resp-tab3 .color4_boxes > DIV .red_box, #mf_tab #resp-tab3 .color4_boxes > DIV .grey_box 
+	{
+		height: 170px;
+	}
+	#mf_tab #resp-tab3 .color4_boxes p
+	{
+	    font-size: 13px;	
+	}
+	/**-- about_us.asp --**/	
+	.aboutus_cnt .client_img
+	{
+		width:100%;
+	}
+	.ourvision_bgcnt h1:first-child
+	{
+	    margin-top: 35px;	
+	}
+	.ourvision_bgcnt h1
+	{
+	    margin-top: 20px;	
+	}
+	/**-- about_us.asp --**/
+	
+}
+
+@media screen and (max-width:650px)
+{
+	.hlv_inputbg .sum_head3:last-child > DIV:last-child .sum_head1
+	{
+		line-height: 17px;
+	}
+	.HLV_calcRow .HLV_clacInput
+	{
+		font-size:16px;
+	}
+	.item .HLV_calcInnerBox 
+	{
+		padding: 45px 30px;
+	}	
+	.plan_infoRowGender .radioButtonCont .commonRadioBtn + label .checkImg
+	{
+		width: 36px;
+		height: 36px;		
+	}
+	.plan_infoRowGender .radioButtonCont .commonRadioBtn + label
+	{
+		padding: 0px 3px 0px 0px;		
+	}
+	.plan_infoBox > DIV:nth-child(2) .plan_infoRow input, .plan_infoBox > DIV:nth-child(3) .plan_infoRow input, .plan_infoBox > DIV:nth-child(3) select, .plan_infoBox .form-control
+	{
+		font-size: 12px;	
+	}
+	.plan_infoBox > DIV:nth-child(2) .plan_infoRow, .plan_infoBox > DIV:nth-child(3) .plan_infoRow {
+		margin-left: 0;
+	}	
+	.select_cat_planBox, .plan_infoBox, .plan_infoBox1, .sum_assure
+	{
+	    padding: 16px 1px;	
+	}
+	.prem_indiv .prem_indiv_right p:last-child
+	{
+	    font-size: 24px;	
+	}
+	.prem_indiv h2, .prem_indiv .prem_indiv_right p, .plan_infoBox > DIV p
+	{
+	    font-size: 14px;	
+	}
+	.child_main .child_result > h1 
+	{
+		font-size: 20px;
+	}
+	.child_corpus .child_corpus_amt 
+	{
+		top: 59px!important;
+	}
+	.child_corpus .child_corpus_amt h1 
+	{
+		font-size: 15px!important;
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2
+	{
+		font-size:18px;
+		text-align:center;
+		margin-top:15px;
+	}
+	.child_age input, .child_degree select, .child_cost input, .child_oldage .zoomIn DIV input
+	{
+		float:none;
+	}
+	.child_step1 .mri, .child_oldage .zoomIn DIV
+	{
+		text-align:center;
+	}
+	.child_main .child_bigbtn h1, .child_main .risk_profile h1
+	{
+	    font-size: 28px;	
+	}
+	.child_innerbox
+	{
+	    padding: 22px 0px;	
+	}
+	.frame4content .panel2_con .sel_goal_oll .imgcon_goal.img1
+	{
+		margin-top:0px;
+	}
+	.frame4content .panel2_con .sel_goal_oll .selgoal_cont
+	{
+		margin-top:0px;
+	}
+	.frame4content .panel2_con .sel_goal_oll .selgoal_cont h3.h3
+	{
+	    font-size: 15px;
+		margin: 0px;
+		font-weight:bold;		
+	}
+	.startSIPpg #divTopPerformance.tabContent
+	{
+		padding: 0px;
+		border: 1px solid #ddd;
+		margin-top: 10px;
+	}
+	.startSIPpg .buymfonlinebbg.panel5 .tabContent table.mf-table
+	{
+		margin:0px;
+	}
+	.frame4content.riskprofilepg #myCarousel .carousel-inner .riskproslid_optndv
+	{
+	    padding: 15px 15px 15px 15px;	
+	}
+	.growth_calcTable > .table-responsive:nth-child(4)
+	{
+		display:inline-table;
+	}
+	.nfo_cntdiv #cboNFO, .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter
+	{
+		float:left;
+		margin-top:0px;
+	}
+	.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter	
+	{
+		padding-right:15px;
+	}
+	.dv_strtsip_procedchkout .proceedtochkout
+	{
+	    width: 205px;	
+	}
+	.panel6 .buymfonlinelasttab thead tr th
+	{
+		white-space:nowrap;
+	}
+	.buymfonlinebbg.panel5 .celconmansel select.subcategorydropdwn, .buymfonlinebbg.panel5 .celconmansel input[type=text] {
+		width: 76%;
+	}	
+	.buymfonlinebbg.panel5 .subcatlargecap .spansubcat {
+		width: 85px;
+	}
+	.buymfonlinebbg.panel5 .spansubcat {
+		width: 26px;
+	}	
+	.my_account_main .buymfonlinebbg.panel5 .basis1year {
+		width: 64%;
+	}	
+	#divTopTable .buymfonlinebbg .table-striped td
+	{
+		white-space:nowrap;
+	}
+	#divTopTable .buymfonlinebbg .tab-act-con
+	{
+	    display: block;	
+	}
+	.div14.recomend_fund .chkout_btn .need_help
+	{
+		margin-top:15px;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .subcategorydropdwn 
+	{
+		padding: 3px 23px 3px 3px;
+	}
+	.assest_allocation .assest_head
+	{
+		width:55%;
+	}
+
+	#mf_tab #resp-tab3 .color4_boxes > DIV, #mf_tab #resp-tab3 .color4_boxes > DIV .green_box, #mf_tab #resp-tab3 .color4_boxes > DIV .black_box, #mf_tab #resp-tab3 .color4_boxes > DIV .red_box, #mf_tab #resp-tab3 .color4_boxes > DIV .grey_box
+	{
+		height: 132px;	
+	}
+	#mf_tab #resp-tab3 .color4_boxes p
+	{
+	    font-size: 13px;	
+	}
+	#mf_tab #resp-tab4 .full_width > DIV:nth-child(2), #mf_tab #resp-tab2 > .full_width:nth-child(2), #mf_tab #resp-tab8 > DIV:nth-child(3), #mf_tab #resp-tab8 > DIV:nth-child(6)
+	{
+		text-align:center;
+	}
+	#mf_tab #resp-tab4 .full_width > DIV:last-child img
+	{
+		margin: 0px auto;
+		padding-top: 30px;		
+		width:auto;
+	}
+	.know_boxes .modal-header .close
+	{
+	    right: -8px;	
+	}
+	#mf_tab #resp-tab1 > DIV img, #mf_tab #resp-tab8 > DIV img {
+		width: auto;
+	}	
+	.page_banner .container .banner_inn {
+		padding-top: 10px!important;
+	}
+	.page_banner h1 {
+		font-size: 22px;
+		margin-top: 0px;
+	}	
+	.page_banner p {
+		font-size: 12px;
+		margin-bottom: 2px;
+	}	
+	#why_mf .nav-tabs>li a
+	{
+		font-size:13px;
+	}
+
+	#life_tab #resp-tab1 h1, #life_tab #resp-tab2 h1, #life_tab #resp-tab3 h1, #life_tab #resp-tab4 h1, #life_tab #resp-tab5 h1, #life_tab #resp-tab6 h1, #mf_tab #resp-tab1 h1, #mf_tab #resp-tab2 h1, #mf_tab #resp-tab3 h1, #mf_tab #resp-tab6 h1, #mf_tab #resp-tab4 h1, #mf_tab #resp-tab8 h1, #mf_tab #resp-tab7 h1, #mf_tab #resp-tab5 h1
+	{
+	    font-size: 25px;	
+	}
+	#mf_tab #resp-tab2 img, #mf_tab #resp-tab8 > DIV:nth-child(3) img, #mf_tab #resp-tab8 > DIV:nth-child(6) img
+	{
+		width:auto;
+		margin:0px auto;
+	}
+	.know_boxes .modal-header .close
+	{
+	    right: -8px;	
+	}	
+}
+
+@media only screen and (max-width:480px)
+{
+	.nl_learnmore .Gi_AnchorHeading 
+	{
+		font-size: 15px;
+	}
+	.nl_learnmore .Gi_Anchor5	
+	{
+		width:100%;
+		float:left;
+	}
+	#taxguide_main .Pinfo_tbl .Pinfo_tblHeading 
+	{
+		line-height: 53px;
+	}
+	#taxguide_main .producinfornew .productrightdiv
+	{
+		text-align:Center;
+	}
+	#taxguide_main .productrightdiv .protpadiv
+	{
+		float:none;	
+		margin-left:auto;
+	}
+	#divNL1 #GI_Tb .GIrow input[type=radio]:checked, #divNL1 #GI_Tb .GIrow input[type=checkbox]:checked {
+		z-index: -1!important;
+	}	
+	.homenewiconmargin
+	{
+		margin-bottom:15px;
+		margin-top:5px;
+	}
+	#taxguide_main .productrightdiv .hvr-shutter-out-vertical, #taxguide_main .productrightdiv .hvr-shutter-out-vertical.produbuttonnew1
+	{
+		width: 110px;
+		float: none;
+		margin-right: 3px;
+	}	
+	#general_tab .GI_BluHeading
+	{
+	    font-size: 15px;
+		line-height: 25px;	
+	}
+	.hlv_slide10 .sum_head2 #hppnCoverPercent 
+	{
+		width: 19%;
+	}
+	.hlv_slide10 .sum_head3 input, .hlv_slide10 .sum_head2 #hppnCoverPercent
+	{
+	    font-size: 19px;	
+	}
+	.hlv_slide10 .sum_head2 
+	{
+		font-size: 17px;
+	}
+	.hlv_slide10 .hlv_inputbg span, .hlv_slide10 .hlv_inputbg input
+	{
+		text-align:center;
+	}
+	.hlv_slide10 .hlv_inputbg
+	{
+		padding: 20px 0px 20px 0px;	
+	}
+	.hlv_slide10 .HLV_calcRow:first-child > .sum_head1:nth-child(3)
+	{
+		line-height: 20px;
+		width: 100%;
+		float: left;	
+	}
+	.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child input 
+	{
+		width: 45%;
+	}	
+	.hlv_slide10 .HLV_calcRow:first-child 
+	{
+		padding:20px 10px;
+	}
+	.hlv_slide10 .HLV_calcRow:first-child .sum_head1:first-child, .hlv_slide10 .HLV_calcInnerBox .sum_head1
+	{
+		text-align:left;
+	}
+	.hlv_slide5 .hlv_rightImg p, .hlv_slide6 .hlv_rightImg p, .hlv_slide8 .hlv_rightImg p {
+		font-size: 14px;
+	}	
+	.hlv_slide7 .hlv_rightImg img:first-child
+	{
+		width: 44%;
+	}
+	.hlv_slide7 .hlv_rightImg > img
+	{
+		float:left;
+	}
+	.hlv_slide5 .HLV_calcRow .HLV_singlefemale, .hlv_slide5 .HLV_calcRow .HLV_singlemale
+	{
+	    width: 110px;
+		height: 110px;	
+		border: 8px solid #fff;
+	}
+	.hlv_slide5 .HLV_calcRow .HLV_singlemale:hover, .HLV_singlefemale:hover, .HLV_singleActive	
+	{
+	    width: 110px;
+		height: 110px;			
+		border: 8px solid #0899e4!important;		
+	}
+	.hlv_slide9 .HLV_calcRow i
+	{
+		line-height: 135px;
+	}
+	.hlv_slide2 .HLV_calcRow i, .hlv_slide3 .HLV_calcRow i, .hlv_slide4 .HLV_calcRow i, .hlv_slide7 .HLV_calcRow i, .hlv_slide9 .HLV_calcRow i 
+	{
+		line-height: 80px;
+		font-size: 20px;
+	}	
+	.HLV_calcLabel, .hlv_slide10 .sum_head1 
+	{
+		font-size: 17px;
+	}	
+	.hlv_rightImg img
+	{
+		width:100%;
+	}
+	.item .HLV_calcInnerBox {
+		padding: 45px 10px;
+		padding-top:10px;
+	}	
+	.hlv_slide1.item .HLV_calcInnerBox 
+	{
+		padding: 30px 10px;
+	}
+	.hlv_slide1 .HLV_calcInnerBox .HLV_calcRow:nth-child(5) > DIV > DIV
+	{
+		padding:0px;
+	}
+	.hlv_slide1 .HLV_calcInnerBox .HLV_calcRow .HLV_male
+	{
+		margin-right: 5px;
+	}
+	.plan_infoBox > DIV:nth-child(3) select, .plan_infoBox > DIV:nth-child(3) .plan_infoRow input
+	{
+		width:100%;
+	}
+	.plan_infoBox > DIV:first-child .plan_infoRow:nth-child(2) input, .plan_infoBox > DIV:nth-child(2) .plan_infoRow input
+	{
+	    width: 88%;	
+	}
+	.prem_indiv h2
+	{
+		text-align:center;
+		margin-top: 10px;
+	}
+	.premium_calc_btn > DIV:nth-child(2) .prem_indiv_left img
+	{
+	    width: 100%;
+	}
+	.premium_calc_btn > DIV:nth-child(2) .prem_indiv_left
+	{
+	    width: 38%;	
+	}
+	.prem_indiv_left
+	{
+	    float: left;
+		text-align: center;	
+	}
+	.prem_indiv .prem_indiv_right
+	{
+		padding: 0px 10px;
+		margin-left: 4px;
+	}
+	.prdt_infor .Heading_Pagenew
+	{
+	    font-size: 20px;
+		line-height: 25px;	
+	}
+	.child_corpus .child_corpus_amt 
+	{
+		top: 70px!important;
+	}
+	.child_corpus input 
+	{
+		font-size: 14px!important;
+	}
+	.child_corpus .child_corpus_amt h1 
+	{
+		font-size: 10.5px!important;
+	}
+	.child_oldage p, .child_age p, .child_degree p, .child_cost p, .child_inflatn h2
+	{
+	    font-size: 17px;	
+	}
+	.child_main .child_bigbtn h1, .child_main .risk_profile h1 
+	{
+		font-size: 20px;
+	}
+	.child_step1, .child_step2 {
+		padding: 22px 0px;
+	}
+	.child_main .child_bigbtn h1 
+	{
+		margin-bottom: 32px;
+	}
+	.child_bigbtn {
+		margin-bottom: 5px;
+	}	
+	.growth_calcTable table th
+	{
+		white-space:nowrap;
+	}
+	.nfo_cntdiv .newfuntab .dataTable
+	{
+		overflow-x: auto;
+		display: block;
+		width:100%!important;
+	}
+	.my_account_main .buymfonlinebbg.panel5 .basis1year
+	{
+		width: 100%;
+	}
+	.my_account_main .buymfonlinebbg.panel5 .tabContent table.mf-table, .div14.recomend_fund .tabContent #divTopPerformance .table-responsive
+	{
+		margin:0px;
+	}
+	#divTopTable .buymfonlinebbg .tab-act-con
+	{
+	    border: 1px solid #ddd;
+		height:auto;
+	}
+	.my_account_main .tabContent, .div14.recomend_fund .tabContent #divTopPerformance
+	{
+		border: 1px solid #ddd;
+		margin:0px;
+		padding:0px;
+	}
+	.buymfonlinebbg.panel5 .celconmansel label 
+	{
+		width: 47px;
+	}	
+	.cartCount
+	{
+	    top: 2.5px;	
+	}
+	.dv_strtsip_procedchkout .proceedtochkout
+	{
+		margin-top:5px;
+	}
+	.div14.recomend_fund .bodybgblcustwmstrtsip 
+	{
+		background-color: black;
+	}
+		.assest_allocation .assest_head
+	{
+		width:auto;
+	}
+	.fundsnpshotdeatilspg .comp_assestAlloGraph > DIV:first-child
+	{
+		overflow:auto;
+	}
+	.fund_perfor1 #divFundPerfTable .table-responsive
+	{
+		display: block;
+	}
+	.basicinfo_table1 table tr th, .fund_perfor1 table tr th
+	{
+	    padding: 7px 10px;	
+	}
+	.comp_assestAllo .basic_info span:first-child, .sect_assestAllo .basic_info span:first-child, #divAMCDetails + .button_div .basic_info span:first-child
+	{
+		word-wrap: break-word;
+		width: 50%;	
+	}
+	h1.basic_info
+	{
+		font-size:12px;
+	}
+	.fundgraph_tabs li a
+	{
+	    font-size: 12px;
+	}	
+	#mf_tab #resp-tab3 .color4_boxes h2
+	{
+		margin:6px 0px;
+	}
+	#mf_tab #resp-tab3 .color4_boxes > DIV, #mf_tab #resp-tab3 .color4_boxes > DIV .green_box, #mf_tab #resp-tab3 .color4_boxes > DIV .black_box, #mf_tab #resp-tab3 .color4_boxes > DIV .red_box, #mf_tab #resp-tab3 .color4_boxes > DIV .grey_box 
+	{
+		height: 155px;
+	}
+	#mf_tab #resp-tab3 .color4_boxes p
+	{
+	    font-size: 12px;
+		line-height: 17px;		
+	}	
+	#why_mf .nav-tabs>li 
+	{
+		width: 49%;
+		font-size: 13px;
+		float: none;
+		display: inline-block;
+	}
+	#life_tab #resp-tab1 h1, #life_tab #resp-tab2 h1, #life_tab #resp-tab3 h1, #life_tab #resp-tab4 h1, #life_tab #resp-tab5 h1, #life_tab #resp-tab6 h1, #mf_tab #resp-tab1 h1, #mf_tab #resp-tab2 h1, #mf_tab #resp-tab3 h1, #mf_tab #resp-tab6 h1, #mf_tab #resp-tab4 h1, #mf_tab #resp-tab8 h1, #mf_tab #resp-tab7 h1, #mf_tab #resp-tab5 h1
+	{
+		font-size: 20px;	
+	}	
+
+	.assest_graph center > DIV:last-child tr
+	{
+		padding:0px;
+	}
+	.our_vision img
+	{
+		height:210px;
+	}
+	.ourvision_bgcnt h1:first-child 
+	{
+		margin-top: 45px;
+	}
+	.div14.recomend_fund .buymfonlinebbg.panel5 .subcategorydropdwn {
+    padding: 5px 29px 5px 10px;
+	}
+	.know_boxes .modal-header .close
+	{
+	    right: -8px;	
+	}	
+	/**-- photogallery.asp, certificates.asp, awards.asp --**/
+	#rg-gallery .es-carousel
+	{
+	    bottom: 0;
+		position: absolute;
+		left: 0;
+		right: 0;		
+	}
+	.aboutus .row
+	{
+		padding-bottom:10px;
+	}
+	/**-- photogallery.asp, certificates.asp, awards.asp --**/
+	.bot_footeropt ul li
+	{
+		padding: 0px 2px;
+	}
+}
+
+
+/** ======================================= onboarding.decrwealth INNDERPAGES rwd css =================================================== **/

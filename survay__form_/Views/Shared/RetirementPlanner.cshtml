@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   
+    @RenderSection("AdditionalMeta", false)
+    @*<link href="~/css/custom/theme-2.css" rel="stylesheet" />
+        <link href="~/css/style.css" rel="stylesheet" />
+        <link href="~/css/style1.css" rel="stylesheet" />*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @*<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">*@
+    <link href="https://fonts.googleapis.com/css?family=Dosis-SemiBold:400" rel="stylesheet">
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>
+    <link href="~/FamilyFinancialSecurity/css/style.css" rel="stylesheet" />
+    <link href="~/FamilyFinancialSecurity/css/Site.css" rel="stylesheet" />
+    <link href="~/FamilyFinancialSecurity/css/mystyle.css" rel="stylesheet" />
+    <link href="~/FamilyFinancialSecurity/css/rwd_wrk.css" rel="stylesheet" />
+    <link href="~/FamilyFinancialSecurity/css/css1.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/alertify.min.css" />
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/themes/default.min.css" />
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/themes/semantic.min.css" />
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/css/themes/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        @@media (max-width:767px) {
+            .hidden-xs {
+                display: none !important;
+            }
+        }
+
+        @@media (min-width:768px) and (max-width:991px) {
+            .hidden-sm {
+                display: none !important;
+            }
+        }
+
+        @@media (max-width:767px) {
+            #return-to-top {
+                display: none !important;
+            }
+        }
+
+        @@media (min-width:768px) and (max-width:991px) {
+            #return-to-top {
+                display: none !important;
+            }
+        }
+    </style>
+    <style>
+        input, textarea 
+        {
+            margin-bottom: 0px !important;
+            line-height: initial;
+        }
+
+        .back-section 
+        {
+            position: relative;
+            /*padding-bottom: 92px;*/
+            /*background-image: url('../images/kazimrazabackgroundimage.jpg');*/
+            /*width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;*/
+        }
+
+        .back-section:before {
+            position: absolute;
+            content: '';
+            /*background-color: #6a5cbc;*/
+            background-image: linear-gradient(270deg, #d04d85, #534ab3);
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <style>
+        @@media screen and (max-width: 520px) and (min-width: 220px) 
+        {
+            h1 {
+                padding-top: 10px;
+                font-size: 35px;
+                line-height: 30px;
+                font-weight: 400;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            .navbar-brand 
+            {
+                padding: 0px !important;
+            }
+
+            .navbar-brand img 
+            {
+                width: 250px !important;
+                padding-top: 5px;
+            }
+
+            .main-menu .navbar-header 
+            {
+                padding: 0px;
+            }
+
+            .back-section 
+            {
+                padding-bottom: 0px;
+                height: 94px;
+            }
+
+            .back-section h1 
+            {
+                padding-top: 20px !important;
+                line-height: initial;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        th {
+            background: #8266f6 !important;
+            border: 1px solid #fff !important;
+            color: #fff;
+        }
+
+        .navbar-toggle {
+            float: right !important;
+            padding: 22px 19px !important;
+            margin-right: 0px !important;
+        }
+
+        .back-section h1 {
+            padding-top: 40px;
+            font-size: 30px;
+            font-weight: 300;
+        }
+    </style>
+
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    @RenderBody()
+
+    @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mehta Softwares</p>
+        </footer>
+    </div>*@
+
+    <script src="~/FamilyFinancialSecurity/js/jquery-1.10.2.js"></script>
+    <link href="~/css/custom/jssocials.css" rel="stylesheet" />
+    <link href="~/css/custom/jssocials-theme-classic.css" rel="stylesheet" />
+    <script src="~/css/custom/jssocials.js"></script>
+    <script src="~/css/custom/jssocials.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).ready(function () {
+            $("#shareIcons").jsSocials({
+                showLabel: false,
+                showCount: false,
+                shares: ["facebook", "linkedin", "twitter", "googleplus", "whatsapp", "instagram"]
+            });
+
+        });
+
+    </script>
+
+    <link href="~/css/custom/datepicker.min.css" rel="stylesheet" />
+
+    <link href="~/css/custom/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/css/custom/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="~/css/custom/bootstrap-datetimepicker.js"></script>
+    <script src="~/css/custom/bootstrap-datepicker.min.js"></script>
+    <script src="~/css/custom/bootstrap-datetimepicker.min.js"></script>
+
+    <script src="~/FamilyFinancialSecurity/js/bootstrap.js"></script>
+    <script src="~/FamilyFinancialSecurity/js/bootstrap.min.js"></script>
+    <script src="~/FamilyFinancialSecurity/js/classie.js"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+
+    @*<script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5b23622f61a2e64e5fb57f15/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+     </script>*@
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

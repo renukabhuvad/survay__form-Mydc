@@ -1,0 +1,495 @@
+﻿
+@{
+    ViewBag.Title = "PowerOfCompounting";
+    Layout = "~/Views/Shared/Powerofcompounting.cshtml";
+}
+@section AdditionalMeta
+{
+    <meta name="keywords" content="Kazim Institute of leadership,Kazim Raza M,022-28684456,905, Ghanshyam Enclave, Lalji Pada,Near Laljipada police chowky, Kandiwali link road, Kandiwali (W). Mumbai-400067 ,,LIC, Insurance, Agent">
+    <meta name="description" content="">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Power Of Compounting">
+    <meta itemprop="description" content="">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:site" content="kazim Raza">
+    <meta name="twitter:title" content="Power Of Compounting">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:creator" content="http://kazimraza.com">
+    <meta name="twitter:image:src" content="http://kazimraza.com/images/Kazim%20Raza%20Logo.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Power Of Compounting" />
+    <meta property="og:type" content="Power Of Compounting" />
+    <meta property="og:description" content="Important Calculator For Financial Planning" />
+    <meta property="og:site_name" content="kazim Raza" />
+    <meta property="article:section" content="Important Calculator For Financial Planning" />
+
+}
+<style>
+     .maturity {
+        float: left;
+        padding: 5px 0px 0px 100px;
+    }
+     .button a.start-sip
+{
+	background: #ff4500 !important;
+    border: 2px solid #ff4500;
+    padding: 8px 24px!important;
+    cursor: pointer;
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 25px !important;
+    width: 156px;
+    text-align: center;
+    text-decoration:none;
+    margin-left:10px;
+}
+.button a:hover.start-sip
+{
+    background: #009454!important;
+    border: 2px solid #009454;
+    color: #fff;
+}
+
+</style>
+
+<section class="staticback" ng-app="app">
+   
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  text-center wow fadeInUp">
+        <div id="shareIcons" socialShareURL="kazimraza.com/PowerOfCompounting"></div>
+        <div class="power-sip-head font-light-green">Power  <span class="white ptsanscaption-bold"> of compounding</span> </div>
+        <div class="margin-top-10-375"><img src="/images/white-line.png" style="width:auto;"></div>
+    </div>
+    <div class="container" style="padding:0px;" ng-controller="Ctrl">
+        <div class="col-xs-12 col-sm-12 col-md-12" id="sip-calc">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <form autocomplete="off" class="ng-pristine ng-valid">
+                    <div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9">
+                                <span class="tool-lebel">How much do you want to invest ?</span><br />
+                                <div class="col-md-12" style="padding:0px">
+                                    @*<input id="range_51" type="range" onchange="updateInvestInput(this.value);" ng-click="change();">*@
+                                    <input type="text" class="js-range-slider" value="" onchange="updateInvestInput(this.value);" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 text-center input-bg">
+                                <input value="1000" id="monthlyinvestment" class="monthlyinvestment" style="border:none" />
+                                @*<input type="number" id="monthlyinvestment" class="ng-pristine ng-untouched ng-valid" value="1000">*@
+                            </div>
+
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel">Investment Period </span>
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_52" type="range" onchange="updatePeriodInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 input-bg">
+                                <input type="number" id="timeperiod" class="ng-pristine ng-untouched ng-valid" value="10" disabled>
+                                <label for="timeperiod">Years</label>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel"> Expected Annual Returns (%)</span>
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_53" type="range" onchange="updateAnnualInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-4 col-lg-3 input-bg">
+                                <input id="rateOfreturn" type="number" class="ng-pristine ng-untouched ng-valid" value="10" disabled>
+                                <label for="rateOfreturn">%</label>
+                            </div>
+                        </div>
+                        <div class="row margin-bottom-20">
+                            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-9 font-400">
+                                <span class="tool-lebel">Adjust for inflation ?</span>
+                                <br />
+                                <div class="col-md-12" style="padding:0px">
+                                    <input id="range_13" type="range" onchange="updateInflationInput(this.value);" ng-click="change()">
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-sm-2 col-md-3 col-lg-3 input-bg">
+                                <input id="inflationRate" type="number" class="ng-pristine ng-untouched ng-valid" value="5" disabled>
+                                <label for="inflationRate">%</label>
+                            </div>
+                            @*<div id="futureval" class="hidden ng-binding">{"value":0}</div>
+                                <div id="investeda" class="hidden ng-binding"></div>
+                                <div id="wealthg" class="hidden ng-binding"></div>*@
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                <canvas id="canvas" height="250" width="250" class="margin-top-10" style="width: 250px; height: 250px;"></canvas>
+                @*<div id="chartContainer" style="height: 370px; width: 100%;"></div>*@
+                <div class="wealth-gaintext"><span class="wealth-dot"></span>Wealth Gain<div class="font-size-15" style="color:#ff4500"><span style="float: left;padding: 15px 0px 0px 33px;;"><i class="fa fa-inr"></i></span><p id="growth" style="float: left;color: #ff4500;padding: 0px 0 0 3px;margin-top: 7px;"></p></div></div>
+                <div class="amount-investedtext">Amount <br> Invested<div class="font-size-15 poppinssemibold green ng-binding"><span><i class="fa fa-inr" style="color: #07bf6f;float: left;padding-top: 8px;"></i></span><p id="investment" style="color: #07bf6f;padding: 0 0 0 0px;margin-top: 5px;"></p><span class="amount-invested-dot"></span></div></div>
+                <div class="center-resulttext">Expected <br>Maturity Amount<div class="amount ng-binding" style="color: #337ab7"><span class="maturity"><i class="fa fa-inr middle_result"></i></span><p id="total" style="float: left;color: #337ab7;padding: 0px 0 0 5px;font-size: 21px;margin: 0px;"></p></div></div>
+                <div id="js-legend" class="chart-legend"></div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right margin-top-15" style="padding: 20px 0 0 0;">
+                    <a href="#" class="start-sip" data-toggle="modal" data-target="#exampleModal">For More Details Click Here</a>
+                </div>
+            </div>
+
+            @*<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="result-text">If you start investing with <font class="lato-bold-orange ng-binding">@*<font class="rupee">`</font> <i class="fa fa-inr"></i> 0</font> per month, we can help you grow it to <font class="lato-bold-orange ng-binding">@*<font class="rupee">`</font><i class="fa fa-inr"></i> 0</font>*</div>
+                </div>*@
+
+        </div>
+    </div>
+</section>
+<style>
+    .contactmodal-container {
+    padding: 30px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #f7f7f7;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    font-family: roboto;
+}
+    .contactmodal-container h1{
+   text-align: center;
+    font-size: 1.8em;
+    font-family: roboto;
+    color:#000;
+}
+    .contactmodal-container input[type=text] {
+        height: 44px;
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 10px;
+        -webkit-appearance: none;
+        background: #fff;
+        border: 1px solid #d9d9d9;
+        border-top: 1px solid #c0c0c0;
+        /* border-radius: 2px; */
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+</style>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div>
+            <div class="contactmodal-container">
+                <h5>I Have Better & Suitable Financial Solution For your Saving And Investment, If You Want I can Explain to you in detail by clicking on Request Now.</h5>
+                <div class="modal-body">
+                    <form method="post">
+                            <input type="text" name="username" class="form-control" id="contact_name" placeholder="Name" />
+                            <input type="text" name="email" class="form-control" id="contact_email" placeholder="Email Id" />
+                            <input type="text" name="phone" class="form-control" id="contact_mobile" placeholder="Phone no" />
+                            <input type="text" name="message" class="form-control" id="contact_message" style="display:none;" />
+
+                    </form>
+                </div>
+                
+                <div class="modal-footer button ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right" style="padding: 20px 0 0 0;">
+                        <a href="#" class="start-sip" id="compounting"> Send </a>
+                        <a href="#" class="start-sip" data-dismiss="modal"> Close </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Graph-->
+
+@section scripts{
+<script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
+<script src="../assets/global/plugins/ion.rangeslider/js/ion.rangeSlider.min.js" type="text/javascript"></script>
+<script>
+    $("#contact_mobile").on("change", function () {
+        var mobNum = $(this).val();
+        var filter = (/^\d*(?:\.\d{1,2})?$/) || (charCode > 31 && (charCode < 48 || charCode > 57));
+
+        if (filter.test(mobNum)) {
+            if (mobNum.length == 10) {
+                //alert("valid");
+                $("#mobile-valid").removeClass("hidden");
+                $("#folio-invalid").addClass("hidden");
+            } else {
+                //$.confirm({
+                //    icon: 'fa fa-warning',
+                //    title: 'Please put 10  digit mobile number',
+                //    content: '',
+                //    type: 'red',
+                //    typeAnimated: true,
+                //    buttons: {
+                //        tryAgain: {
+                //            text: 'Close',
+                //            btnClass: 'btn-red',
+                //            action: function () {
+                //            }
+                //        }
+                //    }
+                //});
+                alert('Please put 10  digit mobile number');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+            }
+        }
+        else {
+            //$.confirm({
+            //    icon: 'fa fa-warning',
+            //    title: 'Not a valid number',
+            //    content: '',
+            //    type: 'red',
+            //    typeAnimated: true,
+            //    buttons: {
+            //        tryAgain: {
+            //            text: 'Close',
+            //            btnClass: 'btn-red',
+            //            action: function () {
+            //            }
+            //        }
+            //    }
+            //});
+            alert('Not a valid number');
+            $("#folio-invalid").removeClass("hidden");
+            $("#mobile-valid").addClass("hidden");
+            return false;
+        }
+
+    });
+    $("#contact_email").on("change", function () {
+        var emailid = $(this).val();
+        var re = /^([A-Za-z0-9_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        if (re.test(emailid) == false)
+        {
+            //$.confirm({
+            //    icon: 'fa fa-warning',
+            //    title: 'Invalid Email Address',
+            //    content: '',
+            //    type: 'red',
+            //    typeAnimated: true,
+            //    buttons: {
+            //        tryAgain: {
+            //            text: 'Close',
+            //            btnClass: 'btn-red',
+            //            action: function () {
+            //            }
+            //        }
+            //    }
+            //});
+            alert('Invalid Email Address');
+                $("#folio-invalid").removeClass("hidden");
+                $("#mobile-valid").addClass("hidden");
+                return false;
+
+        }
+    });
+</script>
+<script>
+        $(document).ready(function () {
+            //var a = 50;
+            //var b = 20;
+            //var pieData = [{
+            //    value: a,
+            //    color: "#07bf6f",
+            //    label: 'Wealth Gain',
+            //    labelColor: 'white',
+            //    labelFontSize: '16'
+            //},
+            //              {
+            //                  value: b,
+            //                  color: "#FF4500",
+            //                  label: 'Amount Invested',
+            //                  labelColor: 'white',
+            //                  labelFontSize: '16'
+            //              }];
+            //var options = {
+            //    percentageInnerCutout: 75,
+            //    scaleShowLabels: true
+            //};
+
+            //var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(pieData, options, {
+            //    animationSteps: 100,
+            //    animationEasing: 'easeInOutQuart'
+            //});
+            mychat();
+        });
+    </script>
+<script>
+
+        function updateInvestInput(val) {
+        document.getElementById('monthlyinvestment').value = val;
+            mychat();
+        }
+        function updatePeriodInput(val) {
+            document.getElementById('timeperiod').value = val;
+            mychat();
+
+        }
+        function updateAnnualInput(val) {
+            document.getElementById('rateOfreturn').value = val;
+            mychat();
+        }
+        function updateInflationInput(val) {
+            document.getElementById('inflationRate').value = val;
+            mychat();
+        }
+
+        //Redraw Graph Function
+        $(".blue-bar, #monthlyinvestment, #timeperiod, #rateOfreturn, #inflationRate").keyup(function () {
+
+            mychat();
+        });
+
+        $(".blue-bar, .green-bar, .red-bar, .yellow-bar").click(function () {
+
+           mychat();
+
+        });
+        $('.more').click(function () {
+            $('html, body').animate({
+                scrollTop: $("#power-sip").offset().top
+            }, 1000);
+        });
+        function mychat()
+        {
+            debugger;
+            var b1, a3;
+            a1 = parseFloat(document.getElementById('monthlyinvestment').value);
+            a2 = parseFloat(document.getElementById('timeperiod').value);
+            a3 = parseFloat(document.getElementById('rateOfreturn').value);
+            a4 = parseFloat(document.getElementById('inflationRate').value);
+            d = a3 - a4;
+
+            //Total
+            var b1 = parseFloat(a1);
+            c1 = 0;
+            i = parseFloat(1);
+
+            for (i; i < a2 + 1 ; i++) {
+                a = c1;
+                b = b1;
+                c = (d / 100);
+                ab = parseFloat(b + ((b) * (c)));
+                c1 = parseFloat(a1);
+                b1 = parseFloat(c1 + ab);
+            }
+            total = parseFloat(b1).toFixed();
+            //Investment
+            investment = (a1 * a2);
+            //GainGain
+            growth = parseFloat(total - investment);
+            //FullTotal = parseFloat(investment + total);
+
+            //var Future_val = parseInt(document.getElementById('futureval').innerHTML);
+            //var Amount_invested = parseInt(document.getElementById('investeda').innerHTML);
+            //var Wealth_gain = parseInt(document.getElementById('wealthg').innerHTML);
+            //var wg = parseInt((parseInt(document.getElementById('wealthg').innerHTML) / parseInt(document.getElementById('futureval').innerHTML)) * 100);
+            //var ai = parseInt((parseInt(document.getElementById('investeda').innerHTML) / parseInt(document.getElementById('futureval').innerHTML)) * 100);
+            var wg = growth;
+            var ai = investment;
+            var Future_val = total;
+            var Amount_invested = investment;
+            growth1 = parseFloat(growth).toFixed();
+            var Wealth_gain = growth1;
+            var pieData = [{
+                value: wg,
+                color: "#07bf6f",
+                label: 'Wealth Gain',
+                labelColor: 'white',
+                labelFontSize: '16'
+            },
+            {
+                value: ai,
+                color: "#FF4500",
+                label: 'Amount Invested',
+                labelColor: 'white',
+                labelFontSize: '16'
+            }];
+            var options = {
+                percentageInnerCutout: 75
+
+            };
+            canvas.width = 250
+            canvas.height = 250
+
+            var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(pieData, options, {
+                animationSteps: 100,
+                animationEasing: 'easeInOutQuart',
+                showTooltips: true
+            });
+
+            document.getElementById('growth').innerHTML = Wealth_gain;
+            //document.getElementById('growth_val').value = Wealth_gain;
+            document.getElementById('investment').innerHTML = investment;
+            //document.getElementById('growth_amount').value = investment;
+            document.getElementById('total').innerHTML = total;
+            //document.getElementById('growth_expected').value = total;
+            document.getElementById('contact_message').value = "Yearly Invest:" + a1 + " Period:" + a2  + " Annual Return: " + a3 + " Inflation:" + a4 + " Wealth Gain:" + Wealth_gain + " Amount Invested: " + investment + " Expected Maturity Amount:" + total;
+        }
+    </script>
+<script>
+     var $range = $(".js-range-slider"),
+     $from = $(".monthlyinvestment"),
+     min = 1000,
+     max = 1000000,
+     from =200;
+
+        var updateValues = function () {
+            $from.prop("value", from);
+        };
+        $range.ionRangeSlider({
+            min: min,
+            max: max,
+            onChange: function (data) {
+                from = data.from;
+                updateValues();
+            }
+        });
+        range = $range.data("ionRangeSlider");
+        var updateRange = function () {
+            range.update({
+                from: from,
+            });
+        };
+
+        $from.on("change", function () {
+            from = +$(this).prop("value");
+            if (from < min) {
+                from = min;
+            }
+
+            updateValues();
+            updateRange();
+            mychat();
+        });
+
+    </script>
+<script>
+    $(document).ready(function () {
+        //document.getElementById('contact_message').value = "Wealth Gain:" + document.getElementById('growth_val').value + " Amount Invested: " + document.getElementById('growth_amount').value + " Expected Maturity Amount:" + document.getElementById('growth_expected').value;
+    });
+</script>
+<script type="text/javascript">
+    var msg = "<body>Name :" + $("#contact_name").val() + "<br/> Email Id: " + $("#contact_email").val() + " <br/> Mobile No: " + $("#contact_mobile").val() + "<br/>Remark: " + $("#contact_message").val() + "</body>";
+        $('#compounting').click(function (e) {
+            e.preventDefault();
+            $.post("../Home/Contact?name=" + $("#contact_name").val() + "&phone=" + $("#contact_mobile").val() + "&email=" + $("#contact_email").val() + "&msg=" + $("#contact_message").val() + "&subject=Power Of Compounting", function (success) {
+                alert(success);
+                document.getElementById("contact_name").value = "";
+                document.getElementById("contact_mobile").value = "";
+                document.getElementById("contact_email").value = "";
+                //document.getElementById("txtdate1").value = "";
+                document.getElementById("contact_message").value = "";
+                location.reload();
+            });
+        });
+</script>
+}
